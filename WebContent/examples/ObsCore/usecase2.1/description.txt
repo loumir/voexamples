@@ -1,0 +1,13 @@
+Show me a list of all data that satisfies:
+    I. DataType=Spectrum
+   II. Energy spans 1 to 5 keV
+  III. Total counts in spectrum > 100
+   IV. Exposure time > 10000 seconds
+    V. Data Quality: Fully Calibrated
+   
+-- 1 keV = 1.2398545639349092E-9 m
+-- 5 keV = 2.4797091278698184E-10 m
+
+-- we cannot find which observations have the total counts,
+-- but we can order by ~depth within the collection
+    

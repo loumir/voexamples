@@ -1,0 +1,5 @@
+Show me a list of all data that satisfies:
+    I. DataType=Imaging or Spectroscopy
+   II. RA includes 16.00 hours
+  III. DEC includes +41.00 degrees
+   IV. SDSS images and spectra AND CFHTLS images and spectra

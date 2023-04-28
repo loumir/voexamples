@@ -1,0 +1,7 @@
+Show me a list of all data that satisfies:
+    I. Optical imaging
+   II. In the M81 group
+  III. With area greater than 0.5 square degrees
+   IV. With sensitivity > 10 for point source m=25
+    V. I also want X-ray data with cut-outs 5 arcmin on a side of all the detected galaxies
+   VI. I also want Radio data cut-outs 5 arcmin on a side around detected galaxies

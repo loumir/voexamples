@@ -1,0 +1,8 @@
+Show me a list of all data which satisfies:
+    I. DataType=TimeSeries
+   II. RA includes 16.00 hours
+  III. DEC includes +41.00
+   IV. Time resolution better than 1 minute
+    V. Time interval (start of series to end of series) > 1 week
+   VI. Observation data before June 10, 2008
+  VII. Observation data after June 10, 2007

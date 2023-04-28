@@ -1,0 +1,19 @@
+Show me all data that satisfies:
+   I. DataType=IFU
+  II. DataQuality: Fully Calibrated
+ III. ObjectClass=quasar (SERVICE REQ + NEEDS ANOTHER SERVICE (CATALOGUE)
+  IV. Redshift > 3
+   V. Radio flux > 1 mJy
+   
+We assume here that data providers will expose IFU data using dataproduct_type='cube'.
+
+Need to get a list of quasar names and coordinates by a TAP query
+--SELECT target_name AS name,coordsys,ra,dec FROM SomeObjectCatalog
+--WHERE target_class = 'quasar'
+--  AND redshift >= 3.0
+--  AND flux_radio > 1.0
+
+--UPLOAD=q1result,http://example.com/tap_service/async/q1_jobID/results/result
+-- or use this canned input file
+-- UPLOAD=q1result,http://www.cadc.hia.nrc.gc.ca/cvo/ObsCore/qso_z_radio.xml
+-- bandpass much larger than resolution == has a spectral axis, not necessarily IFU

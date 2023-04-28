@@ -1,0 +1,7 @@
+Show me a list of all data that satisfies:
+    I. DataType=Spectrum
+   II. Wavelength includes 6500 angstroms
+  III. Spectral Resolution better than 15 angstroms
+   IV. Spatial Resolution better than 2 arcseconds FWHM
+    V. Exposure Time > 3600 seconds
+   VI. Data Quality = Any

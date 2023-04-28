@@ -1,0 +1,1 @@
+Building an enum type with a wrong label 

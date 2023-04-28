@@ -1,0 +1,6 @@
+SELECT * FROM ivoa.ObsCore
+WHERE dataproduct_type = 'cube'
+  AND em_res_power < 5e-10
+  AND CONTAINS(POINT('ICRS',12,34), s_region) = 1
+  and AREA(s_region) >= 0.028
+ORDER BY obs_collection,t_exptime DESC

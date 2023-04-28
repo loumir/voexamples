@@ -1,0 +1,2 @@
+This a mapping example of a dataType containing an enumeration
+An example of VOTable mapping can be seen <a href="/voexamples/show/VODML/EnumLiteral">here</a>

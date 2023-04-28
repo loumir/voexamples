@@ -1,0 +1,7 @@
+Show me all observations satisfying:
+
+   I. DataType = any
+  II. Energy includes 5 keV
+ III. RA includes 16.00
+  IV. DEC includes +10
+   V. Exposure time > 10 ks

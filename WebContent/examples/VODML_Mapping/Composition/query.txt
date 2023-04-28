@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+Example of a VOTable annotated with VODML elements mapping its contents to the 
+Composition data models used to check the parsing of single VO-DML features.
+ -->
+<VOTABLE xmlns="http://www.ivoa.net/xml/VOTable/v1.3_vodml">
+	<!-- 
+	Declaration of VO-DML modes that are used in this annotated VOTable.
+	See $7.1.
+	-->
+	<GROUP>
+		<VODML>
+			<TYPE>vodml-map:Model</TYPE>
+		</VODML>
+		<PARAM name="name" datatype="char" arraysize="*" value="ivoa">
+			<VODML>
+				<ROLE>vodml-map:Model.name</ROLE>
+				<TYPE>ivoa:string</TYPE>
+			</VODML>
+		</PARAM>
+		<PARAM name="url" datatype="char" arraysize="*" value="http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/IVOA.vo-dml.xml">
+			<VODML>
+				<ROLE>vodml-map:Model.url</ROLE>
+				<TYPE>ivoa:anyURI</TYPE>
+			</VODML>
+		</PARAM>
+	</GROUP>
+	<GROUP>
+		<VODML>
+			<TYPE>vodml-map:Model</TYPE>
+		</VODML>
+		<PARAM name="url" datatype="char" arraysize="*" value="http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/vodml-map/vodml-map.vo-dml.xml">
+			<VODML>
+				<ROLE>vodml-map:Model.url</ROLE>
+				<TYPE>ivoa:anyURI</TYPE>
+			</VODML>
+		</PARAM>
+		<PARAM name="name" datatype="char" arraysize="*" value="vodml-map">
+			<VODML>
+				<ROLE>vodml-map:Model.name</ROLE>
+				<TYPE>ivoa:string</TYPE>
+			</VODML>
+		</PARAM>
+	</GROUP>
+	<GROUP>
+		<VODML>
+			<TYPE>vodml-map:Model</TYPE>
+		</VODML>
+		<PARAM name="url" datatype="char" arraysize="*" value="http://saada.unistra.fr/voexamples/dali/vodml/Composition/query">
+			<VODML>
+				<ROLE>vodml-map:Model.url</ROLE>
+				<TYPE>ivoa:anyURI</TYPE>
+			</VODML>
+		</PARAM>
+		<PARAM name="identifier" datatype="char" arraysize="*" value="ivo://ivoa.org/dm/sample/Composition/1.0">
+			<VODML>
+				<ROLE>vodml-map:Model.identifier</ROLE>
+				<TYPE>ivoa:anyURI</TYPE>
+			</VODML>
+		</PARAM>
+		<PARAM name="name" datatype="char" arraysize="*" value="Composition">
+			<VODML>
+				<ROLE>vodml-map:Model.name</ROLE>
+				<TYPE>ivoa:string</TYPE>
+			</VODML>
+		</PARAM>
+	</GROUP>
+	
+	<RESOURCE ID="standalone_objects"/><!--
+	No standalone object in this VOTable
+	-->
+	<RESOURCE ID="table_objects">
+		<TABLE><!--
+			VODML mapping
+			-->
+			<GROUP ID="_airplane">
+				<VODML>
+					<TYPE>Composition:base.Airplane</TYPE>
+				</VODML>
+				<FIELDref ref="_ap_sn">
+					<VODML>
+						<ROLE>vodml-map:ObjectTypeInstance.ID</ROLE>
+					</VODML>
+				</FIELDref>
+				<FIELDref ref="_ap_sn">
+					<VODML>
+						<ROLE>Composition:base.Airplane.SerialNumber</ROLE>
+					</VODML>
+				</FIELDref>
+				<GROUP>
+					<VODML>
+						<ROLE>Composition:base.Airplane.Wings</ROLE>
+						<TYPE>Composition:base.Wing</TYPE>
+					</VODML>
+					<FIELDref ref="_right_w_sn">
+						<VODML>
+							<ROLE>Composition:base.Wing.SerialNumber</ROLE>
+						</VODML>
+					</FIELDref>
+					<FIELDref ref="_left_w_sn">
+						<VODML>
+							<ROLE>Composition:base.Wing.SerialNumber</ROLE>
+						</VODML>
+					</FIELDref>
+				</GROUP>
+			</GROUP><!--
+			Native data
+			-->
+			<FIELD name="AirplaneSN" ID="__ap_sn" datatype="char" arraysize="*">
+				<DESCRIPTION>Airplane Serial Number</DESCRIPTION>
+			</FIELD>
+			<FIELD name="RightWingSN" ID="_right_w_sn" datatype="char" arraysize="*">
+				<DESCRIPTION>Right Wing Serial Number</DESCRIPTION>
+			</FIELD>
+			<FIELD name="LeftWingSN" ID="_left_w_sn" datatype="char" arraysize="*">
+				<DESCRIPTION>Left Wing Serial Number</DESCRIPTION>
+			</FIELD>
+			<DATA>
+				<TABLEDATA>
+					<TR>
+						<TD>#123454_AP</TD>
+						<TD>#67867868_RW</TD>
+						<TD>#89546_LW</TD>
+					</TR>
+				</TABLEDATA>
+			</DATA>
+		</TABLE>
+	</RESOURCE>
+</VOTABLE>

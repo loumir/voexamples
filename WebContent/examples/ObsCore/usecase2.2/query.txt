@@ -1,0 +1,5 @@
+SELECT * FROM ivoa.ObsCore
+WHERE dataproduct_type = 'spectrum'
+  AND t_exptime > 3600
+  AND s_resolution < 5.5e-4
+  AND 6500e-10 between em_min and em_max

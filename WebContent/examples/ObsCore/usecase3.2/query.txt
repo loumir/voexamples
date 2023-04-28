@@ -1,0 +1,3 @@
+SELECT * FROM ivoa.ObsCore
+WHERE dataproduct_type = 'cube'
+  AND CONTAINS(POINT('ICRS',16,41), s_region) = 1

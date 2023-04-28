@@ -1,0 +1,6 @@
+SELECT q.Name,q.ra_RAJ2000,q.dec_DEJ2000,o.*
+FROM TAP_UPLOAD.q1result AS q JOIN ivoa.ObsCore AS o
+  ON CONTAINS(POINT('ICRS',q.ra_RAJ2000, q.dec_DEJ2000), o.s_region) = 1
+WHERE o.dataproduct_type = 'cube'
+  AND o.calib_level >= 2
+  AND (o.em_max - o.em_min)/o.em_res_power > 100

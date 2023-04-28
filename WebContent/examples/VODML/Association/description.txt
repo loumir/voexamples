@@ -1,0 +1,2 @@
+This is an example of an association linking N passengers with one flight. 
+An example of VOTable mapping can be seen <a href="/voexamples/show/VODML_Mapping/Association">here</a>

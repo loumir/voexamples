@@ -1,0 +1,8 @@
+SELECT TOP 100  ivoa.ObsCore.access_url,ivoa.ObsCore.obs_id
+FROM ivoa.ObsCore
+WHERE (CONTAINS(POINT('ICRS', ivoa.ObsCore.s_ra, ivoa.ObsCore.s_dec),      
+            CIRCLE('ICRS', 10.684667, +41.268750, 0.016666666666666666)) = 1)
+	AND ivoa.ObsCore.dataproduct_type = 'timeseries'
+	AND ivoa.ObsCore.t_min > 54221
+	AND ivoa.ObsCore.t_max < 55800
+	AND t_xel > 1000 

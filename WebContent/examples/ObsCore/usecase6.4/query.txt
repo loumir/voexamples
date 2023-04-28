@@ -1,0 +1,8 @@
+SELECT xmm.access_url,xmm.obs_id
+FROM ivoa.ObsCore AS xmm
+WHERE  (xmm.dataproduct_type = 'eventlist'  OR   xmm.dataproduct_type = 'image'
+           	                OR xmm.dataproduct_type = 'spectrum')
+            AND  (CONTAINS(POINT('ICRS', xmm.s_ra, xmm.s_dec)
+     	         , CIRCLE('ICRS', 10.684667, +41.268750, 0.016666666666666666)) = 1)
+            AND xmm.t_exptime  > 100000
+	AND xmm.t_min BETWEEN 54261 AND 54627

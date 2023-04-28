@@ -1,0 +1,11 @@
+Show me a list of all data that satisfies:
+    I. DataType=Cube with 4 dimensions
+   II. Axes includes FREQ
+  III. Spatial axes contain more than  100 pixels
+   IV. Axes includes STOKES
+    V. Frequency resolution < 1 MHz
+   VI. Rest Frequency = 345.795990 GHz appears in band
+
+NB: Need for a polarisation axis
+
+-- 345.795990GHz = 8.669634948629682E-4 meters

@@ -1,0 +1,6 @@
+Show me a list of all data that satisfies:
+    I. DataType=Cube with 3 dimensions
+   II. Axes includes WAVE
+  III. Axes includes more than 200 pixels along each spatial axis 
+   IV. Spatial resolution better than 2 arcsec
+    V. For  a selected list of SDSS objects

@@ -1,0 +1,1 @@
+Images in band J, H, K with spatial resolution greater than 0.3 arcsec (V1.0)

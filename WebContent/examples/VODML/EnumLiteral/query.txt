@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ This simple model defines an Enumeration of energy bands which are used to characterized a composite image
+ Each image is made with 3 components (RGB) each one defined by both a band and an URL
+ 
+ New document created with EditiX at Mon Aug 29 13:38:03 CEST 2016
+-->
+<vo-dml:model xsi:schemaLocation="http://www.ivoa.net/xml/VODML/v1.0 ../xsd/vo-dml-v1.0.xsd" xmlns:vo-dml="http://www.ivoa.net/xml/VODML/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<name>EnumLiteral</name>
+	<description>This DM snipet shows a basic composition example: Wings are part of the plane</description>
+	<title>VO-DML data model snipet</title>
+	<version>1.0</version>
+	<lastModified>2016-08-29T10:55:49</lastModified>
+	<import>
+		<name>ivoa</name>
+		<url>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/IVOA.vo-dml.xml</url>
+		<documentationURL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/IVOA.html</documentationURL>
+	</import>
+	<package>
+		<vodml-id>base</vodml-id>
+		<name>base</name><!--
+		Enumeration of energy bands -->
+		<enumeration>
+			<vodml-id>base.energyBand</vodml-id>
+			<name>enum</name>
+			<literal>
+				<vodml-id>base.enum.xray</vodml-id>
+				<name>Xray</name>
+			</literal>
+			<literal>
+				<vodml-id>base.enum.visible</vodml-id>
+				<name>Visible</name>
+			</literal>
+			<literal>
+				<vodml-id>base.enum.infrared</vodml-id>
+				<name>IR</name>
+			</literal>
+		</enumeration><!-- 
+		DataType describing an image component -->
+		<dataType>
+			<vodml-id>base.imageComponent</vodml-id>
+			<name>ImageComponent</name>
+			<attribute>
+				<vodml-id>ImageComponent.URL</vodml-id>
+				<name>URL</name>
+				<datatype>
+					<vodml-ref>ivoa:string</vodml-ref>
+				</datatype>
+				<multiplicity>
+					<minOccurs>1</minOccurs>
+					<maxOccurs>1</maxOccurs>
+				</multiplicity>
+			</attribute>
+			<attribute>
+				<vodml-id>ImageComponent.band</vodml-id>
+				<name>band</name>
+				<datatype>
+					<vodml-ref>EnumLiteral:base.energyBand</vodml-ref>
+				</datatype>
+				<multiplicity>
+					<minOccurs>1</minOccurs>
+					<maxOccurs>1</maxOccurs>
+				</multiplicity>
+			</attribute>
+		</dataType><!--
+		ObjectType describing a composiet image  -->
+		<objectType>
+			<vodml-id>base.imageComposite</vodml-id>
+			<name>ImageComposite</name>
+			<attribute>
+				<vodml-id>base.imageComposite.redComponent</vodml-id>
+				<name>redComponent</name>
+				<datatype>
+					<vodml-ref>EnumLiteral:base.imageComponent</vodml-ref>
+				</datatype>
+				<multiplicity>
+					<minOccurs>1</minOccurs>
+					<maxOccurs>1</maxOccurs>
+				</multiplicity>
+			</attribute>
+			<attribute>
+				<vodml-id>base.imageComposite.greenComponent</vodml-id>
+				<name>greenComponent</name>
+				<datatype>
+					<vodml-ref>EnumLiteral:base.imageComponent</vodml-ref>
+				</datatype>
+				<multiplicity>
+					<minOccurs>1</minOccurs>
+					<maxOccurs>1</maxOccurs>
+				</multiplicity>
+			</attribute>
+			<attribute>
+				<vodml-id>base.imageComposite.blueComponent</vodml-id>
+				<name>blueComponent</name>
+				<datatype>
+					<vodml-ref>EnumLiteral:base.imageComponent</vodml-ref>
+				</datatype>
+				<multiplicity>
+					<minOccurs>1</minOccurs>
+					<maxOccurs>1</maxOccurs>
+				</multiplicity>
+			</attribute>
+		</objectType>
+	</package>
+</vo-dml:model>

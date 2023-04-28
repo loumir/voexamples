@@ -1,0 +1,6 @@
+SELECT * 
+FROM ivoa.Obscore
+WHERE em_min < 2.48E-10 
+  AND em_max > 2.48 E-10
+  AND CONTAINS(POINT('ICRS',16.0,10.0),s_region) = 1
+  AND t_exptime > 10000

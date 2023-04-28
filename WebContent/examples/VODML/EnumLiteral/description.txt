@@ -1,0 +1,3 @@
+This simple model defines an Enumeration of energy bands used to characterized a composite image
+Each image is made with 3 components (RGB) each one defined by both a band and an URL
+An example of VOTable mapping can be seen <a href="/voexamples/show/VODML_Mapping/EnumLiteral">here</a>

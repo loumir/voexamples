@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  
+Example of a VOTable annotated with VODML elements mapping its contents to the 
+Composition data models used to check the parsing of single VO-DML features.
+ -->
+<VOTABLE xmlns="http://www.ivoa.net/xml/VOTable/v1.3_vodml"><!-- 
+	Declaration of VO-DML modes that are used in this annotated VOTable.
+	See $7.1.
+	-->
+	<GROUP>
+		<VODML>
+			<TYPE>vodml-map:Model</TYPE>
+		</VODML>
+		<PARAM name="name" datatype="char" arraysize="*" value="ivoa">
+			<VODML>
+				<ROLE>vodml-map:Model.name</ROLE>
+				<TYPE>ivoa:string</TYPE>
+			</VODML>
+		</PARAM>
+		<PARAM name="url" datatype="char" arraysize="*" value="http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/IVOA.vo-dml.xml">
+			<VODML>
+				<ROLE>vodml-map:Model.url</ROLE>
+				<TYPE>ivoa:anyURI</TYPE>
+			</VODML>
+		</PARAM>
+	</GROUP>
+	<GROUP>
+		<VODML>
+			<TYPE>vodml-map:Model</TYPE>
+		</VODML>
+		<PARAM name="url" datatype="char" arraysize="*" value="http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/vodml-map/vodml-map.vo-dml.xml">
+			<VODML>
+				<ROLE>vodml-map:Model.url</ROLE>
+				<TYPE>ivoa:anyURI</TYPE>
+			</VODML>
+		</PARAM>
+		<PARAM name="name" datatype="char" arraysize="*" value="vodml-map">
+			<VODML>
+				<ROLE>vodml-map:Model.name</ROLE>
+				<TYPE>ivoa:string</TYPE>
+			</VODML>
+		</PARAM>
+	</GROUP>
+	<GROUP>
+		<VODML>
+			<TYPE>vodml-map:Model</TYPE>
+		</VODML>
+		<PARAM name="url" datatype="char" arraysize="*" value="http://saada.unistra.fr/voexamples/dali/vodml/EnumLiteral/query">
+			<VODML>
+				<ROLE>vodml-map:Model.url</ROLE>
+				<TYPE>ivoa:anyURI</TYPE>
+			</VODML>
+		</PARAM>
+		<PARAM name="identifier" datatype="char" arraysize="*" value="ivo://ivoa.org/dm/sample/EnumLiteral/1.0">
+			<VODML>
+				<ROLE>vodml-map:Model.identifier</ROLE>
+				<TYPE>ivoa:anyURI</TYPE>
+			</VODML>
+		</PARAM>
+		<PARAM name="name" datatype="char" arraysize="*" value="EnumLiteral">
+			<VODML>
+				<ROLE>vodml-map:Model.name</ROLE>
+				<TYPE>ivoa:string</TYPE>
+			</VODML>
+		</PARAM>
+	</GROUP>
+	<RESOURCE ID="standalone_objects"/><!--
+	No standalone object in this VOTable
+	-->
+	<RESOURCE ID="table_objects">
+		<TABLE><!--
+			VODML mapping
+			-->
+			<GROUP ID="_composite">
+				<VODML>
+					<TYPE>EnumLiteral:base.imageComposite</TYPE>
+				</VODML>
+				<GROUP ID="_red_component">
+					<VODML>
+						<ROLE>EnumLiteral:base.imageComposite.redComponent</ROLE>
+						<TYPE>EnumLiteral:base.imageComponent</TYPE>
+					</VODML>
+					<FIELDref ref="_red_url">
+						<VODML>
+							<ROLE>EnumLiteral:base.imageComponent.URL</ROLE>
+						</VODML>
+					</FIELDref>
+					<FIELDref ref="_red_band">
+						<VODML>
+							<ROLE>EnumLiteral:base.imageComponent.band</ROLE>
+						</VODML>
+					</FIELDref>
+				</GROUP>
+				<GROUP ID="_green_component">
+					<VODML>
+						<ROLE>EnumLiteral:base.imageComposite.greenComponent</ROLE>
+						<TYPE>EnumLiteral:base.imageComponent</TYPE>
+					</VODML>
+					<FIELDref ref="_green_url">
+						<VODML>
+							<ROLE>EnumLiteral:base.imageComponent.URL</ROLE>
+						</VODML>
+					</FIELDref>
+					<FIELDref ref="_green_band">
+						<VODML>
+							<ROLE>EnumLiteral:base.imageComponent.band</ROLE>
+						</VODML>
+					</FIELDref>
+				</GROUP>
+				<GROUP ID="_blue_component">
+					<VODML>
+						<ROLE>EnumLiteral:base.imageComposite.blueComponent</ROLE>
+						<TYPE>EnumLiteral:base.imageComponent</TYPE>
+					</VODML>
+					<FIELDref ref="_blue_url">
+						<VODML>
+							<ROLE>EnumLiteral:base.imageComponent.URL</ROLE>
+						</VODML>
+					</FIELDref>
+					<FIELDref ref="_blue_band">
+						<VODML>
+							<ROLE>EnumLiteral:base.imageComponent.band</ROLE>
+						</VODML>
+					</FIELDref>
+				</GROUP>
+			</GROUP><!--
+			Native data
+			-->
+			<FIELD name="URL" ID="_red_url" datatype="char" arraysize="*">
+				<DESCRIPTION>Image red omponent URL</DESCRIPTION>
+			</FIELD>
+			<FIELD name="band" ID="_red_band" datatype="char" arraysize="*">
+				<DESCRIPTION>Image red component band</DESCRIPTION>
+			</FIELD>
+			<FIELD name="URL" ID="_green_url" datatype="char" arraysize="*">
+				<DESCRIPTION>Image green component URL</DESCRIPTION>
+			</FIELD>
+			<FIELD name="band" ID="_green_band" datatype="char" arraysize="*">
+				<DESCRIPTION>Image green component band</DESCRIPTION>
+			</FIELD>
+			<FIELD name="URL" ID="_blue_url" datatype="char" arraysize="*">
+				<DESCRIPTION>Image blue component URL</DESCRIPTION>
+			</FIELD>
+			<FIELD name="band" ID="_blue_band" datatype="char" arraysize="*">
+				<DESCRIPTION>Image blue component band</DESCRIPTION>
+			</FIELD>
+			<DATA>
+				<TABLEDATA>
+					<TR>
+						<TD>http://infrared.image.com</TD>
+						<TD>IR</TD>
+						<TD>http://visible.image.com</TD>
+						<TD>Visible</TD>
+						<TD>http://he.image.com</TD>
+						<TD>Xray</TD>
+					</TR>
+				</TABLEDATA>
+			</DATA>
+		</TABLE>
+	</RESOURCE>
+</VOTABLE>

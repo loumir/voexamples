@@ -1,0 +1,9 @@
+Show me a list of all data that satisfies:
+    I. DataType=cube
+   II. RA includes 16.00
+  III. Dec includes +41.00
+   IV. Wavelength includes 6500 angstroms
+    V. Wavelength includes 4000 angstroms
+   VI. Spectral resolution better than 5 angstroms
+  VII. Exposure time more than 3600 seconds
+ VIII. Data Quality: Fully Calibrated

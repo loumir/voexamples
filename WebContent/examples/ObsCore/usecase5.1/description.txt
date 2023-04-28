@@ -1,0 +1,8 @@
+Show me a list of all event lists observed for a particular phenomenon with constraints on space and time coverage like:
+    I. DataType=event list
+   II. RA includes target_RA
+  III. DEC includes target_DEC
+   IV. Time resolution better than 1 minute
+    V. Exposure Time > 100000s
+   VI. Observation data after June 10, 2007
+  VII. Observation data before June 10, 2008

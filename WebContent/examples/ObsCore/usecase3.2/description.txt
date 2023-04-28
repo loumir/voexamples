@@ -1,0 +1,15 @@
+Show me a list of all data that satisfies:
+    I. DataType=cube with 3 dimensions
+   II. Axes includes Velocity		
+  III. Axes includes RA
+   IV. Axes includes DEC
+    V. Velocity Resolution better than 50 km/s
+   VI. RA includes 16.000
+  VII. Dec includes +41.000
+  
+ NB: in this case optional data model fields related to redshift axis can be used using   em_ucd=spect.DopplerVeloc, for instance.
+ 
+-- velocity axes not detectable
+-- convert from velocity resolution to em_res_power not feasible 
+
+ 

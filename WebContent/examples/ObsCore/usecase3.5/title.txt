@@ -1,0 +1,1 @@
+High spectral resolution with frequency range greater than 500MHz and sky area greater than 100x100 pixels (V1.0)

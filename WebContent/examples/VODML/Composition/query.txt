@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vo-dml:model xsi:schemaLocation="http://www.ivoa.net/xml/VODML/v1.0 ../xsd/vo-dml-v1.0.xsd" xmlns:vo-dml="http://www.ivoa.net/xml/VODML/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<name>Composition</name>
+	<description>This DM snipet shows a basic composition example: Wings are part of the plane</description>
+	<title>VO-DML data model snipet</title>
+	<version>1.0</version>
+	<lastModified>2016-01-12T10:55:49</lastModified>
+	<import>
+		<name>ivoa</name>
+		<url>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/IVOA.vo-dml.xml</url>
+		<documentationURL>http://volute.g-vo.org/svn/trunk/projects/dm/vo-dml/models/ivoa/IVOA.html</documentationURL>
+	</import>
+	<package>
+		<vodml-id>base</vodml-id>
+		<name>base</name>
+		<!-- Wing -->
+		<objectType>
+			<vodml-id>base.Wing</vodml-id>
+			<name>Wing</name>
+			<attribute>
+				<vodml-id>base.Wing.SerialNumber</vodml-id>
+				<name>SerialNumber</name>
+				<datatype>
+					<vodml-ref>ivoa:string</vodml-ref>
+				</datatype>
+				<multiplicity>
+					<minOccurs>1</minOccurs>
+					<maxOccurs>1</maxOccurs>
+				</multiplicity>
+			</attribute>
+		</objectType>
+		<!-- airplane -->
+		<objectType>
+			<vodml-id>base.Airplane</vodml-id>
+			<name>Airplane</name>
+			<attribute>
+				<vodml-id>base.Airplane.SerialNumber</vodml-id>
+				<name>SerialNumber</name>
+				<datatype>
+					<vodml-ref>ivoa:string</vodml-ref>
+				</datatype>
+				<multiplicity>
+					<minOccurs>1</minOccurs>
+					<maxOccurs>1</maxOccurs>
+				</multiplicity>
+			</attribute>
+			<collection>
+				<vodml-id>base.Airplane.Wings</vodml-id>
+				<name>Wings</name>
+				<datatype>
+					<vodml-ref>Composition:base.Wing</vodml-ref>
+				</datatype>
+				<multiplicity>
+					<minOccurs>2</minOccurs>
+					<maxOccurs>2</maxOccurs>
+				</multiplicity>
+			</collection>
+		</objectType>
+	</package>
+</vo-dml:model>

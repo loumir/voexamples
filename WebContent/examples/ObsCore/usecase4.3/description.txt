@@ -1,0 +1,6 @@
+Show me a list of all data matching a particular event (gamma ray burst) in time interval and space:
+    I. DataType=TimeSeries
+   II. RA includes 16.00 hours
+  III. DEC includes +41.00
+   IV. Time start > MJD 55220. and Time stop < MJD 55221
+    V. Number of time slots > 1000

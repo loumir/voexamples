@@ -1,0 +1,1 @@
+Hyperspectral cubes with more than 100 pixels square and spatial resolution better than 2 arcsec for a list of objects extracted from SDSS data collection. (V1.1)
