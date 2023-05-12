@@ -100,3 +100,45 @@ a.wd {
     border-color: #e0e0e0;
     background-color: #e0e0e0;
 }
+
+.custom-img{
+    float:right;
+    padding-left: 100px;
+    max-width: 600px;
+    max-height: 600px;
+}
+.custom-code{
+    width: fit-content
+}
+
+#revealonclick{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ #revealonclick {
+    display:block;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.stepquery {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+}
+
+.stepquery #buttons {
+    display: flex;
+    flex: 1;
+    align-self: flex-end;
+}
+
+.hljs.xml {
+    max-height: 600px;
+}
