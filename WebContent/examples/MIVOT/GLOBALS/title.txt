@@ -1,1 +1,1 @@
-MIVOT Mapping
+GLOBALS Mapping Example in MIVOT

@@ -1,0 +1,36 @@
+title:Example
+description:Considering, in a TimeSeries, a TimeSystem
+query/xml:
+<GLOBALS>
+    <!--
+        Time System
+    -->
+
+     <INSTANCE dmid="TimeSystem" dmrole="" dmtype="coords:TimeSys">
+        <INSTANCE dmrole="coords:TimeFrame" dmtype="coords:TimeFrame">
+            <ATTRIBUTE dmrole="coords:TimeFrame.refPosition" dmtype="ivoa:string" value="BARYCENTER" />
+            <ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="TCB" />
+            <ATTRIBUTE dmrole="coords:TimeFrame.refDirection" dmtype="ivoa:string" value="notSet" />
+        </INSTANCE>
+    </INSTANCE>
+    <INSTANCE  dmid="spaceSys" dmrole="" dmtype="coords:SpaceSys">
+        <INSTANCE dmrole="coords:SpaceSys.frame" dmtype="coords:SpaceFrame">
+            <ATTRIBUTE dmrole="coords:SpaceFrame.refPosition" dmtype="ivoa:string" value="BARYCENTER"/>
+            <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="ICRS"/>
+        </INSTANCE>
+    </INSTANCE>
+</GLOBALS>
+endquery
+img:coordsys.png
+description:We can reference it when needed, for example in a time measurement
+query/xml:
+<INSTANCE dmrole="mango:measure" dmtype="meas:Time">
+    <INSTANCE dmrole="meas:Time.coord" dmtype="coords.JD" >
+        <ATTRIBUTE dmrole="coords:JD.date" dmtype="ivoa:real" ref="obs_time" />
+        <REFERENCE dmrole="coords:Coordinate.coordSys" dmref="TimeSystem" />
+    </INSTANCE>
+    <INSTANCE dmrole="meas:Error"  dmtype="meas:Symmetrical">
+        <ATTRIBUTE dmrole="meas:Error.statError" dmtype="meas:Symmetrical" value="NotSet" />
+    </INSTANCE>
+</INSTANCE>
+endquery
