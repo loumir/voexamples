@@ -1,0 +1,1 @@
+This is a mapping example in MIVOT for GLOBALS instanciation.

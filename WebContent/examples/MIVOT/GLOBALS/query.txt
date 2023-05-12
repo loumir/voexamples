@@ -1,0 +1,17 @@
+<VODML xmlns:dm-mapping="http://www.ivoa.net/xml/mivot">
+    <REPORT status="OK">Mapping compiled by hand</REPORT>
+    <MODEL... />
+    <!--
+place holder for singular data model instances not associated with a singular VOTabme TABLE
+-->
+    <GLOBALS>
+        <!--
+Container for the coordinate systems
+-->
+        <COLLECTION dmid="IDCoordinateSystems" dmrole="">
+            ...
+        </COLLECTION>
+        ...
+    </GLOBALS>
+    ...
+</VODML>
