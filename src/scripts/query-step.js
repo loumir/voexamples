@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-    const steps = document.querySelectorAll(".step");
+    const stepQuery = document.querySelector(".stepquery");
+    const prevBtn = stepQuery.querySelector("#prev-btn");
+    const nextBtn = stepQuery.querySelector("#next-btn");
+    const steps = stepQuery.querySelectorAll(".step");
     let currentStep = 0;
 
     function showStep(step) {
@@ -26,5 +27,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     showStep(currentStep);
-
 });
