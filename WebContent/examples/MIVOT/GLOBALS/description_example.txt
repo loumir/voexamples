@@ -1,0 +1,1 @@
+Considering, in a TimeSeries, a TimeSystem
