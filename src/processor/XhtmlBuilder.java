@@ -3,6 +3,9 @@
  */
 package processor;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 import scripts.GetScript;
 
@@ -14,178 +17,126 @@ public class XhtmlBuilder {
 
 	public static String getExampleDiv(String baseDir , Request params) throws Exception{
 		ExampleModel em = new ExampleModel(baseDir, params);
-		StringBuffer retour = new StringBuffer();
+		StringBuilder retour = new StringBuilder();
 		String content;
 		retour.append("<div id=\"" + em.getName() + "\" resource=\"#" +em.getName() + "\" typeof=\"example\">\n");
 		retour.append("  <fieldset>\n");
 		retour.append("     <legend>" + params.protocol + "[" + params.useCase + "] " + em.getTitle() + "</legend>\n");
-		content = em.getDescription();
-		if( content.length() > 0 ){
-			retour.append("     <fieldset>\n");
-			retour.append("       <legend>Description</legend>\n");
-			retour.append("       <pre>" + content + "</pre>");
-			retour.append("     </fieldset>\n");
-		}
-		content = em.getQuery();
-		if( content.length() > 0 ){
-			retour.append("     <fieldset>\n");
-			retour.append("       <legend>Query</legend>\n");
-			retour.append("       <pre>" + content.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</pre>");
-			retour.append("     </fieldset>\n");
-		}
-		content = em.getUsage();
-		if( content.length() > 0 ){
-			retour.append("     <fieldset>\n");
-			retour.append("       <legend>Usage</legend>\n");
-			retour.append("       <pre>" + content + "</pre>");
-			retour.append("     </fieldset>\n");
-			retour.append("   </fieldset>\n");
-		}
-		content = em.getImage();
-		if( content.length() > 0 ){
-			retour.append("     <fieldset>\n");
-			retour.append("       <legend>Image</legend>\n");
-			retour.append("       <pre> " + content + "</pre>\n");
-			retour.append("     </fieldset>\n");
-		}
-		TreeMap<String, String> custom = em.processCustom(em.getCustom());
-		if( custom.size() > 0 ){
+//		content = em.getStepQuery();
+//		if( content.length() > 0 ) {
+//			retour.append("    <fieldset>\n");
+//			retour.append("    <legend> Step Query </legend>\n");
+//			String[] contentList = content.split("---");
+//			int total = contentList.length;
+//			int i = 1;
+//			for( String s : contentList ){
+//				int beginIndex = s.indexOf("desc:");
+//				int endIndex = s.indexOf("\n", beginIndex);
+//				String substring = s.substring(beginIndex+6, endIndex);
+//				retour.append("    <fieldset>\n");
+//				retour.append("     <legend> Description " + i + "/" + total + "</legend>\n");
+//				retour.append("     <pre>" + substring + "</pre>\n");
+//				retour.append("    </fieldset>\n");
+//
+//				substring = s.substring(endIndex);
+//				System.out.println(substring);
+//				retour.append("    <fieldset>\n");
+//				retour.append("     <legend> Query " + i + "/" + total + "</legend>\n");
+//				retour.append("     <pre>" + substring.replaceAll("<", "&lt;").replaceAll(">", "&gt;") + "</pre>\n");
+//				retour.append("    </fieldset>\n");
+//
+//				i++;
+//			}
+//			retour.append("     </fieldset>\n");
+//		}
 
-			for( String key : custom.keySet()) {
-				retour.append("     <fieldset>\n");
-				retour.append("         <legend>" + key.substring(1) + "</legend>\n");
-				if(key.contains("xml")){
-					retour.append("       <pre>" + custom.get(key).replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</pre>");
-				} else {
-					retour.append("         <pre>" + custom.get(key) + "</pre>\n");
-				}
-				retour.append("     </fieldset>\n");
+		List<String> index = em.getIndex(null);
+		if(index != null) {
+			for(String file : index){
+				boolean is_code = file.contains("query") || file.contains("xml");
+				retour.append(addDaliDiv(file, em.getByName(file), is_code));
 			}
+		} else {
+			retour.append(addDaliDiv("description", em.getDescription(), false));
+			retour.append(addDaliDiv("query", em.getQuery(), true));
+			retour.append(addDaliDiv("usage", em.getUsage(), false));
+			retour.append(addDaliDiv("image", em.getImage(), false));
 		}
+
+		retour.append("    </fieldset>\n");
 		retour.append("</div>\n");
 		return retour.toString();
 	}
 
 	public static String getExampleNiceDiv(ExampleModel em) throws Exception{
-		StringBuffer retour = new StringBuffer();
-		String content;
-		TreeMap<String, String> custom = em.processCustom(em.getCustom());
+		StringBuilder retour = new StringBuilder();
 		retour.append("     <p>");
 		retour.append("[<a title='Get Dali resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "'>dali xhtml</a>]");
-		if( em.getTitle().length() > 0 ){
-			retour.append(" [<a title='Get title' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/title'>title</a>]");
-		}
-		if( em.getDescription().length() > 0 ){
-			retour.append(" [<a title='Get description' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/description'>description</a>]");
-		}
-		if( em.getQuery().length() > 0 ){
-			retour.append(" [<a title='Get query' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/query'>query</a>]");
-		}
-		if( em.getUsage().length() > 0 ){
-			retour.append(" [<a title='Get usage' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/usage'>usage</a>]");
-		}
-		if( em.getImage().length() > 0 ){
-			retour.append(" [<a title='Get image' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/image'>image</a>]");
-		}
-		if (em.getStepQuery().length() > 0 ){
-			retour.append(" [<a title='Get step query' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/stepQuery'>step query</a>]");
-		}
-		if( em.getCustom().length() > 0 ){
-			retour.append(" [<a title='Get custom' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/custom'>custom</a>]");
-		}
-		retour.append("     </p>\n");
 
-		content = em.getDescription();
-		if( content.length() > 0 ){
-			retour.append("     <p><strong><pre>");
-			retour.append(content);
-			retour.append("      </strong></pre></p>\n");
-		}
-		content = em.getQuery();
-		String cssClass="";
-		if( content.length() > 0 ){
-			if( content.indexOf("?xml") >= 0 ) {
-				cssClass = "class=xml";
+		List<String> index = em.getIndex(null);
+		if(index != null) {
+			for(String file : index){
+				String el = file;
+				if(file.contains(".")){
+					el = file.substring(0, file.indexOf("."));
+				}
+
+				retour.append(" [<a title='Get " + el + " resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/" + el + "'>" + el + "</a>]");
 			}
-			retour.append("     <p><strong>Query</strong>\n");
-			retour.append("       <pre><code " + cssClass + ">" + content.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</code></pre>");
 			retour.append("     </p>\n");
-		}
-		content = em.getUsage();
-		if( content.length() > 0 ){
-			if( !content.startsWith("#!")){
-				retour.append("     <p><strong>Usage</strong>\n");
-				retour.append("       <pre>" + content + "</pre>");
-				retour.append("     </pre>\n");
-			} else {
-				retour.append("     <p><strong>Usage</strong>\n");
-				retour.append("       <pre><code>" + content + "</code></pre>");
-				retour.append("     </pre>\n");
-			}
-		}
 
-		content = em.getImage();
-		if( content.length() > 0 ){
-			String route = em.params.protocol + "/" + em.params.useCase;
-			retour.append("<input type=\"checkbox\" id=\"toggle\"><label for=\"toggle\"> Click to show " + content +": </label>");
-			retour.append("       <img id=\"revealonclick\" class=\"custom-img\" src=\"../../examples/")
-					.append(route).append("/")
-					.append(content)
-					.append("\"/>\n")
-					.append("     </p>\n");
-		}
-
-		content = em.getStepQuery();
-		if( content.length() > 0 ){
-			String[] contentList = content.split("---");
-			retour.append("<div class=\"stepquery\">");
-			retour.append("<div id=\"buttons\">");
-			retour.append("	<button id=\"prev-btn\" disabled>Previous</button>\n");
-			retour.append("	<button id=\"next-btn\">Next</button>");
-			retour.append("</div>");
-			for( String s : contentList ){
-				if( s.length() > 0 ){
-					String temp = s;
-					retour.append("  <div class=\"step\">");
-					if(s.contains("desc:")){
-						int beginIndex = temp.indexOf("desc:");
-						int endIndex = temp.indexOf("\n", beginIndex);
-						String substring = temp.substring(beginIndex+6, endIndex);
-						retour.append("<p><strong> " + substring + "</strong></p>\n");
-						temp = temp.replace(temp.substring(beginIndex, endIndex), "");
+			for(String file : index){
+				System.out.println(file);
+				String el = em.getByName(file);
+				if(file.contains("txt") && !file.contains("query")){
+					if(file.contains("description")) {
+						retour.append(addDescription(el));
 					}
-					retour.append("       <p><pre><code class=xml>" + temp.replaceAll("<", "&lt;").replaceAll(">", "&gt;") + "</code></pre></p>\n");
-					retour.append("  </div>");
-				}
-			}
-			retour.append("</div>");
-
-		}
-
-		if( custom.size() > 0 ){
-			for( String key : custom.keySet() ){
-				if(key.contains("title")) retour.append("<p><strong>"+ custom.get(key) +"</strong></p>\n");
-				if(key.contains("description")) retour.append("<p>"+ custom.get(key) +"</p>\n");
-				if(key.contains("query")) {
-
-					cssClass = "";
-					if (key.contains("xml")) {
-						cssClass = "class=xml";
+					else if(file.contains("usage")){
+						retour.append(addUsage(el));
 					}
-					retour.append("<p>\n");
-					retour.append("<pre><code " + cssClass + " custom-code>" + custom.get(key).replaceAll("<", "&lt;").replaceAll(">", "&gt;") + "</code></pre>");
-					retour.append("</p>\n");
+					else if(file.contains("subtitle")){
+						retour.append(addSubtitle(el));
+					}
 				}
-				if(key.contains("img")) {
-					String route = em.params.protocol + "/" + em.params.useCase;
-					retour.append("<input type=\"checkbox\" id=\"toggle\"><label for=\"toggle\"> Click to show " + custom.get(key) +": </label>");
-					retour.append("       <img id=\"revealonclick\" class=\"custom-img\" src=\"../../examples/")
-							.append(route).append("/")
-							.append(custom.get(key))
-							.append("\"/>\n")
-							.append("     </p>\n");
+				else if(file.contains("query") && file.contains(".")){
+					if(file.contains(".xml")){
+						retour.append(addQuery(el, "xml"));
+
+					} else {
+						retour.append(addQuery(el, null));
+					}
+				}
+				else if(file.contains("png") || file.contains("jpg")){
+					retour.append(addImage(file, em));
+				}
+				else if(file.contains("stepquery") && !file.contains(".")){
+					retour.append(addStepQuery(file, em));
 				}
 			}
+		}
+		else {
+			if( em.getTitle().length() > 0 ){
+				retour.append(" [<a title='Get title' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/title'>title</a>]");
+			}
+			if( em.getDescription().length() > 0 ){
+				retour.append(" [<a title='Get description' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/description'>description</a>]");
+			}
+			if( em.getQuery().length() > 0 ){
+				retour.append(" [<a title='Get query' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/query'>query</a>]");
+			}
+			if( em.getUsage().length() > 0 ){
+				retour.append(" [<a title='Get usage' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/usage'>usage</a>]");
+			}
+			if( em.getImage().length() > 0 ){
+				retour.append(" [<a title='Get image' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/image'>image</a>]");
+			}
+			retour.append("     </p>\n");
+
+			retour.append(addDescription(em.getDescription()));
+			retour.append(addQuery(em.getQuery(), null));
+			retour.append(addUsage(em.getUsage()));
+			retour.append(addImage(em.getImage(), em));
 		}
 
 		return retour.toString();
@@ -289,5 +240,142 @@ public class XhtmlBuilder {
 						+ "	               </div>\n"
 						+ "	           </div>\n"
 						+ "       </div>\n";
+	}
+
+	public static String addSubtitle(String subtitle){
+		return "<p><strong>" + subtitle + "</strong></p>\n";
+	}
+	public static String addDescription(String description) {
+		StringBuilder html = new StringBuilder();
+		if( description.length() > 0 ){
+			html.append("     <p><strong><pre>");
+			html.append(description);
+			html.append("      </strong></pre></p>\n");
+		}
+
+		return html.toString();
+	}
+
+	public static String addUsage(String usage) {
+		StringBuilder html = new StringBuilder();
+		if( usage.length() > 0 ) {
+			if (!usage.startsWith("#!")) {
+				html.append("     <p><strong>Usage</strong>\n");
+				html.append("       <pre>" + usage + "</pre>");
+				html.append("     </pre>\n");
+			} else {
+				html.append("     <p><strong>Usage</strong>\n");
+				html.append("       <pre><code>" + usage + "</code></pre>");
+				html.append("     </pre>\n");
+			}
+		}
+
+		return html.toString();
+	}
+
+	public static String addQuery(String query, String type) {
+		StringBuilder html = new StringBuilder();
+		String cssClass="";
+
+		if( query.length() > 0 ){
+
+			if(type != null) {
+				cssClass = "class=" + type;
+			} else {
+				if (query.contains("?xml")) {
+					cssClass = "class=xml";
+				}
+			}
+
+			html.append("     <p><strong>Query</strong>\n");
+			html.append("       <pre><code " + cssClass + ">" + query.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</code></pre>");
+			html.append("     </p>\n");
+		}
+
+		return html.toString();
+	}
+
+	public static String addImage(String image, ExampleModel em) {
+		StringBuilder html = new StringBuilder();
+		if( image.length() > 0 ){
+			String route = em.params.protocol + "/" + em.params.useCase;
+			html.append("<input type=\"checkbox\" id=\"toggle\"><label for=\"toggle\"> Click to show " + image +": </label>");
+			html.append("       <img id=\"revealonclick\" class=\"custom-img\" src=\"../../examples/")
+					.append(route).append("/")
+					.append(image)
+					.append("\"/>\n")
+					.append("     </p>\n");
+		}
+
+		return html.toString();
+	}
+
+	public static String addURI(String uri){
+		StringBuilder html = new StringBuilder();
+		if( uri.length() > 0 ){
+			html.append("     <a href=\"" + uri + "\"\n");
+			html.append("       <p>" + uri + "</p>\n");
+			html.append("     </a>\n");
+		}
+
+		return html.toString();
+	}
+
+	public static String addStepQuery(String file, ExampleModel em) throws Exception{
+		StringBuilder html = new StringBuilder();
+		html.append("<div class=\"stepquery\">");
+		html.append("<div id=\"buttons\">");
+		html.append("	<button id=\"prev-btn\" disabled>Previous</button>\n");
+		html.append("	<button id=\"next-btn\">Next</button>");
+		html.append("</div>");
+
+		List<String> index = em.getIndex(file);
+		List<String> descriptions = new ArrayList<>();
+		List<String> queries = new ArrayList<>();
+
+		for(String f : index) {
+			String el = em.getByName(file + "/" + f);
+			System.out.println(el);
+			if(el.length() > 0) {
+				if(f.contains("description")){
+					descriptions.add(el);
+				}
+				else if(f.contains("query") && f.contains(".")){
+					queries.add(el);
+				}
+			}
+		}
+
+		for(int i = 0 ; i < queries.size() ; i++) {
+			html.append("  <div class=\"step\">");
+			html.append(addDescription(descriptions.get(i)));
+			if (index.get(i).contains(".xml")) {
+				html.append(addQuery(queries.get(i), "xml"));
+
+			} else {
+				html.append(addQuery(queries.get(i), null));
+			}
+			html.append("  </div>");
+		}
+
+		html.append("</div>");
+
+		return html.toString();
+	}
+
+	public static String addDaliDiv(String file_name, String content, boolean is_code){
+		StringBuilder html = new StringBuilder();
+		if( content.length() > 0 ){
+			html.append("     <fieldset>\n");
+			html.append("       <legend>" + file_name.substring(0,1).toUpperCase() + file_name.substring(1, file_name.indexOf('.')) + "</legend>\n");
+			if(is_code) {
+				html.append("       <pre>" + content.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</pre>");
+			} else {
+				html.append("       <pre>" + content + "</pre>\n");
+			}
+			html.append("     </fieldset>\n");
+		}
+
+		return html.toString();
 	}
 }

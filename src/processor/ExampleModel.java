@@ -3,6 +3,9 @@ package processor;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
@@ -55,42 +58,33 @@ public class ExampleModel {
 		return getItem("custom.txt");
 	}
 
-	public  TreeMap<String, String> processCustom(String custom){
+	public List<String> getIndex(String subpath) throws Exception {
+		List<String> index = new ArrayList<>();
 
-		TreeMap<String, String> retour = new TreeMap<>();
-		int i = 0;
-		if( custom.length() > 0 ) {
-			String[] lines = custom.split("\n");
-			boolean inQuery = false;
-			StringBuilder query = new StringBuilder();
-			String query_name = "";
-			for (String line : lines) {
-				if (line.length() > 0) {
-					if (line.contains("query") && !line.contains("end")){
-						i++;
-						query_name = line.split(":")[0];
-						inQuery = true;
-						continue;
-					} else if (line.equals("endquery")) {
-						String key = i + query_name;
-						retour.put(key, query.toString());
-						inQuery = false;
-						query.delete(0, query.length());
-						continue;
-					}
-					if (inQuery) {
-						query.append(line).append("\n");
-					}
-					String[] kv = line.split(":");
-					if (kv.length == 2 && !inQuery) {
-						i++;
-						retour.put(i + kv[0], kv[1]);
-					}
-				}
-			}
+		File f = new File(exampleDir + "/index.txt");
+		if(subpath != null){
+			f = new File(exampleDir + "/" + subpath + "/index.txt");
 		}
-		return retour;
+		if( !f.exists()) {
+			return null;
+		}
+		BufferedReader br = new BufferedReader(new FileReader(f));
+		String boeuf;
+		while( (boeuf =  br.readLine()) != null ) {
+			index.add(boeuf);
+		}
+		br.close();
+
+		return index;
 	}
+
+	public String getByName(String name) throws Exception {
+		if(name.contains("png") || name.contains("jpg") || name.contains("jpeg")) {
+			return "";
+		}
+		return getItem(name);
+	}
+
 	public boolean match(String filter) throws Exception {
 		Pattern pattern = Pattern.compile(".*" + filter + ".*", Pattern.CASE_INSENSITIVE);
 		System.out.println("@@@@@@@@@@@ " + this.getTitle() + " " + filter + " " + this.getTitle().indexOf(filter));
@@ -99,7 +93,7 @@ public class ExampleModel {
 	}
 	private String getItem(String itemName) throws Exception {
 		File f = new File(exampleDir + "/" + itemName);
-		if( !f.exists()) {
+		if( !f.exists() || f.isDirectory()) {
 			return "";
 		}
 		BufferedReader br = new BufferedReader(new FileReader(f));
