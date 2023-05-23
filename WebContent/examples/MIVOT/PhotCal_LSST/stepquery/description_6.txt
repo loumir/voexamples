@@ -1,0 +1,1 @@
+Don't forget the attributes of each instances:

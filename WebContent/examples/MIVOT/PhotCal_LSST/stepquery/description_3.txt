@@ -1,0 +1,1 @@
+Then, we declare the models we will use, here Phot and ivoa :

@@ -1,0 +1,1 @@
+We now create a template for the concerned table, here _transcurve :
