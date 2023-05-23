@@ -4,6 +4,7 @@
 package processor;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.servlet.ServletContext;
@@ -84,15 +85,29 @@ public class GetExampletem extends Processor {
 
 	public File setupFile(){
 		String myfile = servletContext.getRealPath(ROOTDIR);
-		File folder = new File(myfile + "/" + params.protocol + "/" + params.useCase);
-		String[] listOfFiles = folder.list();
-
+		String[] listOfFiles = new File(myfile + "/" + params.protocol + "/" + params.useCase).list();
 		File retour = null;
 
-		if(listOfFiles != null){
-			for(String file : listOfFiles){
-				if(file.substring(0, file.indexOf('.')).equals(params.item) && !file.contains("image")){
-					retour = new File(myfile + "/" + params.protocol + "/" + params.useCase+ "/" + file);
+		if(listOfFiles == null){
+			return retour;
+		}
+		for(String file : listOfFiles){
+			if(file.contains(".")) {
+				if (file.substring(0, file.indexOf('.')).equals(params.item) && !file.contains("image")) {
+					retour = new File(myfile + "/" + params.protocol + "/" + params.useCase + "/" + file);
+				}
+			}
+			else{
+				String[] listOfStepFiles = new File(myfile + "/" + params.protocol + "/" + params.useCase + "/" + file).list();
+				if(listOfStepFiles == null){
+					continue;
+				}
+				for(String stepFile : listOfStepFiles){
+					if(stepFile.contains(".")){
+						if (stepFile.substring(0, stepFile.indexOf('.')).equals(params.item_step)) {
+							retour = new File(myfile + "/" + params.protocol + "/" + params.useCase + "/" + file + "/" + stepFile);
+						}
+					}
 				}
 			}
 		}

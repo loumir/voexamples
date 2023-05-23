@@ -6,6 +6,7 @@ public final class Request {
 	String protocol = "";
 	String useCase = "";
 	String item = "";
+	String item_step = "";
 	
 	public static String getPathForData(HttpServletRequest req) {
 	    int ignoreAmt = req.getContextPath().length() + req.getServletPath().length();
@@ -16,6 +17,7 @@ public final class Request {
 	Request(HttpServletRequest request){
 		String[] pathElemForData = getPathForData(request).split("/");
 		switch (pathElemForData.length) {
+		case 4: item_step = pathElemForData[3];
 		case 3: item = pathElemForData[2];
 		case 2: useCase = pathElemForData[1];
 		case 1: protocol = pathElemForData[0];

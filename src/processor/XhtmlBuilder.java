@@ -3,10 +3,8 @@
  */
 package processor;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeMap;
 import scripts.GetScript;
 
 /**
@@ -22,39 +20,20 @@ public class XhtmlBuilder {
 		retour.append("<div id=\"" + em.getName() + "\" resource=\"#" +em.getName() + "\" typeof=\"example\">\n");
 		retour.append("  <fieldset>\n");
 		retour.append("     <legend>" + params.protocol + "[" + params.useCase + "] " + em.getTitle() + "</legend>\n");
-//		content = em.getStepQuery();
-//		if( content.length() > 0 ) {
-//			retour.append("    <fieldset>\n");
-//			retour.append("    <legend> Step Query </legend>\n");
-//			String[] contentList = content.split("---");
-//			int total = contentList.length;
-//			int i = 1;
-//			for( String s : contentList ){
-//				int beginIndex = s.indexOf("desc:");
-//				int endIndex = s.indexOf("\n", beginIndex);
-//				String substring = s.substring(beginIndex+6, endIndex);
-//				retour.append("    <fieldset>\n");
-//				retour.append("     <legend> Description " + i + "/" + total + "</legend>\n");
-//				retour.append("     <pre>" + substring + "</pre>\n");
-//				retour.append("    </fieldset>\n");
-//
-//				substring = s.substring(endIndex);
-//				System.out.println(substring);
-//				retour.append("    <fieldset>\n");
-//				retour.append("     <legend> Query " + i + "/" + total + "</legend>\n");
-//				retour.append("     <pre>" + substring.replaceAll("<", "&lt;").replaceAll(">", "&gt;") + "</pre>\n");
-//				retour.append("    </fieldset>\n");
-//
-//				i++;
-//			}
-//			retour.append("     </fieldset>\n");
-//		}
 
 		List<String> index = em.getIndex(null);
 		if(index != null) {
 			for(String file : index){
-				boolean is_code = file.contains("query") || file.contains("xml");
-				retour.append(addDaliDiv(file, em.getByName(file), is_code));
+				if (file.contains("stepquery")){
+					for(String stepFile : em.getIndex(file)){
+						boolean is_code = stepFile.contains("query") || stepFile.contains("xml");
+						retour.append(addDaliDiv(file + "/" + stepFile, em.getByName(file + "/" + stepFile), is_code));
+					}
+				}
+				else {
+					boolean is_code = file.contains("query") || file.contains("xml");
+					retour.append(addDaliDiv(file, em.getByName(file), is_code));
+				}
 			}
 		} else {
 			retour.append(addDaliDiv("description", em.getDescription(), false));
@@ -76,17 +55,20 @@ public class XhtmlBuilder {
 		List<String> index = em.getIndex(null);
 		if(index != null) {
 			for(String file : index){
-				String el = file;
 				if(file.contains(".")){
-					el = file.substring(0, file.indexOf("."));
+					String el = file.substring(0, file.indexOf("."));
+					retour.append(" [<a title='Get " + el + " resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/" + el + "'>" + el + "</a>]");
 				}
-
-				retour.append(" [<a title='Get " + el + " resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/" + el + "'>" + el + "</a>]");
+				else{
+					for (String stepFile : em.getIndex(file)){
+						String el = stepFile.substring(0, stepFile.indexOf("."));
+						retour.append(" [<a title='Get " + file + "/" + el + " resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/" + file + "/" + el + "'>" + file + "/" + el + "</a>]");
+					}
+				}
 			}
 			retour.append("     </p>\n");
 
 			for(String file : index){
-				System.out.println(file);
 				String el = em.getByName(file);
 				if(file.contains("txt") && !file.contains("query")){
 					if(file.contains("description")) {
@@ -98,6 +80,11 @@ public class XhtmlBuilder {
 					else if(file.contains("subtitle")){
 						retour.append(addSubtitle(el));
 					}
+					else if(file.contains("url")){
+						System.out.println("url");
+						retour.append(addURI(el));
+					}
+
 				}
 				else if(file.contains("query") && file.contains(".")){
 					if(file.contains(".xml")){
@@ -112,6 +99,12 @@ public class XhtmlBuilder {
 				}
 				else if(file.contains("stepquery") && !file.contains(".")){
 					retour.append(addStepQuery(file, em));
+				}
+				else{
+					retour.append("     <strong><p>Link</p></strong>\n");
+					retour.append("     <a href=\"../../examples/" +  em.params.protocol + "/" + em.params.useCase + "/" + file + "\"\n");
+					retour.append("       <p>" + file + "</p>\n");
+					retour.append("     </a>\n");
 				}
 			}
 		}
@@ -313,6 +306,7 @@ public class XhtmlBuilder {
 	public static String addURI(String uri){
 		StringBuilder html = new StringBuilder();
 		if( uri.length() > 0 ){
+			html.append("     <strong><p>Link</p></strong>\n");
 			html.append("     <a href=\"" + uri + "\"\n");
 			html.append("       <p>" + uri + "</p>\n");
 			html.append("     </a>\n");
@@ -335,7 +329,6 @@ public class XhtmlBuilder {
 
 		for(String f : index) {
 			String el = em.getByName(file + "/" + f);
-			System.out.println(el);
 			if(el.length() > 0) {
 				if(f.contains("description")){
 					descriptions.add(el);
