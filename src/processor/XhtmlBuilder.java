@@ -80,8 +80,8 @@ public class XhtmlBuilder {
 					else if(file.contains("subtitle")){
 						retour.append(addSubtitle(el));
 					}
-					else if(file.contains("url")){
-						System.out.println("url");
+					else if(file.contains("uri")){
+						System.out.println("uri");
 						retour.append(addURI(el));
 					}
 
