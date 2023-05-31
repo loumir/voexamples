@@ -1,0 +1,134 @@
+<GLOBALS> <!-- Space frames-->
+    <INSTANCE dmid="SpaceFrame_ICRS" dmtype="coords:SpaceFrame">
+        <INSTANCE dmrole="coords:SpaceFrame.refPosition" dmtype="coords:StdRefLocation">
+            <ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="NoSet" />
+        </INSTANCE>
+        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="ICRS" />
+        <ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="coords:Epoch" value="NoSet" />
+    </INSTANCE>
+    <INSTANCE dmid="SpaceFrame_Galactic" dmtype="coords:SpaceFrame">
+        <INSTANCE dmrole="coords:SpaceFrame.refPosition" dmtype="coords:StdRefLocation">
+            <ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="NoSet" />
+        </INSTANCE>
+        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="Galactic" />
+        <ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="coords:Epoch" value="NoSet" />
+    </INSTANCE>
+    <!-- Photometric calibration and associated Filter -->
+    <INSTANCE dmid="PhotCal_ACIS_Broad" dmrole="" dmtype="Phot:PhotCal">
+        <INSTANCE dmrole="Phot:PhotCal.zeroPoint" dmtype="phot:ZeroPoint">
+            <INSTANCE dmrole="Phot:ZeroPoint.flux" dmtype="phot:Flux">
+                <ATTRIBUTE dmrole="Phot:Flux.value" dmtype="ivoa:real" value="NoSet" />
+            </INSTANCE>
+        </INSTANCE>
+        <REFERENCE dmrole="Phot:PhotCal.photometryFilter" dmtype="Phot:Photometry.Filter" dmref="PhotFrame_ACISBroad" />
+    </INSTANCE>
+    <INSTANCE dmid="PhotFrame_ACISBroad" dmrole="" dmtype="Phot:Photometry.Filter">
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.name" dmtype="ivoa:string" value="ACIS Broad" />
+
+        <!-- <ATTRIBUTE dmrole="Phot:PhotometryFilter.effectiveWavlength" dmtype="ivoa:real" value="2.3"/>-->
+        <INSTANCE dmrole="Phot:PhotometryFilter.spectralLocation" dmtype="Phot:SpectralLocation">
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.ucd" dmtype="Phot:UCD" value="em.energy" />
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.unitexpression" dmtype="ivoa:Unit" value="Kev" />
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.value" dmtype="ivoa:real" value="2.3" />
+        </INSTANCE>
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.unit" dmtype="ivoa:string" value="KeV" />
+        <!--<ATTRIBUTE dmrole="Phot:PhotometryFilter.bandWidth" dmtype="ivoa:real" value="6.5"/> -->
+        <INSTANCE dmrole="Phot:PhotometryFilter.bandwidth" dmtype="Phot:Bandwidth">
+            <ATTRIBUTE dmrole="Phot:Bandwidth.ucd" dmtype="Phot:UCD" value="instr.bandwidth" />
+            <ATTRIBUTE dmrole="Phot:Bandwidth.unitexpression" dmtype="ivoa:Unit" value="KeV" />
+            <ATTRIBUTE dmrole="Phot:Bandwidth.extent" dmtype="ivoa:real" value="6.5" />
+        </INSTANCE>
+    </INSTANCE>
+    <INSTANCE dmid="PhotCal_ACIS_Hard" dmrole="" dmtype="Phot:PhotCal">
+        <INSTANCE dmrole="Phot:PhotCal.zeroPoint" dmtype="phot:ZeroPoint">
+            <INSTANCE dmrole="Phot:ZeroPoint.flux" dmtype="phot:Flux">
+                <ATTRIBUTE dmrole="Phot:Flux.value" dmtype="ivoa:real" value="NoSet" />
+            </INSTANCE>
+        </INSTANCE>
+        <INSTANCE dmrole="Phot:PhotCal.magnitudeSystem" dmtype="Phot:MagnitudeSystem" />
+        <ATTRIBUTE dmrole="Phot:Magnitude.System.referenceSpectrum" dmtype="ivoa:uri" value="NoSet" />
+        <!--erreur a tester-->
+        <ATTRIBUTE dmrole="Phot:MagnitudeSystem.type" dmtype="ivoa:string" value="Chandra" />
+        <!--erreur a tester-->
+    </INSTANCE>
+    <REFERENCE dmrole="Phot:PhotCal.photometryFilter" dmtype="Phot:Photometry.Filter" dmref="PhotFrame_ACISHard" />
+
+    <INSTANCE dmid="PhotFrame_ACISHard" dmrole="" dmtype="Phot:PhotometryFilter">
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.name" dmtype="ivoa:string" value="ACIS Hard" />
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.zeroPointFlux" dmtype="ivoa:real" value="NoSet" />
+        <!--erreur a tester-->
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.magnitudeSystem" dmtype="ivoa:string" value="Chandra" />
+        <!--erreur a tester-->
+        <!-- <ATTRIBUTE dmrole="Phot:PhotometryFilter.effectiveWavelength" dmtype="ivoa:real" value="3.8"/> -->
+        <INSTANCE dmrole="Phot:PhotometryFilter.spectralLocation" dmtype="Phot:SpectralLocation">
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.ucd" dmtype="Phot:UCD" value="em.energy" />
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.unitexpression" dmtype="ivoa:Unit" value="Kev" />
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.value" dmtype="ivoa:real" value="3.8" />
+        </INSTANCE>
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.unit" dmtype="ivoa:string" value="KeV" />
+        <!--<ATTRIBUTE dmrole="Phot:PhotometryFilter.bandWidth" dmtype="ivoa:real" value="5.0"/>
+    -->
+        <INSTANCE dmrole="Phot:PhotometryFilter.bandwidth" dmtype="Phot:Bandwidth">
+            <ATTRIBUTE dmrole="Phot:Bandwidth.ucd" dmtype="Phot:UCD" value="instr.bandwidth" />
+            <ATTRIBUTE dmrole="Phot:Bandwidth.unitexpression" dmtype="ivoa:Unit" value="KeV" />
+            <ATTRIBUTE dmrole="Phot:Bandwidth.extent" dmtype="ivoa:real" value="5.0" />
+        </INSTANCE>
+    </INSTANCE> <!-- end of Phot fiilter ACIS Hard -->
+
+    <!-- ACIS Medium -->
+    <INSTANCE dmid="PhotCal_ACIS_Medium" dmrole="" dmtype="Phot:PhotCal">
+        <INSTANCE dmrole="Phot:PhotCal.zeroPoint" dmtype="Phot:ZeroPoint">
+            <INSTANCE dmrole="Phot:ZeroPoint.flux" dmtype="Phot:Flux">
+                <ATTRIBUTE dmrole="Phot:Flux.value" dmtype="ivoa:real" value="NoSet" />
+            </INSTANCE>
+        </INSTANCE>
+        <REFERENCE dmrole="Phot:PhotCal.photometryFilter" dmref="PhotFrame_ACISMedium" />
+    </INSTANCE>
+    <INSTANCE dmid="PhotFrame_ACISMedium" dmrole="" dmtype="Phot:PhotometryFilter">
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.name" dmtype="ivoa:string" value="ACIS Medium" />
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.zeroPointFlux" dmtype="ivoa:real" value="NotSet" />
+        <!--erreur a tester -->
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.magnitudeSystem" dmtype="ivoa:string" value="Chandra" />
+        <!--erreur a tester -->
+        <!--<ATTRIBUTE dmrole="Phot:PhotometryFilter.effectiveWavlength" dmtype="ivoa:real" value="1.56"/> -->
+        <INSTANCE dmrole="Phot:PhotometryFilter.spectralLocation" dmtype="Phot:SpectralLocation">
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.ucd" dmtype="Phot:UCD" value="em.energy" />
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.unitexpression" dmtype="ivoa:Unit" value="Kev" />
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.value" dmtype="ivoa:real" value="1.56" />
+        </INSTANCE>
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.unit" dmtype="ivoa:string" value="KeV" />
+        <!-- <ATTRIBUTE dmrole="Phot:PhotometryFilter.bandWidth.extent" dmtype="ivoa:real" value="1.8"/> -->
+        <INSTANCE dmrole="Phot:PhotometryFilter.bandwidth" dmtype="Phot:Bandwidth">
+            <ATTRIBUTE dmrole="Phot:Bandwidth.ucd" dmtype="Phot:UCD" value="instr.bandwidth" />
+            <ATTRIBUTE dmrole="Phot:Bandwidth.unitexpression" dmtype="ivoa:Unit" value="KeV" />
+            <ATTRIBUTE dmrole="Phot:Bandwidth.extent" dmtype="ivoa:real" value="1.8" />
+        </INSTANCE>
+    </INSTANCE>
+    <!-- ACIS Soft -->
+    <INSTANCE dmid="PhotCal_ACIS_Soft" dmrole="" dmtype="Phot:PhotCal">
+        <INSTANCE dmrole="Phot:PhotCal.zeroPoint" dmtype="phot:ZeroPoint">
+            <INSTANCE dmrole="Phot:ZeroPoint.flux" dmtype="phot:Flux">
+                <ATTRIBUTE dmrole="Phot:Flux.value" dmtype="ivoa:real" value="NoSet" />
+            </INSTANCE>
+        </INSTANCE>
+        <REFERENCE dmrole="Phot:PhotCal.photometryFilter" dmtype="Phot:Photometry.Filter" dmref="PhotFrame_ACISSoft" />
+    </INSTANCE>
+    <INSTANCE dmid="PhotFrame_ACISSoft" dmrole="" dmtype="Phot:PhotometryFilter">
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.name" dmtype="ivoa:string" value="ACIS Soft" />
+        <!-- <ATTRIBUTE dmrole="Phot:PhotometryFilter.zeroPointFlux" dmtype="ivoa:real" value="NoSet"/>
+                        <ATTRIBUTE dmrole="Phot:PhotometryFilter.magnitudeSystem" dmtype="ivoa:string" value="Chandra"/> -->
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.effectiveWavlength" dmtype="ivoa:real" value="1.2" />
+        <INSTANCE dmrole="Phot:PhotometryFilter.spectralLocation" dmtype="Phot:SpectralLocation">
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.ucd" dmtype="Phot:UCD" value="em.energy" />
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.unitexpression" dmtype="ivoa:Unit" value="Kev" />
+            <ATTRIBUTE dmrole="Phot:SpectralLocation.value" dmtype="ivoa:real" value="1.2" />
+        </INSTANCE>
+        <ATTRIBUTE dmrole="Phot:PhotometryFilter.unit" dmtype="ivoa:string" value="KeV" />
+        <!-- <ATTRIBUTE dmrole="Phot:PhotometryFilter.bandWidth" dmtype="ivoa:real" value="0.7"/> -->
+        <INSTANCE dmrole="Phot:PhotometryFilter.bandwidth" dmtype="Phot:Bandwidth">
+            <ATTRIBUTE dmrole="Phot:Bandwidth.ucd" dmtype="Phot:UCD" value="instr.bandwidth" />
+            <ATTRIBUTE dmrole="Phot:Bandwidth.unitexpression" dmtype="ivoa:Unit" value="KeV" />
+            <ATTRIBUTE dmrole="Phot:Bandwidth.extent" dmtype="ivoa:real" value=">0.7" />
+        </INSTANCE>
+    </INSTANCE> <!-- end of Phot fiilter ACIS Soft -->
+</GLOBALS>

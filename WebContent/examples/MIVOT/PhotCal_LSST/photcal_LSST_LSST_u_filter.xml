@@ -9,8 +9,8 @@
       <VODML xmlns="https://ivoa.net/xml/MIVOT">
         <MODEL name="Phot" url="http://ivoa.net/xml/VODML/Phot-v1.1.vodml.xml" />
         <MODEL name="ivoa" url="https://ivoa.net/xml/VODML/IVOA-v1.vo-dml.xml" />
-        <TEMPLATES tableref="_transcurve">
-          <INSTANCE dmrole="" dmtype="Phot:PhotCal">
+        <GLOBALS>
+        <INSTANCE dmrole="" dmtype="Phot:PhotCal">
             <ATTRIBUTE dmrole="Phot:PhotCal.identifier" dmtype="ivoa:string"
               value="LSST/LSST.u_filter/Vega" />
             <INSTANCE dmrole="Phot:PhotCal.zeroPoint" dmtype="Phot:PogsonZeropoint">
@@ -67,7 +67,12 @@
                   <ATTRIBUTE dmrole="Phot:Access.format" dmtype="ivoa:string"
                     value="application/x-votable+xml" />
                 </INSTANCE>
-                <COLLECTION dmrole="Phot:TransmissionCurve.transmissionPoint">
+              </INSTANCE>
+            </INSTANCE> <!--end Photometry Filter blocl-->
+          </INSTANCE> <!--end Photcal blocl-->
+        </GLOBALS>
+        <TEMPLATES tableref="_transcurve">
+               <COLLECTION dmrole="Phot:TransmissionCurve.transmissionPoint">
                   <INSTANCE dmrole="" dmtype="Phot:TransmissionPoint">
                     <ATTRIBUTE dmrole="Phot:TransmissionPoint.transmissionValue" dmtype="ivoa:real"
                       ref="_trans" />
@@ -78,13 +83,9 @@
                       value="Angstrom" />
                   </INSTANCE>
                 </COLLECTION>
-              </INSTANCE>
-            </INSTANCE>
-          </INSTANCE>
         </TEMPLATES>
       </VODML>
-    </RESOURCE>    <!--
-    end mapping block-->
+    </RESOURCE>    <!--end mapping block-->
     <!--  FPS  Filter description +transmission curve TABLE-->
 
     <TABLE name="_transcurve" utype="Phot:PhotometryFilter.transmissionCurve.spectrum">
