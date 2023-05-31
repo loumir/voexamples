@@ -1,0 +1,9 @@
+description.txt
+description_model_used.txt
+uri_MANGO Data Model.txt
+uri_Measure Data Model.txt
+uri_Coords Data Model.txt
+uri_Photometry Data Model.txt
+usage.txt
+stepquery
+Annotated-Votable-Chandra_catalog_2023_color.xml
