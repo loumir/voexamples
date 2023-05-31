@@ -1,0 +1,3 @@
+URI to the definition in vodml_xml of the model classes 
+used to annotate the Chandra table.
+

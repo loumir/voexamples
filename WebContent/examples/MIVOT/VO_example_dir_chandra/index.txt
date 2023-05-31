@@ -1,5 +1,0 @@
-description.txt
-usage.txt
-stepquery
-uri.txt
-Annotated-Votable-Chandra_catalog_2023_color_v2.xml
