@@ -1,4 +1,0 @@
-In the TEMPLATES mapping block , here are mapped 2 values for  Hardness Ratio.
-The classes constructs from Mango is the Color class.
-It binds to the energy coverage domains of the filters used to integrate and define the ratio.
-The band cuts are using the Filter profile exposed in the <GLOBALS> element.

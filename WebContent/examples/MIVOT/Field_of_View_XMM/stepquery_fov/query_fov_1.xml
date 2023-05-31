@@ -1,0 +1,5 @@
+<INSTANCE dmid="_fov" dmrole="instfov:InstrumentMode.fov" dmtype="instfov:Fov">
+    <COLLECTION dmrole="instfov:Fov.shape">
+        ...
+    </COLLECTION>
+</INSTANCE>

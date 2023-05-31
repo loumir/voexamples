@@ -1,5 +1,0 @@
-This example illustrates how to handle a Source catalog table and map data model classes on it.
-Here we consider a list of sources, for which measures are recorded and gathered in a row.
-
-The example here is an exercpt from the The Chandra Source Catalog (CSC), Release 2.0 (Evans+, 2019). 
-It shows only a selection of columns to illustrate the classes used for Position, Error, Flux, etc.

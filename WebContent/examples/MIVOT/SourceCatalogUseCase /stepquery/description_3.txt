@@ -1,5 +1,0 @@
-In the <TEMPLATES> element, here is described a Flux value in one band of the survey
-with a reference to the Filter details defined in the <GLOBALS> element.
-
-Using a PhotometricMeasure class
-Binding to the PhotCal Object related to the Filter used 
