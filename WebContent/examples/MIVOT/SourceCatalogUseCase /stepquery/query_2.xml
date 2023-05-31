@@ -1,0 +1,59 @@
+<!-- This block maps the data of the table identified as "Results" -->
+<TEMPLATES tableref="result_S1634224440728">
+    <!-- 
+        The table contain a set of Mango instances, this is why we have COLLECTION at the top level
+        -->
+    <INSTANCE dmrole="root" dmtype="mango:Source">
+        <!-- Collection of the complex data attached to the source
+                      -->
+        <ATTRIBUTE dmrole="mango:Source.identifier" dmtype="ivoa:string" ref="_2CXO"/>
+        <!-- Collection of the property attached to the source 
+            Each child INSTANCE maps one parameter -->
+        <COLLECTION dmrole="mango:Source.propertyDock">
+            <INSTANCE dmtype="mango:PhysicalProperty">  <!-- position of the source object --> 
+                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#position.corrected"/>
+                </INSTANCE>
+                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Source sky position"/>
+                <ATTRIBUTE dmrole="mango:PhysicalProperty.calibrationLevel" dmtype="mango:CalibrationLevel" value="Corrected"/>
+                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:Position">
+                    <INSTANCE dmrole="meas:Position.coord" dmtype="coords:LonLatPoint">
+                        <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:RealQuantity" ref="RAICRS"/>
+                        <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:RealQuantity" ref="DEICRS"/>
+                        <INSTANCE dmrole="coords:Coordinate.coordSys" dmtype="coords:SpaceSys">
+                            <REFERENCE dmref="SpaceFrame_ICRS" dmrole="coords:PhysicalCoordSys.frame"/>
+                        </INSTANCE>
+                    </INSTANCE>
+                </INSTANCE>
+            </INSTANCE>
+
+            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">
+                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#position.lonlat"/>
+                </INSTANCE>
+                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Source position"/>
+                <ATTRIBUTE dmrole="mango:PhysicalProperty.calibrationLevel" dmtype="mango:CalibrationLevel" value="Corrected"/>
+                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:Position">
+                    <INSTANCE dmrole="meas:Position.coord" dmtype="coords:LonLatPoint">
+                        <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:RealQuantity" ref="GLON"/>
+                        <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:RealQuantity" ref="GLAT"/>
+                        <INSTANCE dmrole="coords:Coordinate.coordSys" dmtype="coords:SpaceSys">
+                            <REFERENCE dmref="SpaceFrame_Galactic" dmrole="coords:PhysicalCoordSys.frame"/>
+                        </INSTANCE>
+                    </INSTANCE>
+                    <INSTANCE dmrole="meas:Measure.error" dmtype="meas:Error">
+                        <INSTANCE dmrole="meas:Error.statError" dmtype="meas:Ellipse">
+                            <COLLECTION dmrole="meas:Ellipse.semiAxis">
+                                <ATTRIBUTE dmrole="" dmtype="ivoa:RealQuantity" ref="r0"/>
+                                <ATTRIBUTE dmrole="" dmtype="ivoa:RealQuantity" ref="r1"/>
+                            </COLLECTION>
+                            <ATTRIBUTE dmrole="meas:Ellipse.posAngle" dmtype="ivoa:RealQuantity" ref="PA"/>
+                        </INSTANCE>
+                    </INSTANCE>
+                </INSTANCE>
+            </INSTANCE>
+        </COLLECTION>
+    </INSTANCE>
+</TEMPLATES>                
