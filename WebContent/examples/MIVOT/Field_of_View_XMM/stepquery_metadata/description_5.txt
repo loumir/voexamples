@@ -1,0 +1,2 @@
+Again same thing for the instrument mode instance, which will contains its name and the field of view.
+We will concentrate about the field of view right after.

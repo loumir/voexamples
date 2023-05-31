@@ -1,0 +1,1 @@
+We now complete the instrument instance with its name, eventually the description and its mode.
