@@ -1,0 +1,13 @@
+This catalog serialisation uses 3 models 
+Mango DM, which in turn reuses
+    ivoa : IVOA Datamodel for data types 
+    meas : Measure DM for positions and errors
+    phot : Photometry Data Model for photometric calibration and filter details
+
+    main classes in use:
+    Source 
+    Property <-- PhysicalProperty <>-- Position ---->> Coordystem                   
+                                           <>----Ellipse
+
+    Property <-- PhysicalProperty <>-- PhotometricMeasure ---->> PhotCal    3 flux variables                 
+    Property <-- ComputedProperty <-- Color ----->> PhotometryFilter        2 hardness ratio values

@@ -1,0 +1,28 @@
+<!-- hardness ratio parameter translate to Color -test  hard soft -->
+<!-- hardness ratio ACIS hard-soft -->
+<INSTANCE dmrole="" dmtype="mango:Color">
+    <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+        <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+        <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#hardnessratio.computed"/>
+    </INSTANCE>
+    <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="ACIS hard - soft energy band hardness ratio"/>
+    <ATTRIBUTE dmrole="mango:ComputedProperty.value" dmtype="ivoa:RealQuantity" ref="HRhs"/>
+
+    <INSTANCE dmrole="mango:Color.colorDef" dmtype="mango:ColorDef">
+        <REFERENCE dmrole="mango:ColorDef.high" dmtype="Phot:PhotometryFilter" dmref="PhotFrame_ACISHard" />
+        <REFERENCE dmrole="mango:ColorDef.low" dmtype="Phot:PhotometryFilter" dmref="PhotFrame_ACISSoft" />
+    </INSTANCE>
+</INSTANCE>
+<!-- hardness ratio ACIS medium-soft -->
+<INSTANCE dmrole="" dmtype="mango:Color">
+    <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+        <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+        <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#hardnessratio.computed"/>
+    </INSTANCE>
+    <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="[-1/1]? ACIS medium-soft (0.5-1.2keV) energy band hardness ratio (hard_ms)"/>
+    <ATTRIBUTE dmrole="mango:ComputedProperty.value" dmtype="ivoa:RealQuantity" ref="HRms"/>
+    <INSTANCE dmrole="mango:Color.colorDef" dmtype="mango:ColorDef">
+        <REFERENCE dmrole="mango:ColorDef.high" dmtype="Phot:PhotometryFilter" dmref="PhotFrame_ACISMedium" />
+        <REFERENCE dmrole="mango:ColorDef.low" dmtype="Phot:PhotometryFilter" dmref="PhotFrame_ACISSoft" />
+    </INSTANCE>
+</INSTANCE>

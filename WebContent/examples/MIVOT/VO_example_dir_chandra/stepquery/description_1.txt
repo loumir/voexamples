@@ -1,0 +1,5 @@
+The mapping block gathers all necessary common definitions used in 
+the XML serialisation in a first block named <Globals>
+
+It entails Coordinate systems, Filters, and describes the metadata for them within 
+ static objects.
