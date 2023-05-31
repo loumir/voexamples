@@ -1,0 +1,1 @@
+https://github.com/loumir/mivot-validator/blob/Annotation_exemples/mivot_validator/instance_checking/vodml/mango.vo-dml.xml

@@ -1,6 +1,0 @@
-URI to the definition of model classes in vodml_xml 
-
-Mango   https://github.com/loumir/mivot-validator/blob/Annotation_exemples/mivot_validator/instance_checking/vodml/mango.vo-dml.xml
-Measure http://ivoa.net/xml/VODML/Meas-v1.0.vodml.xml
-Coords  http://ivoa.net/xml/VODML/Coords-v1.0.vo-dml.xml
-Phot   http://ivoa.net/xml/VODML/Phot-v1.1.vodml.xml
