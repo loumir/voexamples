@@ -1,1 +1,1 @@
-Using aladin lite, we can now load this mapping file to see the field of view, for examples in M51:
+Using Aladin Lite, we can now load this mapping file and draw the field of view of the instrument on the sky, for example in the region of M51:
