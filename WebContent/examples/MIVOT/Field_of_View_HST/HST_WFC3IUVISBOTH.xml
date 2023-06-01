@@ -86,15 +86,16 @@
                                                             <REFERENCE dmref="_universalCoordSys" dmrole="instfov:standardSpaceReferenceSystem"/>
                                                         </INSTANCE>
                                                     </INSTANCE>
-                                                <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="FK5"/>
-                                                <ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="ivoa:string" value="J2000"/>
-                                                <ATTRIBUTE dmrole="instfov:CustomSpaceFrame.directionAngle" dmtype="ivoa:real" value="NaN"/>
-                                                <ATTRIBUTE dmrole="instfov:CustomSpaceFrame.projection" dmtype="ivoa:string" value="CARTESIAN"/>
+                                                    <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="FK5"/>
+                                                    <ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="ivoa:string" value="J2000"/>
+                                                    <ATTRIBUTE dmrole="instfov:CustomSpaceFrame.directionAngle" dmtype="ivoa:real" value="NaN"/>
+                                                    <ATTRIBUTE dmrole="instfov:CustomSpaceFrame.projection" dmtype="ivoa:string" value="CARTESIAN"/>
+                                                </INSTANCE>
                                             </INSTANCE>
                                         </INSTANCE>
-                                    </INSTANCE>
-                                    <!-- other instrument modes used for this instrument come here as Instances-->
-                                </INSTANCE> <!-- other instruments monted on this telescope come here -->
+                                        <!-- other instrument modes used for this instrument come here as Instances-->
+                                    </INSTANCE> <!-- other instruments monted on this telescope come here -->
+                                </INSTANCE>
                             </COLLECTION>
                         </INSTANCE>
                     </COLLECTION>
