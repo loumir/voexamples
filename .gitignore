@@ -26,6 +26,9 @@ local.properties
 .settings/
 .loadpath
 
+### Mac OS ###
+.DS_Store
+
 # External tool builders
 .externalToolBuilders/
 
