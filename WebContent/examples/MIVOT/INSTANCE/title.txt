@@ -1,0 +1,1 @@
+INSTANCE Mapping Example in MIVOT

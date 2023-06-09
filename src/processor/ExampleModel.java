@@ -50,14 +50,6 @@ public class ExampleModel {
 		return getItem("image.txt");
 	}
 
-	public String getStepQuery() throws Exception {
-		return getItem("stepQuery.txt");
-	}
-
-	public String getCustom() throws Exception {
-		return getItem("custom.txt");
-	}
-
 	public List<String> getIndex(String subpath) throws Exception {
 		List<String> index = new ArrayList<>();
 

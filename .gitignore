@@ -4,6 +4,12 @@
 *.ear
 *.class
 
+# idea git ignore
+.idea/
+out/
+lib/
+voexamples.iml
+
 # eclipse specific git ignore
 *.pydevproject
 .project

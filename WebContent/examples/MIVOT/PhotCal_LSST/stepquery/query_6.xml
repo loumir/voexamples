@@ -4,6 +4,7 @@
         <VODML xmlns="https://ivoa.net/xml/MIVOT">
             <MODEL name="Phot" url="http://ivoa.net/xml/VODML/Phot-v1.1.vodml.xml" />
             <MODEL name="ivoa" url="https://ivoa.net/xml/VODML/IVOA-v1.vo-dml.xml" />
+
             <TEMPLATES tableref="_transcurve">
                 <INSTANCE dmrole="" dmtype="Phot:PhotCal">
                     <ATTRIBUTE dmrole="Phot:PhotCal.identifier" dmtype="ivoa:string"

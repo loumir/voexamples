@@ -19,7 +19,7 @@
                                 <INSTANCE dmrole="instfov:Instrument.instrumentMode" dmtype="instfov:InstrumentMode">
                                     <ATTRIBUTE dmrole="instfov:InstrumentMode.name" dmtype="ivoa:String" value="M1" />
                                     <INSTANCE dmid="_fov" dmrole="instfov:InstrumentMode.fov" dmtype="instfov:Fov">
-                                        ...
+                                        ... <!-- Here goes the field of view -->
                                     </INSTANCE>
                                 </INSTANCE>
                             </INSTANCE>
