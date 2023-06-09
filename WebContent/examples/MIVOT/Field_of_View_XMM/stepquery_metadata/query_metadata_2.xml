@@ -12,7 +12,7 @@
                     <INSTANCE dmid="_footprint" dmtype="instfov:InstrumentalFootPrint">
                         <ATTRIBUTE dmrole="instfov:InstrumentalFootPrint.author_name" dmtype="ivoa:string" value="XMM-Newton SOC" />
                         <INSTANCE dmrole="instfov:InstrumentalFootPrint.telescope" dmtype="instfov:Telescope">
-                            ...
+                            ... <!-- Here goes the elements structure -->
                         </INSTANCE>
                     </INSTANCE>
                 </GLOBALS>

@@ -17,7 +17,7 @@
                             <INSTANCE dmrole="instfov:Telescope.instrument" dmtype="instfov:Instrument">
                                 <ATTRIBUTE dmrole="instfov:Instrument.name" dmtype="ivoa:String" value="EPIC-pn" />
                                 <INSTANCE dmrole="instfov:Instrument.instrumentMode" dmtype="instfov:InstrumentMode">
-                                    ...
+                                    ... <!-- Here goes the elements structure -->
                                 </INSTANCE>
                             </INSTANCE>
                         </INSTANCE>

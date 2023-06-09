@@ -15,7 +15,7 @@
                             <ATTRIBUTE dmrole="instfov:Telescope.name" dmtype="ivoa:String" value="XMM-Newton" />
                             <ATTRIBUTE dmrole="instfov:Telescope.description" dmtype="ivoa:string" value="EPIC-pn Camera footprint" />
                             <INSTANCE dmrole="instfov:Telescope.instrument" dmtype="instfov:Instrument">
-                                ...
+                                ... <!-- Here goes the elements structure -->
                             </INSTANCE>
                         </INSTANCE>
                     </INSTANCE>

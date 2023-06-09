@@ -10,7 +10,7 @@
                 <MODEL name="coords" url="https://www.ivoa.net/xml/Coords-v1.xsd"/>
                 <GLOBALS>
                     <INSTANCE dmid="_footprint" dmtype="instfov:InstrumentalFootPrint">
-                        ...
+                        ... <!-- Here goes the elements structure -->
                     </INSTANCE>
                 </GLOBALS>
             </VODML>
