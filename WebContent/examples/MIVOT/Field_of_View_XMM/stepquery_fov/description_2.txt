@@ -1,2 +1,0 @@
-The collection of shapes can contain different sort of shapes like any polygon, boxes, circles and pickles.
-In this case my shapes are all polygons.

@@ -1,3 +1,0 @@
-This is an example of a complete XML file for mapping a Photometric Calibration against VOTable data.
-
-Let's analyze it step by step :
