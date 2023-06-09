@@ -1,0 +1,1 @@
+We consider the mapping of a Vizier catalog containing sources with radial velocity measures available here:
