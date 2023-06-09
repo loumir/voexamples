@@ -4,6 +4,7 @@
 package processor;
 
 import java.io.File;
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -23,18 +24,14 @@ public class GetExampletem extends Processor {
 	@Override
 	public String getContent() throws Exception{
 		File fls = setupFile();
+		String type = fls.getName().substring(fls.getName().length() - 3);
 		String retour = "";
-		if( fls != null ) {
-			Scanner myScanner = new Scanner(fls);
-			retour = myScanner.useDelimiter("\\A").next(); 
-			myScanner.close();
+		if(type.equals("png") || type.equals("jpg")) {
+			retour = getImagePath();
 		} else {
-			if(params.item.contains("image")){
-				retour = getImagePath();
-			}
-			else{
-				retour = "Protocol " + params.item + " not supported";
-			}
+			Scanner myScanner = new Scanner(fls);
+			retour = myScanner.useDelimiter("\\A").next();
+			myScanner.close();
 		}
 		return retour;
 
@@ -74,7 +71,8 @@ public class GetExampletem extends Processor {
 
 		if(listOfFiles != null){
 			for(String file : listOfFiles){
-				if(file.substring(0, file.indexOf('.')).equals(params.item)){
+				System.out.println(file);
+				if(file.contains(".") && file.substring(0, file.indexOf('.')).equals(params.item.replaceAll("%20", " "))){
 					retour = myfile + "/" + params.protocol + "/" + params.useCase+ "/" + file;
 				}
 			}
@@ -93,7 +91,7 @@ public class GetExampletem extends Processor {
 		}
 		for(String file : listOfFiles){
 			if(file.contains(".")) {
-				if (file.substring(0, file.indexOf('.')).equals(params.item) && !file.contains("image")) {
+				if (file.substring(0, file.indexOf('.')).equals(params.item.replaceAll("%20", " ")) && !file.contains("image")) {
 					retour = new File(myfile + "/" + params.protocol + "/" + params.useCase + "/" + file);
 				}
 			}

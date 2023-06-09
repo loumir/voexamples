@@ -49,7 +49,8 @@ public class XhtmlBuilder {
 
 	public static String getExampleNiceDiv(ExampleModel em) throws Exception{
 		StringBuilder retour = new StringBuilder();
-		retour.append("     <p>");
+		retour.append("<button type=\"button\" class=\"collapsible\">Show DALI Resources</button>\n");
+		retour.append("     <p class=\"content\">");
 		retour.append("[<a title='Get Dali resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "'>dali xhtml</a>]");
 
 		List<String> index = em.getIndex(null);
@@ -81,8 +82,7 @@ public class XhtmlBuilder {
 						retour.append(addSubtitle(el));
 					}
 					else if(file.contains("uri")){
-						System.out.println("uri");
-						retour.append(addURI(el));
+						retour.append(addURI(el, file));
 					}
 
 				}
@@ -197,6 +197,12 @@ public class XhtmlBuilder {
 						+ "<script>\n"
 						+ GetScript.get("query-step")
 						+ "</script>\n"
+						+ "<script>\n"
+						+ GetScript.get("show-image")
+						+ "</script>\n"
+						+ "<script>\n"
+						+ GetScript.get("collapsible")
+						+ "</script>\n"
 						+ "	</body>\n"
 						+ "	</html>\n";
 	}
@@ -241,9 +247,9 @@ public class XhtmlBuilder {
 	public static String addDescription(String description) {
 		StringBuilder html = new StringBuilder();
 		if( description.length() > 0 ){
-			html.append("     <p><strong><pre>");
+			html.append("     <p id=\"desc\"><pre>");
 			html.append(description);
-			html.append("      </strong></pre></p>\n");
+			html.append("      </pre></p>\n");
 		}
 
 		return html.toString();
@@ -280,7 +286,7 @@ public class XhtmlBuilder {
 				}
 			}
 
-			html.append("     <p><strong>Query</strong>\n");
+			html.append("     <p><strong>Query or Code</strong>\n");
 			html.append("       <pre><code " + cssClass + ">" + query.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</code></pre>");
 			html.append("     </p>\n");
 		}
@@ -292,21 +298,26 @@ public class XhtmlBuilder {
 		StringBuilder html = new StringBuilder();
 		if( image.length() > 0 ){
 			String route = em.params.protocol + "/" + em.params.useCase;
+			html.append("<div class=\"show-image\">\n");
 			html.append("<input type=\"checkbox\" id=\"toggle\"><label for=\"toggle\"> Click to show " + image +": </label>");
-			html.append("       <img id=\"revealonclick\" class=\"custom-img\" src=\"../../examples/")
-					.append(route).append("/")
-					.append(image)
-					.append("\"/>\n")
-					.append("     </p>\n");
+			html.append("       <img id=\"toggled\" src=\"../../examples/" + route + "/" + image + "\"/>\n");
+			html.append("     </p>\n");
+			html.append("</div>\n");
 		}
 
 		return html.toString();
 	}
 
-	public static String addURI(String uri){
+	public static String addURI(String uri, String file){
 		StringBuilder html = new StringBuilder();
 		if( uri.length() > 0 ){
-			html.append("     <strong><p>Link</p></strong>\n");
+			if (file.contains("_")) {
+				file = file.substring(file.indexOf("_") + 1, file.length() - 4);
+			}
+			else{
+				file = "Link";
+			}
+			html.append("     <strong><p>" + file + "</p></strong>\n");
 			html.append("     <a href=\"" + uri + "\"\n");
 			html.append("       <p>" + uri + "</p>\n");
 			html.append("     </a>\n");
@@ -319,8 +330,9 @@ public class XhtmlBuilder {
 		StringBuilder html = new StringBuilder();
 		html.append("<div class=\"stepquery\">");
 		html.append("<div id=\"buttons\">");
-		html.append("	<button id=\"prev-btn\" disabled>Previous</button>\n");
-		html.append("	<button id=\"next-btn\">Next</button>");
+		html.append("   <button id=\"info-btn\" title=\"Click on the next button to browse to the next step\">i</button>\n");
+		html.append("	<button id=\"prev-btn\" disabled><<</button>\n");
+		html.append("	<button id=\"next-btn\">>></button>");
 		html.append("</div>");
 
 		List<String> index = em.getIndex(file);
@@ -359,8 +371,11 @@ public class XhtmlBuilder {
 	public static String addDaliDiv(String file_name, String content, boolean is_code){
 		StringBuilder html = new StringBuilder();
 		if( content.length() > 0 ){
+			if(file_name.contains(".")){
+				file_name = file_name.substring(0, file_name.indexOf('.'));
+			}
 			html.append("     <fieldset>\n");
-			html.append("       <legend>" + file_name.substring(0,1).toUpperCase() + file_name.substring(1, file_name.indexOf('.')) + "</legend>\n");
+			html.append("       <legend>" + file_name.substring(0,1).toUpperCase() + file_name.substring(1) + "</legend>\n");
 			if(is_code) {
 				html.append("       <pre>" + content.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</pre>");
 			} else {
