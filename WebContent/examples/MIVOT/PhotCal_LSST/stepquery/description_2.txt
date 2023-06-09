@@ -1,1 +1,1 @@
-Let's setting up the resources to use MIVOT mapping :
+Let's set up the resources to use MIVOT mapping :
