@@ -4,6 +4,8 @@
 *.ear
 *.class
 
+.DS_Store
+
 # eclipse specific git ignore
 *.pydevproject
 .project
