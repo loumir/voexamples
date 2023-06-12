@@ -16,7 +16,6 @@ public class XhtmlBuilder {
 	public static String getExampleDiv(String baseDir , Request params) throws Exception{
 		ExampleModel em = new ExampleModel(baseDir, params);
 		StringBuilder retour = new StringBuilder();
-		String content;
 		retour.append("<div id=\"" + em.getName() + "\" resource=\"#" +em.getName() + "\" typeof=\"example\">\n");
 		retour.append("  <fieldset>\n");
 		retour.append("     <legend>" + params.protocol + "[" + params.useCase + "] " + em.getTitle() + "</legend>\n");
@@ -49,6 +48,7 @@ public class XhtmlBuilder {
 
 	public static String getExampleNiceDiv(ExampleModel em) throws Exception{
 		StringBuilder retour = new StringBuilder();
+		retour.append("<div class=\"collapse\">\n");
 		retour.append("<button type=\"button\" class=\"collapsible\">Show DALI Resources</button>\n");
 		retour.append("     <p class=\"content\">");
 		retour.append("[<a title='Get Dali resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "'>dali xhtml</a>]");
@@ -68,6 +68,7 @@ public class XhtmlBuilder {
 				}
 			}
 			retour.append("     </p>\n");
+			retour.append("</div>\n");
 
 			for(String file : index){
 				String el = em.getByName(file);
@@ -125,6 +126,7 @@ public class XhtmlBuilder {
 				retour.append(" [<a title='Get image' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/image'>image</a>]");
 			}
 			retour.append("     </p>\n");
+			retour.append("</div>\n");
 
 			retour.append(addDescription(em.getDescription()));
 			retour.append(addQuery(em.getQuery(), null));
@@ -132,6 +134,7 @@ public class XhtmlBuilder {
 			retour.append(addImage(em.getImage(), em));
 		}
 
+		retour.append("<button type=\"button\" id=\"top\">Back to top</button>\n");
 		return retour.toString();
 	}
 
@@ -187,7 +190,7 @@ public class XhtmlBuilder {
 						+ "					<li></li>\n"
 						+ "				</ul>\n"
 						+ "				<p class=\"copy\">\n"
-						+ "					&copy; Laurent Michel - Daniel Durand - Mireille Louys. Contact the<a\n"
+						+ "					&copy; Laurent Michel - Daniel Durand - Mireille Louys - Julien Abid. Contact the<a\n"
 						+ "						href=\"laurent.michel@astro.unistra.fr\"> Webmaster</a>\n"
 						+ "				</p>\n"
 						+ "				<div class=\"cl\"></div>\n"
@@ -198,7 +201,7 @@ public class XhtmlBuilder {
 						+ GetScript.get("query-step")
 						+ "</script>\n"
 						+ "<script>\n"
-						+ GetScript.get("show-image")
+						+ GetScript.get("back-to-top")
 						+ "</script>\n"
 						+ "<script>\n"
 						+ GetScript.get("collapsible")
@@ -242,12 +245,12 @@ public class XhtmlBuilder {
 	}
 
 	public static String addSubtitle(String subtitle){
-		return "<p><strong>" + subtitle + "</strong></p>\n";
+		return "<p><strong>" + subtitle.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</strong></p>\n";
 	}
 	public static String addDescription(String description) {
 		StringBuilder html = new StringBuilder();
 		if( description.length() > 0 ){
-			html.append("     <p id=\"desc\"><pre>");
+			html.append("     <p><pre id=\"desc\">");
 			html.append(description);
 			html.append("      </pre></p>\n");
 		}
@@ -260,11 +263,11 @@ public class XhtmlBuilder {
 		if( usage.length() > 0 ) {
 			if (!usage.startsWith("#!")) {
 				html.append("     <p><strong>Usage</strong>\n");
-				html.append("       <pre>" + usage + "</pre>");
+				html.append("       <pre>" + usage.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</pre>");
 				html.append("     </pre>\n");
 			} else {
 				html.append("     <p><strong>Usage</strong>\n");
-				html.append("       <pre><code>" + usage + "</code></pre>");
+				html.append("       <pre><code>" + usage.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</code></pre>");
 				html.append("     </pre>\n");
 			}
 		}
@@ -298,10 +301,11 @@ public class XhtmlBuilder {
 		StringBuilder html = new StringBuilder();
 		if( image.length() > 0 ){
 			String route = em.params.protocol + "/" + em.params.useCase;
-			html.append("<div class=\"show-image\">\n");
-			html.append("<input type=\"checkbox\" id=\"toggle\"><label for=\"toggle\"> Click to show " + image +": </label>");
-			html.append("       <img id=\"toggled\" src=\"../../examples/" + route + "/" + image + "\"/>\n");
-			html.append("     </p>\n");
+			html.append("<div class=\"collapse\">\n");
+			html.append("<button class=\"collapsible\"> Click to show " + image +": </button>");
+			html.append("<p class=\"content\">\n");
+			html.append("       <img src=\"../../examples/" + route + "/" + image + "\"/>\n");
+			html.append("</p>\n");
 			html.append("</div>\n");
 		}
 
@@ -318,8 +322,8 @@ public class XhtmlBuilder {
 				file = "Link";
 			}
 			html.append("     <strong><p>" + file + "</p></strong>\n");
-			html.append("     <a href=\"" + uri + "\"\n");
-			html.append("       <p>" + uri + "</p>\n");
+			html.append("     <a href=\"" + uri.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "\"\n");
+			html.append("       <p>" + uri.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</p>\n");
 			html.append("     </a>\n");
 		}
 
@@ -353,7 +357,9 @@ public class XhtmlBuilder {
 
 		for(int i = 0 ; i < queries.size() ; i++) {
 			html.append("  <div class=\"step\">");
-			html.append(addDescription(descriptions.get(i)));
+			if(descriptions.size() > i){
+				html.append(addDescription(descriptions.get(i)));
+			}
 			if (index.get(i).contains(".xml")) {
 				html.append(addQuery(queries.get(i), "xml"));
 
