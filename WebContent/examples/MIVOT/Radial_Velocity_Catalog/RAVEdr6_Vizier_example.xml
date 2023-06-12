@@ -1,0 +1,1519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VOTABLE version="1.4"
+    xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3">
+    <!-- xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://vo.ari.uni-heidelberg.de/docs/schemata/VOTable-1.4.xsd"> -->
+
+    <DESCRIPTION>
+   VizieR Astronomical Server vizier.cds.unistra.fr
+    Date: 2023-06-01T13:40:02 [V7.31]
+   Explanations and Statistics of UCDs:			See LINK below
+   In case of problem, please report to:	cds-question@unistra.fr
+   In this version, NULL integer columns are written as an empty string
+   &lt;TD&gt;&lt;/TD&gt;, explicitely possible from VOTable-1.3
+    </DESCRIPTION>
+    <RESOURCE type="results" ID="yCat_3283" name="III/283">
+        <COOSYS ID="J2000" system="eq_FK5" equinox="J2000"/>
+        <TIMESYS ID="time_1" refposition="UNKNOWN" timeorigin="0.000000" timescale="UNKNOWN"/>
+        <RESOURCE type="meta">
+            <VODML xmlns="https://ivoa.net/xml/MIVOT">
+                <!-- Here starts the mapping block This bloc maps all data contained in the VOTable on the MANGO model. The ModelInstanceInVot syntax 
+                is detailed here https://github.com/ivoa-std/modelinstanceinvot with a lot of snippet here https://github.com/ivoa/modelinstanceinvot-code 
+                -->
+                <MODEL name="mango" url="https://github.com/loumir/mivot-validator/blob/Annotation_exemples/mivot_validator/instance_checking/vodml/mango.vo-dml.xml"/>
+                <MODEL name="Phot" url="http://ivoa.net/xml/VODML/Phot-v1.1.vodml.xml"/>
+                <MODEL name="coords" url="https://ivoa.net/xml/VODML/Coords-v1.0.vo-dml.xml"/>
+                <GLOBALS>
+                    <INSTANCE dmid="j2000_FK5" dmtype="coords:SpaceSys">
+                        <!-- Specialized coordinate system for the Spatial domain. -->
+                        <!-- the axis representation (coords:PhysicalCoordSys.coordSpace) is not serialized here -->
+                        <INSTANCE dmid="_spaceFrame1" dmrole="coords:PhysicalCoordSys.frame" dmtype="coords:SpaceFrame">
+                            <!-- A SpaceFrame is specified by its reference frame (orientation), and a reference position (origin). -->
+                            <INSTANCE dmrole="coords:SpaceFrame.refPosition" dmtype="coords:StdRefLocation">
+                                <!-- An absolute a-priori known location in phase space (position and velocity).  
+                                Values are selected from the StdRefPosition vocabulary. -->
+                                <ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="BARYCENTER"/>
+                            </INSTANCE>
+                            <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="FK5"/>
+                            <ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="coords:Epoch" value="J2000"/>
+                        </INSTANCE>
+                    </INSTANCE>                    
+                    <!-- corresponds to <COOSYS ID="J2000" system="eq_FK5" equinox="J2000"/> -->
+                    <INSTANCE dmid="_timesys_1" dmtype="coords:TimeSys">
+                        <INSTANCE dmid="TimeFrame_1" dmtype="coords:TimeFrame">
+                            <INSTANCE dmrole="coords:TimeFrame.refPosition" dmtype="coords:StdRefLocation">
+                                <ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="BARYCENTER"/>
+                            </INSTANCE>
+                            <ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="UT"/>
+                        </INSTANCE>
+                        <INSTANCE dmid="TimeCoordSpace_1" dmtype="coords:coordSpace">
+                            <INSTANCE dmrole="coords:TimeFrame.refPosition" dmtype="coords:StdRefLocation">
+                                <ATTRIBUTE dmrole="coords:CoordSpace.timereference" dmtype="ivoa:string" value="UNKNOWN"/>
+                            </INSTANCE>
+                        </INSTANCE>
+                    </INSTANCE>  <!-- fin TimeSys -->
+                    <!--  corresponds to <TIMESYS ID="time_1" refposition="UNKNOWN" timeorigin="0.000000" timescale="UNKNOWN"/> -->
+                </GLOBALS>
+
+                <TEMPLATES tableref="III/283/ravedr6">
+                    <INSTANCE dmrole="root" dmtype="mango:Source">
+                        <ATTRIBUTE dmrole="mango:Source.identifier" dmtype="ivoa:string" ref="ObsID"/>
+                        <!-- il faudrait placer cette description qui indique la nature de l identifiant 
+                        "Unique Identifier for RAVE objects, Observation Date, Fieldname, Fibernumber (rave_obs_id)" -->
+                        <COLLECTION dmrole="mango:Source.associatedDataDock">
+                            <INSTANCE dmrole="" dmtype="mango:WebEndpoint">
+                                <!-- Class for associated data referenced by an URL" -->
+                                <INSTANCE dmrole="mango:AssociatedData.semantic" dmtype="mango:VocabularyTerm">
+                                    <!-- Linked data -->
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="linked_data"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:AssociatedData.description" dmtype="ivoa:string" value="Display the spectrum data for this source if any [NULL integer written as an empty string]"/>
+                                <ATTRIBUTE dmrole="mango:WebEndpoint.ContentType" dmtype="ivoa:string" value="SSA_response"/>
+                                <ATTRIBUTE dmrole="mango:WebEndpoint.url" dmtype="ivoa:anyURI" value="http://vizier.cds.unistra.fr/viz-bin/nph-htx/A?%5cignore%7bX%7d%5cifnum%7b${Sp}%7d%3e0%5cvMore%7b-source=III/283/spectra%5c%26-out.max=999%5c%26ObsID=${ObsID}%7d%7b${Sp}%7d%5celse%7b${Sp}%7d%5cfi"/>
+                            </INSTANCE>
+                        </COLLECTION>   <!-- end associated datadock -->
+                        <!-- Collection of the complex data attached to the source . les instances de la collection n ont pas de dm role -->
+                        <COLLECTION dmrole="mango:Source.propertyDock">
+                            <INSTANCE dmrole="" dmtype="mango:Label">   <!-- object identifier for the source/ alternate id -->
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#alternate identifier"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Object identifier (objectid)"/>
+                                <ATTRIBUTE dmrole="mango:Label.text" dmtype="ivoa:string" value="objID"/>
+                            </INSTANCE>
+                            <INSTANCE dmrole="" dmtype="mango:Label">    <!-- raveid for the source /alternate id -->
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#alternate rave id"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Identifier (J2000 GCS) (raveid)"/>
+                                <ATTRIBUTE dmrole="mango:Label.text" dmtype="ivoa:string" ref="ID"/>
+                            </INSTANCE>
+                            <!-- Source Position computed from Vizier -->
+                            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">                                
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#source position"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="recorded source position"/>
+                                <!-- Science ready data with the instrument signature removed (ObsCore). -->
+                                <!-- Enumeration datatype: supported values are Raw Instrumental Calibrated  -->
+                                <ATTRIBUTE dmrole="mango:PhysicalProperty.calibrationLevel" dmtype="mango:CalibrationLevel" value="Calibrated"/>
+                                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:Position">
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="pos.eq"/>
+                                    <INSTANCE dmrole="meas:Position.coord" dmtype="coords:LonLatPoint">
+                                        <!-- A spatial coordinate in a Spherical coordinate space defining a Celestial position in Latitude and Longitude.  Any associated CoordSpace MUST conform to this description.  If no CoordSpace is provided, 
+                                        a Standard Spherical CoordSpace is assumed.  Values for unused/undefined dimensions need not be provided.-->
+                                        <REFERENCE dmref="j2000_FK5" dmrole="coords:Coordinate.coordSys" />
+                                        <!-- coords:SpaceSys -->
+                                        <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:Quantity" unit="deg" ref="_RAJ2000" />
+                                        <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:Quantity" unit="deg" ref="_DEJ2000" />
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                            <!-- Source Position as in original table -->
+                            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#observed source position"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Observed Source sky position"/>
+                                <!-- pos recorded -->
+                                <ATTRIBUTE dmrole="mango:PhysicalProperty.calibrationLevel" dmtype="mango:CalibrationLevel" value="Calibrated"/>
+                                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:Position">
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="pos.eq"/>
+                                    <INSTANCE dmrole="meas:Position.coord" dmtype="coords:LonLatPoint">
+                                        <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:RealQuantity" ref="RAJ2000"/>
+                                        <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:RealQuantity" ref="DEJ2000"/>
+                                        <REFERENCE dmref="j2000_FK5" dmrole="coords:Coordinate.coordSys"/>
+
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                            <!--Radial Velocity -->
+                            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">  
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#spectral derived velocity"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="[-3687/3010] Heliocentric radial velocity (hrv_sparv)"/>
+                                <ATTRIBUTE dmrole="mango:PhysicalProperty.calibrationLevel" dmtype="mango:CalibrationLevel" value="Corrected"/>
+                                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:Velocity">
+                                    <!-- Provides a comple description of a measured Velocity instant." -->
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value=""/>
+                                    <INSTANCE dmrole="meas:Measure.error" dmtype="meas:Error">
+                                        <!-- The Error class uses the Uncertainty types to describe measurement errors from various sources." -->
+                                        <INSTANCE dmrole="meas:Error.sysError" dmtype="meas:Symmetrical">
+                                            <!-- Symmetrical uncertainty, constant in all dimensions and directions from the associated Coordinate.  ie: PlusMinus in 1D, circular in 2D, spherical in 3D." -->
+                                            <ATTRIBUTE dmrole="meas:Symmetrical.radius" dmtype="ivoa:RealQuantity" unit="" ref="e_HRV"/>
+                                        </INSTANCE>
+                                    </INSTANCE>
+                                    <INSTANCE dmrole="meas:Velocity.coord" dmtype="coords:GenericPoint">
+                                        <!-- GenericPoint supports the representation of spatial coordinates in a custom coordinate space, or any space which is not covered by the other specializations.   The coordinate values map, in order, to the axes described by the associated CoordSpace.  If no CoordSpace is provided, the behavior is undefined.  Values for unused/undefined dimensions need not be provided." -->
+                                        <!-- The Coordinate system can be pushed up to the GLOBALS and replaced here with <REFERENCE dmref="SOME_REF" dmrole="coords:Coordinate.coordSys" />">-->
+                                        <INSTANCE dmid="_Veloc_coordsys" dmrole="coords:Coordinate.coordSys" dmtype="coords:SpaceSys">
+                                            <!-- Specialized coordinate system for the Spatial domain.  This object SHOULD include an appropriate SpaceFrame.  In Appendix B, we define two standard spatial coordinate space instances (Spherical and Cartesian), which may be referenced in serializations.  If a CoordSpace is not provided, it is assumed to be represented by a Standard Spherical Coordinate Space." -->
+                                            <!-- the axis representation (coords:PhysicalCoordSys.coordSpace) is not serialized here -->
+                                            <INSTANCE dmrole="coords:PhysicalCoordSys.frame" dmtype="coords:SpaceFrame">
+                                                <!-- A SpaceFrame is specified by its reference frame (orientation), and a reference position (origin). Currently only standard reference frames are allowed. An equinox MUST be provided for pre-ICRS reference frames. 
+                                                A planetary ephemeris MAY be provided if relevant. If needed, but not provided, it is assumed to be "DE405". -->
+                                                <INSTANCE dmrole="coords:SpaceFrame.refPosition" dmtype="coords:StdRefLocation">
+                                                    <!-- An absolute a-priori known location in phase space (position and velocity).  Values are selected from the StdRefPosition vocabulary.  Considering that the GEOCENTER is really the only place for which we know the absolute location at all times, all other locations require the specification of a planetary ephemeris.  LSR[KD] are reserved for spectral and reshift frames.  TOPOCENTER (location of the observer) is special in that it assumes that the observing location is available through other means (e.g. a geographic location or an orbit ephemeris).  RELOCATABLE is available for simulations.  UNKNOWN should only be used if absolutely necessary." -->
+                                                    <ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="HELIOCENTER"/>
+                                                </INSTANCE>
+                                                <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="FK5"/>
+                                                <!-- We define epoch as a primitive data type with the expected form "<type><year>" where type = "J" or "B" for Julian or Besselian respectively, and year is expressed as a decimal year.  e.g.: "B1950", "J2000.0" -->
+                                                <ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="coords:Epoch" value="J2000"/>
+                                            </INSTANCE>
+                                        </INSTANCE>
+                                        <ATTRIBUTE dmrole="coords:GenericPoint.axis1" dmtype="ivoa:Quantity" unit="km/s" ref="HRV"/>
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                            <!--Observing date and time  -->
+                            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#obs date"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Observation date"/>
+                                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:Time">
+                                    <!-- Provides a complete description of a measured Temporal instant -->
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="time.epoch"/>
+                                    <INSTANCE dmrole="meas:Time.coord" dmtype="coords:ISOTime">
+                                        <!-- Extension of TimeInstant for time expressed as a structured datetime string.-->
+                                        <ATTRIBUTE dmrole="coords:ISOTime.date" dmtype="ivoa:datetime" unit="" ref="_tab1_22"/>
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#obs time"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Observation time start"/>
+                                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:Time">
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="time.epoch"/>
+                                    <INSTANCE dmrole="meas:Time.coord" dmtype="coords:ISOTime">
+                                        <!-- Extension of TimeInstant for time expressed as a structured datetime string.-->
+                                        <ATTRIBUTE dmrole="coords:ISOTime.date" dmtype="ivoa:datetime" unit="" ref="Obs.st"/>
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                                <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#obs time"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Observation time end"/>
+                                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:Time">
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="time.epoch"/>
+                                    <INSTANCE dmrole="meas:Time.coord" dmtype="coords:ISOTime">
+                                        <!-- Extension of TimeInstant for time expressed as a structured datetime string.-->
+                                        <ATTRIBUTE dmrole="coords:ISOTime.date" dmtype="ivoa:datetime" unit="" ref="Obs.end"/>
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                    
+                            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty"> <!-- measure zeropoint corrected Velocity-->
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#corrected velocity"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="[-37.7/49.3] Zero point correction applied Heliocentric Radial Velocity (correction_rv_sparv)"/>
+                                <ATTRIBUTE dmrole="mango:PhysicalProperty.calibrationLevel" dmtype="mango:CalibrationLevel" value="Corrected"/>
+                                <INSTANCE dmrole="mango:PhysicalProperty.measure" dmtype="meas:GenericMeasure">
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="spect.dopplerVeloc"/>
+                                    <INSTANCE dmrole="meas:GenericMeasure.coord" dmtype="coords:PhysicalCoordinate">
+                                        <ATTRIBUTE dmrole="coords:PhysicalCoordinate.cval" dmtype="ivoa:RealQuantity" ref="cHRV"/>
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                            <INSTANCE dmrole="" dmtype="mango:ComputedProperty">    <!-- computed Correlation-->
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="[0/205] Tonry-Davis R correlation coefficient (correlation_coeff_sparv)"/>
+                                <ATTRIBUTE dmrole="mango:ComputedProperty.value" dmtype="ivoa:RealQuantity" ref="R"/>
+                            </INSTANCE>
+                            <INSTANCE dmrole="" dmtype="mango:ComputedProperty">     <!-- computed chi2-->
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="[59/596615] Chi square from SPARV pipeline (chisq_sparv)"/>
+                                <ATTRIBUTE dmrole="mango:ComputedProperty.value" dmtype="ivoa:RealQuantity" ref="Chi2"/>
+                            </INSTANCE>
+                            <INSTANCE dmrole="" dmtype="mango:ComputedProperty">     <!-- computed SNR-->
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="[1/764] Signal/Noise Ratio (snr_med_sparv)SNR"/>
+                                <ATTRIBUTE dmrole="mango:ComputedProperty.value" dmtype="ivoa:RealQuantity" ref="SNR"/>
+                            </INSTANCE>
+
+                        </COLLECTION>                        <!-- fin property Dock -->
+                    </INSTANCE>                    <!-- fin Mangosource-->
+                </TEMPLATES>
+            </VODML>
+        </RESOURCE>
+
+        <!-- VOTable description at http://www.ivoa.net/Documents/latest/VOT.html -->
+        <INFO name='protocol' value='ASU'/>
+        <INFO name='request_date' value='2023-06-01T13:40:02'/>
+        <INFO name='request_post' value='https://vizier.cds.unistra.fr//viz-bin/votable'>
+        </INFO>
+        <INFO name='contact' value='cds-question@unistra.fr'/>
+        <INFO name='version' value='7.31'/>
+        <INFO ID="MaxTuples" name="-out.max" value="50"/>
+        <!-- Execution Reports -->
+
+        <INFO name='ivoid' value='ivo://cds.vizier/iii/283'/>
+        <INFO name='publisher' value='CDS'/>
+        <INFO name='creator' value='Steinmetz M.'/>
+        <INFO name='related_resource' value='bibcode:2020yCat.3283....0S'/>
+        <INFO name='landing_page' value='https://cdsarc.cds.unistra.fr/viz-bin/cat/III/283'/>
+        <INFO name='publication_date' value='2021-10-21'/>
+        <INFO name='curation_level' value='RESEARCH'/>
+        <INFO name='rights' value='https://cds.unistra.fr/vizier-org/licences_vizier.html'/>
+
+        <TABLE ID="III_283_ravedr6" name="III/283/ravedr6">
+
+            <DESCRIPTION>RAVE 6th data release (Steinmetz+, 2020).
+                RAVE DR6 master file and classification and observation diagnostic data (ravedr6.dr6_sparv, ravedr6.dr6_classification and ravedr6.dr6_obsdata)</DESCRIPTION>
+            <!-- RowName: ${ObsID} -->
+            <!-- Definitions of GROUPs and FIELDs -->
+            <FIELD name="_RAJ2000" ucd="pos.eq.ra" ref="J2000" datatype="double" width="14" precision="10" unit="deg">                <!-- ucd="POS_EQ_RA" -->
+                <DESCRIPTION>Right ascension (FK5, Equinox=J2000.0) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="_DEJ2000" ucd="pos.eq.dec" ref="J2000" datatype="double" width="14" precision="10" unit="deg">                <!-- ucd="POS_EQ_DEC" -->
+                <DESCRIPTION>Declination (FK5, Equinox=J2000.0) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="Sp" ucd="meta.ref.url" datatype="short" width="3">                <!-- ucd="DATA_LINK" -->
+                <DESCRIPTION>Display the spectrum data for this source if any [NULL integer written as an empty string]</DESCRIPTION>
+                <VALUES null="-32768" />
+                <LINK href="http://vizier.cds.unistra.fr/viz-bin/nph-htx/A?%5cignore%7bX%7d%5cifnum%7b${Sp}%7d%3e0%5cvMore%7b-source=III/283/spectra%5c%26-out.max=999%5c%26ObsID=${ObsID}%7d%7b${Sp}%7d%5celse%7b${Sp}%7d%5cfi"/>
+            </FIELD>
+            <FIELD name="ObsID" ucd="meta.id;obs" datatype="char" arraysize="21">                <!-- ucd1="OBS_ID" -->
+                <DESCRIPTION>Unique Identifier for RAVE objects, Observation Date, Fieldname, Fibernumber (rave_obs_id)</DESCRIPTION>
+                <LINK href="http://vizier.cds.unistra.fr/viz-bin/VizieR-5?-info=XML&amp;-out.add=.&amp;-source=III/283/ravedr6&amp;recno=${recno}"/>
+            </FIELD>
+            <FIELD name="IRFM" ucd="meta.ref.url" datatype="short" width="3">                <!-- ucd="DATA_LINK" -->
+                <DESCRIPTION>Display IR data if any (link to irfm table) [NULL integer written as an empty string]</DESCRIPTION>
+                <VALUES null="-32768" />
+                <LINK href="http://vizier.cds.unistra.fr/viz-bin/nph-htx/A?%5cignore%7bX%7d%5cifnum%7b${IRFM}%7d%3e0%5cvMore%7b-source=III/283/irfm%5c%26-out.max=999%5c%26ObsID=${ObsID}%7d%7b${IRFM}%7d%5celse%7b${IRFM}%7d%5cfi"/>
+            </FIELD>
+            <FIELD name="ID" ucd="meta.id;meta.main" datatype="char" arraysize="16">                <!-- ucd="ID_MAIN" -->
+                <DESCRIPTION>Identifier (J2000 GCS) (raveid)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="objID" ucd="meta.id" datatype="char" arraysize="16">                <!-- ucd="ID_IDENTIFIER" -->
+                <DESCRIPTION>Object identifier (objectid)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="HRV" ucd="spect.dopplerVeloc;pos.heliocentric" datatype="double" width="8" precision="2" unit="km/s">                <!-- ucd="VELOC_HC" -->
+                <DESCRIPTION>[-3687/3010] Heliocentric radial velocity (hrv_sparv)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="e_HRV" ucd="stat.error" datatype="float" width="7" precision="2" unit="km/s">                <!-- ucd="ERROR" -->
+                <DESCRIPTION>[0/1207] HRV uncertainty (hrv_error_sparv)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="R" ucd="stat.correlation" datatype="float" width="6" precision="2">                <!-- ucd="STAT_CORRELATION" -->
+                <DESCRIPTION>[0/205] Tonry-Davis R correlation coefficient (correlation_coeff_sparv)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="cHRV" ucd="phys.veloc;arith.diff" datatype="float" width="6" precision="2" unit="km/s">                <!-- ucd="VELOC_CORR" -->
+                <DESCRIPTION>[-37.7/49.3] Zero point correction applied Heliocentric Radial Velocity (correction_rv_sparv)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="Chi2" ucd="stat.fit.chi2" datatype="double" width="9" precision="2">                <!-- ucd="FIT_CHI2" -->
+                <DESCRIPTION>[59/596615] Chi square from SPARV pipeline (chisq_sparv)</DESCRIPTION>
+            </FIELD>
+            <FIELD ID="SNR" name="S/N" ucd="stat.snr" datatype="float" width="6" precision="2">                <!-- ucd="INST_S/N" -->
+                <DESCRIPTION>[1/764] Signal/Noise Ratio (snr_med_sparv)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="Simbad" ucd="meta.ref.url" datatype="char" arraysize="6*">                <!-- ucd="DATA_LINK" -->
+                <DESCRIPTION>Simbad column added by the CDS</DESCRIPTION>
+            <!-- ask the {\bf\fg{FireBrick}Simbad} data-base about this object -->
+
+
+                <!-- No link in: \ifregexp{[^ ]}{${ID}}{\wSimbad{RAVE ${ID} }{RAVE ${ID} }}\else{${}}\fi -->
+            </FIELD>
+            <FIELD name="RAJ2000" ucd="pos.eq.ra;meta.main" ref="J2000" datatype="double" width="12" precision="8" unit="deg">                <!-- ucd="POS_EQ_RA_MAIN" -->
+                <DESCRIPTION>Right ascension (J2000) (ra_input)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="DEJ2000" ucd="pos.eq.dec;meta.main" ref="J2000" datatype="double" width="12" precision="8" unit="deg">                <!-- ucd="POS_EQ_DEC_MAIN" -->
+                <DESCRIPTION>[-87.6/27.8] Declination (J2000) (dec_input)</DESCRIPTION>
+            </FIELD>
+            <FIELD name="Obs.date" ucd="time.epoch;obs" ref="time_1" ID="_tab1_22" datatype="char" arraysize="10" unit="'Y:M:D'">                <!-- ucd="TIME_DATE" -->
+                <DESCRIPTION>Observation Date (obsdate)</DESCRIPTION>
+                <VALUES null=" " />
+            </FIELD>
+            <FIELD name="Obs.st" ucd="time.epoch" datatype="char" arraysize="10" unit="">                <!-- ucd="TIME_MISC" -->
+                <DESCRIPTION>Universal time, start of observation (ut_start)</DESCRIPTION>
+                <VALUES null=" " />
+            </FIELD>
+            <FIELD name="Obs.end" ucd="time.epoch" datatype="char" arraysize="10" unit="">                <!-- ucd="TIME_MISC" -->
+                <DESCRIPTION>Universal time, end of observation (ut_end)</DESCRIPTION>
+                <VALUES null=" " />
+            </FIELD>
+            <FIELD name="Nrep" ucd="meta.number" datatype="short" width="2">                <!-- ucd="NUMBER" -->
+                <DESCRIPTION>[1/13] Number of repeat observation of a stellar object (n_repeats)</DESCRIPTION>
+                <LINK href="http://vizier.cds.unistra.fr/viz-bin/VizieR-4?-info=XML&amp;-out.add=.&amp;-source=III/283/repeats&amp;ID=${ID}"/>
+            </FIELD>
+            <FIELD name="recno" ucd="meta.record" datatype="int" width="8" type="hidden">                <!-- ucd="RECORD" -->
+                <DESCRIPTION>Record number assigned by the VizieR team. Should Not be used for identification.</DESCRIPTION>
+                <LINK href="http://vizier.cds.unistra.fr/viz-bin/VizieR-5?-info=XML&amp;-out.add=.&amp;-source=III/283/ravedr6&amp;recno=${recno}"/>
+            </FIELD>
+            <DATA>
+                <TABLEDATA>
+                    <TR>
+                        <TD>226.2200416667</TD>
+                        <TD>-24.2029444444</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_121</TD>
+                        <TD>1</TD>
+                        <TD>J150452.8-241211</TD>
+                        <TD>T6761_01049_1</TD>
+                        <TD>-32.60</TD>
+                        <TD>6.03</TD>
+                        <TD>9.77</TD>
+                        <TD>-1.31</TD>
+                        <TD>4505.90</TD>
+                        <TD>43.67</TD>
+                        <TD>Simbad</TD>
+                        <TD>226.22004167</TD>
+                        <TD>-24.20294444</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>969</TD>
+                    </TR>
+                    <TR>
+                        <TD>228.8913333333</TD>
+                        <TD>-26.2320000000</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_122</TD>
+                        <TD>1</TD>
+                        <TD>J151533.9-261355</TD>
+                        <TD>T6766_00418_1</TD>
+                        <TD>-41.25</TD>
+                        <TD>4.90</TD>
+                        <TD>11.72</TD>
+                        <TD>-1.34</TD>
+                        <TD>7238.30</TD>
+                        <TD>55.78</TD>
+                        <TD>Simbad</TD>
+                        <TD>228.89133333</TD>
+                        <TD>-26.23200000</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>970</TD>
+                    </TR>
+                    <TR>
+                        <TD>228.7614166667</TD>
+                        <TD>-26.2737777778</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_123</TD>
+                        <TD>1</TD>
+                        <TD>J151502.7-261626</TD>
+                        <TD>T6770_00144_1</TD>
+                        <TD>-28.12</TD>
+                        <TD>4.77</TD>
+                        <TD>12.32</TD>
+                        <TD>-1.36</TD>
+                        <TD>11469.80</TD>
+                        <TD>68.13</TD>
+                        <TD>Simbad</TD>
+                        <TD>228.76141667</TD>
+                        <TD>-26.27377778</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>971</TD>
+                    </TR>
+                    <TR>
+                        <TD>228.2075416667</TD>
+                        <TD>-26.2426666667</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_124</TD>
+                        <TD>1</TD>
+                        <TD>J151249.8-261434</TD>
+                        <TD>T6766_00374_1</TD>
+                        <TD>23.78</TD>
+                        <TD>3.73</TD>
+                        <TD>15.45</TD>
+                        <TD>-1.39</TD>
+                        <TD>8796.50</TD>
+                        <TD>68.80</TD>
+                        <TD>Simbad</TD>
+                        <TD>228.20754167</TD>
+                        <TD>-26.24266667</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>972</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.6614583333</TD>
+                        <TD>-26.2293888889</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_125</TD>
+                        <TD>1</TD>
+                        <TD>J151038.7-261346</TD>
+                        <TD>C1510387-261345</TD>
+                        <TD>-123.17</TD>
+                        <TD>2.71</TD>
+                        <TD>19.98</TD>
+                        <TD>-1.42</TD>
+                        <TD>1071.90</TD>
+                        <TD>34.80</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.66145833</TD>
+                        <TD>-26.22938889</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>973</TD>
+                    </TR>
+                    <TR>
+                        <TD>225.5403333333</TD>
+                        <TD>-26.2861111111</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_126</TD>
+                        <TD>1</TD>
+                        <TD>J150209.7-261710</TD>
+                        <TD>T6756_01093_1</TD>
+                        <TD>-46.94</TD>
+                        <TD>2.65</TD>
+                        <TD>18.48</TD>
+                        <TD>-1.45</TD>
+                        <TD>3376.70</TD>
+                        <TD>57.79</TD>
+                        <TD>Simbad</TD>
+                        <TD>225.54033333</TD>
+                        <TD>-26.28611111</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>974</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.0922083333</TD>
+                        <TD>-26.2046944444</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_127</TD>
+                        <TD>1</TD>
+                        <TD>J150822.1-261217</TD>
+                        <TD>C1508221-261216</TD>
+                        <TD>-44.54</TD>
+                        <TD>4.80</TD>
+                        <TD>13.03</TD>
+                        <TD>-1.48</TD>
+                        <TD>2328.80</TD>
+                        <TD>26.80</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.09220833</TD>
+                        <TD>-26.20469444</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>975</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.9280000000</TD>
+                        <TD>-26.1488888889</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_129</TD>
+                        <TD>1</TD>
+                        <TD>J151142.7-260856</TD>
+                        <TD>C1511427-260855</TD>
+                        <TD>-36.26</TD>
+                        <TD>1.86</TD>
+                        <TD>30.18</TD>
+                        <TD>-1.54</TD>
+                        <TD>1490.50</TD>
+                        <TD>34.33</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.92800000</TD>
+                        <TD>-26.14888889</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>976</TD>
+                    </TR>
+                    <TR>
+                        <TD>226.7105416667</TD>
+                        <TD>-26.2114444444</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_130</TD>
+                        <TD>1</TD>
+                        <TD>J150650.5-261241</TD>
+                        <TD>C1506505-261241</TD>
+                        <TD>141.80</TD>
+                        <TD>4.44</TD>
+                        <TD>9.05</TD>
+                        <TD>-1.57</TD>
+                        <TD>3729.00</TD>
+                        <TD>45.76</TD>
+                        <TD>Simbad</TD>
+                        <TD>226.71054167</TD>
+                        <TD>-26.21144444</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>977</TD>
+                    </TR>
+                    <TR>
+                        <TD>228.3017500000</TD>
+                        <TD>-26.6988888889</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_131</TD>
+                        <TD>1</TD>
+                        <TD>J151312.4-264156</TD>
+                        <TD>C1513124-264156</TD>
+                        <TD>26.19</TD>
+                        <TD>4.84</TD>
+                        <TD>9.91</TD>
+                        <TD>-1.61</TD>
+                        <TD>1361.10</TD>
+                        <TD>27.26</TD>
+                        <TD>Simbad</TD>
+                        <TD>228.30175000</TD>
+                        <TD>-26.69888889</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>978</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.3212500000</TD>
+                        <TD>-26.0634166667</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_132</TD>
+                        <TD>1</TD>
+                        <TD>J150917.1-260348</TD>
+                        <TD>C1509171-260348</TD>
+                        <TD>0.66</TD>
+                        <TD>7.67</TD>
+                        <TD>8.11</TD>
+                        <TD>-1.64</TD>
+                        <TD>2535.60</TD>
+                        <TD>27.61</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.32125000</TD>
+                        <TD>-26.06341667</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>979</TD>
+                    </TR>
+                    <TR>
+                        <TD>228.2235000000</TD>
+                        <TD>-26.9588055556</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_133</TD>
+                        <TD>1</TD>
+                        <TD>J151253.6-265732</TD>
+                        <TD>C1512536-265731</TD>
+                        <TD>-4.24</TD>
+                        <TD>4.65</TD>
+                        <TD>11.70</TD>
+                        <TD>-1.68</TD>
+                        <TD>2267.70</TD>
+                        <TD>34.68</TD>
+                        <TD>Simbad</TD>
+                        <TD>228.22350000</TD>
+                        <TD>-26.95880556</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>980</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.0362916667</TD>
+                        <TD>-25.9114444444</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_134</TD>
+                        <TD>1</TD>
+                        <TD>J150808.7-255441</TD>
+                        <TD>C1508087-255441</TD>
+                        <TD>51.17</TD>
+                        <TD>1.94</TD>
+                        <TD>28.45</TD>
+                        <TD>-1.71</TD>
+                        <TD>1236.20</TD>
+                        <TD>31.28</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.03629167</TD>
+                        <TD>-25.91144444</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>981</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.5010416667</TD>
+                        <TD>-26.6355277778</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_135</TD>
+                        <TD>1</TD>
+                        <TD>J151000.3-263808</TD>
+                        <TD>C1510002-263807</TD>
+                        <TD>-15.98</TD>
+                        <TD>2.19</TD>
+                        <TD>24.37</TD>
+                        <TD>-1.75</TD>
+                        <TD>1792.00</TD>
+                        <TD>35.31</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.50104167</TD>
+                        <TD>-26.63552778</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>982</TD>
+                    </TR>
+                    <TR>
+                        <TD>226.1833750000</TD>
+                        <TD>-25.9272222222</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_136</TD>
+                        <TD>1</TD>
+                        <TD>J150444.0-255538</TD>
+                        <TD>C1504440-255537</TD>
+                        <TD>108.52</TD>
+                        <TD>3.93</TD>
+                        <TD>15.29</TD>
+                        <TD>-1.79</TD>
+                        <TD>1736.70</TD>
+                        <TD>31.10</TD>
+                        <TD>Simbad</TD>
+                        <TD>226.18337500</TD>
+                        <TD>-25.92722222</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>983</TD>
+                    </TR>
+                    <TR>
+                        <TD>226.4600833333</TD>
+                        <TD>-26.5192222222</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_138</TD>
+                        <TD>1</TD>
+                        <TD>J150550.4-263109</TD>
+                        <TD>T6769_00987_1</TD>
+                        <TD>-34.75</TD>
+                        <TD>2.91</TD>
+                        <TD>15.70</TD>
+                        <TD>-1.87</TD>
+                        <TD>6151.20</TD>
+                        <TD>74.24</TD>
+                        <TD>Simbad</TD>
+                        <TD>226.46008333</TD>
+                        <TD>-26.51922222</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>984</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.7089166667</TD>
+                        <TD>-27.3070833333</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_139</TD>
+                        <TD>1</TD>
+                        <TD>J151050.1-271825</TD>
+                        <TD>C1510501-271825</TD>
+                        <TD>181.94</TD>
+                        <TD>1.55</TD>
+                        <TD>26.18</TD>
+                        <TD>-1.91</TD>
+                        <TD>10714.20</TD>
+                        <TD>73.50</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.70891667</TD>
+                        <TD>-27.30708333</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>985</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.3879166667</TD>
+                        <TD>-27.2940277778</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_140</TD>
+                        <TD>1</TD>
+                        <TD>J150933.1-271739</TD>
+                        <TD>T6769_00273_1</TD>
+                        <TD>-40.69</TD>
+                        <TD>8.26</TD>
+                        <TD>8.97</TD>
+                        <TD>-1.95</TD>
+                        <TD>22117.80</TD>
+                        <TD>81.57</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.38791667</TD>
+                        <TD>-27.29402778</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>986</TD>
+                    </TR>
+                    <TR>
+                        <TD>227.1082916667</TD>
+                        <TD>-27.2506944444</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_141</TD>
+                        <TD>1</TD>
+                        <TD>J150826.0-271502</TD>
+                        <TD>T6769_00505_1</TD>
+                        <TD>-3.60</TD>
+                        <TD>2.25</TD>
+                        <TD>27.45</TD>
+                        <TD>-1.99</TD>
+                        <TD>2634.70</TD>
+                        <TD>54.05</TD>
+                        <TD>Simbad</TD>
+                        <TD>227.10829167</TD>
+                        <TD>-27.25069444</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>987</TD>
+                    </TR>
+                    <TR>
+                        <TD>226.5348750000</TD>
+                        <TD>-26.9080277778</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_143</TD>
+                        <TD>1</TD>
+                        <TD>J150608.4-265429</TD>
+                        <TD>C1506083-265428</TD>
+                        <TD>-54.49</TD>
+                        <TD>2.43</TD>
+                        <TD>20.69</TD>
+                        <TD>-2.08</TD>
+                        <TD>2311.10</TD>
+                        <TD>42.49</TD>
+                        <TD>Simbad</TD>
+                        <TD>226.53487500</TD>
+                        <TD>-26.90802778</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>2</TD>
+                        <TD>988</TD>
+                    </TR>
+                    <TR>
+                        <TD>226.7602083333</TD>
+                        <TD>-25.7783055556</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_146</TD>
+                        <TD>1</TD>
+                        <TD>J150702.4-254642</TD>
+                        <TD>T6765_00809_1</TD>
+                        <TD>20.13</TD>
+                        <TD>3.41</TD>
+                        <TD>16.42</TD>
+                        <TD>-2.21</TD>
+                        <TD>2540.20</TD>
+                        <TD>45.63</TD>
+                        <TD>Simbad</TD>
+                        <TD>226.76020833</TD>
+                        <TD>-25.77830556</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>989</TD>
+                    </TR>
+                    <TR>
+                        <TD>226.8508750000</TD>
+                        <TD>-28.0514444444</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_147</TD>
+                        <TD>1</TD>
+                        <TD>J150724.2-280305</TD>
+                        <TD>C1507242-280305</TD>
+                        <TD>-25.76</TD>
+                        <TD>3.48</TD>
+                        <TD>17.17</TD>
+                        <TD>-2.26</TD>
+                        <TD>742.10</TD>
+                        <TD>24.43</TD>
+                        <TD>Simbad</TD>
+                        <TD>226.85087500</TD>
+                        <TD>-28.05144444</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>990</TD>
+                    </TR>
+                    <TR>
+                        <TD>226.1340833333</TD>
+                        <TD>-27.0340277778</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_149</TD>
+                        <TD>1</TD>
+                        <TD>J150432.2-270203</TD>
+                        <TD>C1504321-270202</TD>
+                        <TD>-54.83</TD>
+                        <TD>3.28</TD>
+                        <TD>18.56</TD>
+                        <TD>-2.36</TD>
+                        <TD>2100.90</TD>
+                        <TD>25.85</TD>
+                        <TD>Simbad</TD>
+                        <TD>226.13408333</TD>
+                        <TD>-27.03402778</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>991</TD>
+                    </TR>
+                    <TR>
+                        <TD>225.8417916667</TD>
+                        <TD>-26.9999722222</TD>
+                        <TD>1</TD>
+                        <TD>20030420_1504m25_150</TD>
+                        <TD>1</TD>
+                        <TD>J150322.0-265960</TD>
+                        <TD>C1503220-265959</TD>
+                        <TD>-51.25</TD>
+                        <TD>7.91</TD>
+                        <TD>7.87</TD>
+                        <TD>-2.41</TD>
+                        <TD>479.90</TD>
+                        <TD>23.74</TD>
+                        <TD>Simbad</TD>
+                        <TD>225.84179167</TD>
+                        <TD>-26.99997222</TD>
+                        <TD>2003-04-20</TD>
+                        <TD>14:38:45.0</TD>
+                        <TD>15:52:40.0</TD>
+                        <TD>1</TD>
+                        <TD>992</TD>
+                    </TR>
+                    <TR>
+                        <TD>174.3411250000</TD>
+                        <TD>-34.2931111111</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_001</TD>
+                        <TD>1</TD>
+                        <TD>J113721.9-341735</TD>
+                        <TD>T7224_00329_1</TD>
+                        <TD>-23.57</TD>
+                        <TD>2.16</TD>
+                        <TD>27.69</TD>
+                        <TD>-0.73</TD>
+                        <TD>7732.60</TD>
+                        <TD>74.59</TD>
+                        <TD>Simbad</TD>
+                        <TD>174.34112500</TD>
+                        <TD>-34.29311111</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>993</TD>
+                    </TR>
+                    <TR>
+                        <TD>174.4115833333</TD>
+                        <TD>-34.0734722222</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_003</TD>
+                        <TD>1</TD>
+                        <TD>J113738.8-340424</TD>
+                        <TD>T7224_01233_1</TD>
+                        <TD>1.72</TD>
+                        <TD>2.28</TD>
+                        <TD>22.20</TD>
+                        <TD>-0.69</TD>
+                        <TD>4258.40</TD>
+                        <TD>48.81</TD>
+                        <TD>Simbad</TD>
+                        <TD>174.41158333</TD>
+                        <TD>-34.07347222</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>994</TD>
+                    </TR>
+                    <TR>
+                        <TD>174.3609166667</TD>
+                        <TD>-33.9524444444</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_004</TD>
+                        <TD>1</TD>
+                        <TD>J113726.6-335709</TD>
+                        <TD>C1137266-335708</TD>
+                        <TD>4.85</TD>
+                        <TD>5.96</TD>
+                        <TD>10.26</TD>
+                        <TD>-0.67</TD>
+                        <TD>1538.00</TD>
+                        <TD>24.31</TD>
+                        <TD>Simbad</TD>
+                        <TD>174.36091667</TD>
+                        <TD>-33.95244444</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>995</TD>
+                    </TR>
+                    <TR>
+                        <TD>173.5765000000</TD>
+                        <TD>-34.4257500000</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_006</TD>
+                        <TD>1</TD>
+                        <TD>J113418.4-342533</TD>
+                        <TD>T7224_00955_1</TD>
+                        <TD>39.54</TD>
+                        <TD>3.47</TD>
+                        <TD>14.99</TD>
+                        <TD>-0.64</TD>
+                        <TD>1414.40</TD>
+                        <TD>19.12</TD>
+                        <TD>Simbad</TD>
+                        <TD>173.57650000</TD>
+                        <TD>-34.42575000</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>996</TD>
+                    </TR>
+                    <TR>
+                        <TD>173.9146666667</TD>
+                        <TD>-33.5415000000</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_007</TD>
+                        <TD>1</TD>
+                        <TD>J113539.5-333229</TD>
+                        <TD>T7220_01132_1</TD>
+                        <TD>5.96</TD>
+                        <TD>3.52</TD>
+                        <TD>17.40</TD>
+                        <TD>-0.63</TD>
+                        <TD>2808.30</TD>
+                        <TD>47.49</TD>
+                        <TD>Simbad</TD>
+                        <TD>173.91466667</TD>
+                        <TD>-33.54150000</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>997</TD>
+                    </TR>
+                    <TR>
+                        <TD>174.5340000000</TD>
+                        <TD>-33.2452777778</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_008</TD>
+                        <TD>1</TD>
+                        <TD>J113808.2-331443</TD>
+                        <TD>C1138081-331443</TD>
+                        <TD>2.16</TD>
+                        <TD>2.74</TD>
+                        <TD>18.49</TD>
+                        <TD>-0.62</TD>
+                        <TD>1319.50</TD>
+                        <TD>24.00</TD>
+                        <TD>Simbad</TD>
+                        <TD>174.53400000</TD>
+                        <TD>-33.24527778</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>998</TD>
+                    </TR>
+                    <TR>
+                        <TD>174.4422916667</TD>
+                        <TD>-33.0440277778</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_009</TD>
+                        <TD>1</TD>
+                        <TD>J113746.2-330239</TD>
+                        <TD>T7220_00850_1</TD>
+                        <TD>37.67</TD>
+                        <TD>3.12</TD>
+                        <TD>17.66</TD>
+                        <TD>-0.60</TD>
+                        <TD>12099.10</TD>
+                        <TD>63.53</TD>
+                        <TD>Simbad</TD>
+                        <TD>174.44229167</TD>
+                        <TD>-33.04402778</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>999</TD>
+                    </TR>
+                    <TR>
+                        <TD>174.3957916667</TD>
+                        <TD>-32.5325000000</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_010</TD>
+                        <TD>1</TD>
+                        <TD>J113735.0-323157</TD>
+                        <TD>T7220_00096_1</TD>
+                        <TD>7.36</TD>
+                        <TD>2.55</TD>
+                        <TD>23.46</TD>
+                        <TD>-0.59</TD>
+                        <TD>8571.30</TD>
+                        <TD>71.31</TD>
+                        <TD>Simbad</TD>
+                        <TD>174.39579167</TD>
+                        <TD>-32.53250000</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1000</TD>
+                    </TR>
+                    <TR>
+                        <TD>173.2590416667</TD>
+                        <TD>-32.8730000000</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_011</TD>
+                        <TD>1</TD>
+                        <TD>J113302.2-325223</TD>
+                        <TD>T7220_00652_1</TD>
+                        <TD>70.35</TD>
+                        <TD>2.13</TD>
+                        <TD>24.99</TD>
+                        <TD>-0.58</TD>
+                        <TD>8219.10</TD>
+                        <TD>78.06</TD>
+                        <TD>Simbad</TD>
+                        <TD>173.25904167</TD>
+                        <TD>-32.87300000</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1001</TD>
+                    </TR>
+                    <TR>
+                        <TD>173.9071250000</TD>
+                        <TD>-33.0726111111</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_012</TD>
+                        <TD>1</TD>
+                        <TD>J113537.7-330421</TD>
+                        <TD>C1135377-330421</TD>
+                        <TD>-18.06</TD>
+                        <TD>3.44</TD>
+                        <TD>13.47</TD>
+                        <TD>-0.57</TD>
+                        <TD>1447.10</TD>
+                        <TD>27.07</TD>
+                        <TD>Simbad</TD>
+                        <TD>173.90712500</TD>
+                        <TD>-33.07261111</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>1002</TD>
+                    </TR>
+                    <TR>
+                        <TD>173.4710833333</TD>
+                        <TD>-33.0659444444</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_013</TD>
+                        <TD>1</TD>
+                        <TD>J113353.1-330357</TD>
+                        <TD>T7220_00929_1</TD>
+                        <TD>-24.19</TD>
+                        <TD>4.01</TD>
+                        <TD>12.63</TD>
+                        <TD>-0.56</TD>
+                        <TD>4706.40</TD>
+                        <TD>60.60</TD>
+                        <TD>Simbad</TD>
+                        <TD>173.47108333</TD>
+                        <TD>-33.06594444</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>1003</TD>
+                    </TR>
+                    <TR>
+                        <TD>174.6153333333</TD>
+                        <TD>-31.7448611111</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_014</TD>
+                        <TD>1</TD>
+                        <TD>J113827.7-314441</TD>
+                        <TD>C1138276-314441</TD>
+                        <TD>24.82</TD>
+                        <TD>4.75</TD>
+                        <TD>11.05</TD>
+                        <TD>-0.55</TD>
+                        <TD>2156.40</TD>
+                        <TD>30.63</TD>
+                        <TD>Simbad</TD>
+                        <TD>174.61533333</TD>
+                        <TD>-31.74486111</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>1004</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.9698333333</TD>
+                        <TD>-33.6358333333</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_015</TD>
+                        <TD>1</TD>
+                        <TD>J113152.8-333809</TD>
+                        <TD>C1131527-333809</TD>
+                        <TD>30.97</TD>
+                        <TD>3.43</TD>
+                        <TD>16.73</TD>
+                        <TD>-0.55</TD>
+                        <TD>3114.30</TD>
+                        <TD>38.74</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.96983333</TD>
+                        <TD>-33.63583333</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>1005</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.8464583333</TD>
+                        <TD>-33.5617222222</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_016</TD>
+                        <TD>1</TD>
+                        <TD>J113123.1-333342</TD>
+                        <TD>T7219_01349_1</TD>
+                        <TD>49.69</TD>
+                        <TD>3.87</TD>
+                        <TD>14.93</TD>
+                        <TD>-0.54</TD>
+                        <TD>8227.40</TD>
+                        <TD>55.58</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.84645833</TD>
+                        <TD>-33.56172222</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1006</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.5980416667</TD>
+                        <TD>-33.6925000000</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_017</TD>
+                        <TD>1</TD>
+                        <TD>J113023.5-334133</TD>
+                        <TD>T7219_01326_1</TD>
+                        <TD>-8.42</TD>
+                        <TD>4.01</TD>
+                        <TD>15.04</TD>
+                        <TD>-0.53</TD>
+                        <TD>2472.60</TD>
+                        <TD>31.37</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.59804167</TD>
+                        <TD>-33.69250000</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1007</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.3724166667</TD>
+                        <TD>-33.5613333333</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_019</TD>
+                        <TD>1</TD>
+                        <TD>J112929.4-333341</TD>
+                        <TD>T7219_01230_1</TD>
+                        <TD>-14.98</TD>
+                        <TD>2.85</TD>
+                        <TD>18.82</TD>
+                        <TD>-0.52</TD>
+                        <TD>1256.20</TD>
+                        <TD>33.82</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.37241667</TD>
+                        <TD>-33.56133333</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>1008</TD>
+                    </TR>
+                    <TR>
+                        <TD>173.3488750000</TD>
+                        <TD>-32.3156111111</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_021</TD>
+                        <TD>1</TD>
+                        <TD>J113323.7-321856</TD>
+                        <TD>T7220_00445_1</TD>
+                        <TD>-5.81</TD>
+                        <TD>2.96</TD>
+                        <TD>18.07</TD>
+                        <TD>-0.51</TD>
+                        <TD>7551.00</TD>
+                        <TD>56.01</TD>
+                        <TD>Simbad</TD>
+                        <TD>173.34887500</TD>
+                        <TD>-32.31561111</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1009</TD>
+                    </TR>
+                    <TR>
+                        <TD>173.2286250000</TD>
+                        <TD>-32.7135277778</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_022</TD>
+                        <TD>1</TD>
+                        <TD>J113254.9-324249</TD>
+                        <TD>C1132548-324248</TD>
+                        <TD>58.62</TD>
+                        <TD>3.42</TD>
+                        <TD>12.91</TD>
+                        <TD>-0.51</TD>
+                        <TD>1185.40</TD>
+                        <TD>31.38</TD>
+                        <TD>Simbad</TD>
+                        <TD>173.22862500</TD>
+                        <TD>-32.71352778</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>1010</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.4204583333</TD>
+                        <TD>-33.0671944444</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_023</TD>
+                        <TD>1</TD>
+                        <TD>J112940.9-330402</TD>
+                        <TD>T7219_00399_1</TD>
+                        <TD>-2.85</TD>
+                        <TD>2.19</TD>
+                        <TD>26.10</TD>
+                        <TD>-0.51</TD>
+                        <TD>8296.30</TD>
+                        <TD>61.10</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.42045833</TD>
+                        <TD>-33.06719444</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1011</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.4116250000</TD>
+                        <TD>-32.8086944444</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_024</TD>
+                        <TD>1</TD>
+                        <TD>J112938.8-324831</TD>
+                        <TD>T7219_00122_1</TD>
+                        <TD>11.53</TD>
+                        <TD>2.70</TD>
+                        <TD>21.43</TD>
+                        <TD>-0.51</TD>
+                        <TD>3210.40</TD>
+                        <TD>34.74</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.41162500</TD>
+                        <TD>-32.80869444</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1012</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.2100416667</TD>
+                        <TD>-32.8473888889</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_025</TD>
+                        <TD>1</TD>
+                        <TD>J112850.4-325051</TD>
+                        <TD>T7219_00360_1</TD>
+                        <TD>14.80</TD>
+                        <TD>4.10</TD>
+                        <TD>13.98</TD>
+                        <TD>-0.51</TD>
+                        <TD>5280.10</TD>
+                        <TD>44.20</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.21004167</TD>
+                        <TD>-32.84738889</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1013</TD>
+                    </TR>
+                    <TR>
+                        <TD>175.1200833333</TD>
+                        <TD>-31.7125833333</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_026</TD>
+                        <TD>1</TD>
+                        <TD>J114028.8-314245</TD>
+                        <TD>C1140288-314245</TD>
+                        <TD>33.13</TD>
+                        <TD>2.69</TD>
+                        <TD>21.23</TD>
+                        <TD>-0.51</TD>
+                        <TD>3345.30</TD>
+                        <TD>45.34</TD>
+                        <TD>Simbad</TD>
+                        <TD>175.12008333</TD>
+                        <TD>-31.71258333</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1014</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.1936250000</TD>
+                        <TD>-32.4482777778</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_028</TD>
+                        <TD>1</TD>
+                        <TD>J112846.5-322654</TD>
+                        <TD>C1128464-322653</TD>
+                        <TD>-2.00</TD>
+                        <TD>4.13</TD>
+                        <TD>13.21</TD>
+                        <TD>-0.51</TD>
+                        <TD>3068.60</TD>
+                        <TD>30.35</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.19362500</TD>
+                        <TD>-32.44827778</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1015</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.3710833333</TD>
+                        <TD>-32.1355833333</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_029</TD>
+                        <TD>1</TD>
+                        <TD>J112929.1-320808</TD>
+                        <TD>T7219_01025_1</TD>
+                        <TD>20.27</TD>
+                        <TD>3.98</TD>
+                        <TD>13.70</TD>
+                        <TD>-0.51</TD>
+                        <TD>4195.70</TD>
+                        <TD>39.70</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.37108333</TD>
+                        <TD>-32.13558333</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>1</TD>
+                        <TD>1016</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.5886666667</TD>
+                        <TD>-31.9611666667</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_031</TD>
+                        <TD>1</TD>
+                        <TD>J113021.3-315740</TD>
+                        <TD>C1130212-315740</TD>
+                        <TD>50.39</TD>
+                        <TD>4.94</TD>
+                        <TD>14.37</TD>
+                        <TD>-0.51</TD>
+                        <TD>1313.60</TD>
+                        <TD>25.98</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.58866667</TD>
+                        <TD>-31.96116667</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1017</TD>
+                    </TR>
+                    <TR>
+                        <TD>172.9548333333</TD>
+                        <TD>-32.0807222222</TD>
+                        <TD>1</TD>
+                        <TD>20030421_1138m31_032</TD>
+                        <TD>1</TD>
+                        <TD>J113149.2-320451</TD>
+                        <TD>T7219_00831_1</TD>
+                        <TD>39.03</TD>
+                        <TD>2.47</TD>
+                        <TD>20.56</TD>
+                        <TD>-0.52</TD>
+                        <TD>10648.00</TD>
+                        <TD>75.90</TD>
+                        <TD>Simbad</TD>
+                        <TD>172.95483333</TD>
+                        <TD>-32.08072222</TD>
+                        <TD>2003-04-21</TD>
+                        <TD>12:45:50.0</TD>
+                        <TD>14:28:08.0</TD>
+                        <TD>2</TD>
+                        <TD>1018</TD>
+                    </TR>
+                </TABLEDATA>
+            </DATA>
+        </TABLE>
+        <INFO name="matches" value="50">matching records</INFO>
+
+        <INFO name="Warning" value="No center provided++++"/>
+        <INFO name="Warning" value="vc_coo can't change epoch"/>
+        <INFO name="Warning" value="increase the precision for computed column 11"/>
+        <INFO name="Warning" value="increase the precision for computed column 11"/>
+        <INFO name="Warning" value="truncated result (maxtup=50)"/>
+        <INFO name="QUERY_STATUS" value="OVERFLOW">truncated result (maxtup=50)</INFO>
+    </RESOURCE>
+</VOTABLE>

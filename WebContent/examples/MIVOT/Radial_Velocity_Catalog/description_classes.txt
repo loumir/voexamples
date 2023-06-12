@@ -1,0 +1,13 @@
+The typical required classes corresponding to columns found in this table have a matching concept in the Astronomical Measurement Data Model (MEAS) which are: 
+- Position 
+- Velocity 
+- Time
+- Label
+
+The MANGO data model allows to bind these properties to a MANGO Source object.
+To workout the mapping the snippet generator can be called 
+1) for each individual classes 
+    The mapping elements are then gathered manually in a collection of Properties.
+2) with a list of MANGO classes that are bound as a collection to a Source Object 
+
+NB : 2 requires the user to be familiar to the MANGO, and MEAS data model. that mimic the sequence of to bind 

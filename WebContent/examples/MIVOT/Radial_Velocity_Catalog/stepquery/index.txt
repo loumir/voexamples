@@ -1,0 +1,12 @@
+description_GLOBALS.txt
+query_GLOBALS.xml
+description_Position.txt
+query_Position.xml
+description_Velocity.txt
+query_Velocity.xml
+description_Time.txt
+query_Time.xml
+description_OtherColumnsToMap.txt
+query_otherColumnsToMap.xml
+description_Label.txt
+query_Label.xml

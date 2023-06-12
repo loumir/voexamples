@@ -1,0 +1,45 @@
+<!-- ... -->
+                            <!--Observing date and time  -->
+                            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#obs date"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Observation date"/>
+                                <INSTANCE dmrole="mango:PhysicalProperty.Measure" dmtype="meas:Time">
+                                    <!-- Provides a complete description of a measured Temporal instant -->
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="time.epoch"/>
+                                    <INSTANCE dmrole="meas:Time.coord" dmtype="coords:ISOTime">
+                                        <!-- Extension of TimeInstant for time expressed as a structured datetime string.-->
+                                        <ATTRIBUTE dmrole="coords:ISOTime.date" dmtype="ivoa:datetime" unit="" ref="Obs.date"/>
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                            <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#obs time"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Observation time start"/>
+                                <INSTANCE dmrole="PhysicalProperty.Measure" dmtype="meas:Time">
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="time.epoch"/>
+                                    <INSTANCE dmrole="meas:Time.coord" dmtype="coords:ISOTime">
+                                        <!-- Extension of TimeInstant for time expressed as a structured datetime string.-->
+                                        <ATTRIBUTE dmrole="coords:ISOTime.date" dmtype="ivoa:datetime" unit="" ref="Obs.st"/>
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                                <INSTANCE dmrole="" dmtype="mango:PhysicalProperty">
+                                <INSTANCE dmrole="mango:Property.semantic" dmtype="mango:VocabularyTerm">
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.uri" dmtype="ivoa:string" value=""/>
+                                    <ATTRIBUTE dmrole="mango:VocabularyTerm.label" dmtype="ivoa:string" value="#obs time"/>
+                                </INSTANCE>
+                                <ATTRIBUTE dmrole="mango:Property.description" dmtype="ivoa:string" value="Observation time end"/>
+                                <INSTANCE dmrole="PhysicalProperty.Measure" dmtype="meas:Time">
+                                    <ATTRIBUTE dmrole="meas:Measure.ucd" dmtype="ivoa:string" value="time.epoch"/>
+                                    <INSTANCE dmrole="meas:Time.coord" dmtype="coords:ISOTime">
+                                        <!-- Extension of TimeInstant for time expressed as a structured datetime string.-->
+                                        <ATTRIBUTE dmrole="coords:ISOTime.date" dmtype="ivoa:datetime" unit="" ref="Obs.st"/>
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
