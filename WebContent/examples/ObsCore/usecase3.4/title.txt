@@ -1,1 +1,0 @@
-Polarization cubes with a sky area greater then 100x100 pixels (V1.1)

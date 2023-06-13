@@ -1,9 +1,0 @@
-SELECT xmm.access_url,xmm.obs_id
-FROM ivoa.ObsCore AS xmm
-JOIN ivoa.ObsCore as galex
-ON (CONTAINS(REGION(galex.s_region), REGION(xmm.s_region)) = 1)
-WHERE  xmm.dataproduct_type = 'eventlist'    
-   AND galex.facility_name = 'GALEX'
-   AND galex.dataproduct_type = 'image'
-   AND xmm.facility_name = 'XMM'
-   AND xmm.instrument_name LIKE= 'EP%'

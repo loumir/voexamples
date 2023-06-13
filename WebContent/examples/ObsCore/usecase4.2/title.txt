@@ -1,1 +1,0 @@
-Times series for a sky position, with a minimum of time slots (V1.1)

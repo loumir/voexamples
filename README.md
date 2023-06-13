@@ -1,2 +1,0 @@
-# voexamples
-From CDS GitLab

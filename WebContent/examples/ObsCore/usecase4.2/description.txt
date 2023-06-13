@@ -1,9 +1,0 @@
-This use-case is added in ObsCore 1.1 to search for time series against the number of time slots and be sure to have enough samples along the time axis
-
-Show me a list of all data which satisfies:
-    I. DataType=TimeSeries
-   II. RA includes 16.00 hours
-  III. DEC includes +41.00
-   IV. Time resolution better than 1 minute
-    V. Time interval (start of series to end of series) > 1 day
-    VI. Number of time slots > 50

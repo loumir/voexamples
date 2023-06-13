@@ -1,1 +1,0 @@
-Times series for a sky position, with date, length and exposure constraints (V1.0)

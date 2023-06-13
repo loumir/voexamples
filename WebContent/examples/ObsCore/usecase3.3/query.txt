@@ -1,6 +1,0 @@
-SELECT * FROM ivoa.ObsCore
-WHERE dataproduct_type = 'cube'
-  AND CONTAINS(POINT('ICRS',16,41), s_region) = 1
-  AND t_exptime > 3600
-  AND em_res_power < 5250/5
-  AND em_min <= 4000e-10 AND 6500e-10 <= em_max
