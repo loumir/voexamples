@@ -78,6 +78,18 @@ h3 {font-family: "Myriad Pro", "Trebuchet MS", sans-serif; font-size: 18px; colo
     padding-left: 8px;
 
 }
+
+.heading-cnt ul {
+    list-style-type: none;
+
+}
+
+.heading-cnt li {
+    margin: 20px;
+    border: 1px solid #d1d1d1;
+    border-radius: 25px;
+    padding: 10px;
+}
 #heading h2 {
     color: #3d49c7;
     padding-bottom: 15px;
