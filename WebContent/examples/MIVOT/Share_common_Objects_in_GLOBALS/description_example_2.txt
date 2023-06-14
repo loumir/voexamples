@@ -1,1 +1,1 @@
-We can reference it when needed, for example in a time measurement
+We can reference it when needed, for example in a Time measurement.
