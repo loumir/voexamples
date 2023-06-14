@@ -1,1 +1,0 @@
-Cube including spectral values at 6500 and at 4000 angstroms and resolution better than 5 Angstroms (V1.0)

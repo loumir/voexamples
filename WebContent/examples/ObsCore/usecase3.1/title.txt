@@ -1,1 +1,0 @@
-High resolution spectral cubes around one position covering more than 100 square arcsec (V1.0)

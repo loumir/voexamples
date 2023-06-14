@@ -1,6 +1,0 @@
-SELECT * FROM ivoa.ObsCore
-WHERE dataproduct_type = 'spectrum'
-  AND t_exptime > 10000
-  AND calib_level >= 2
-  AND 1.2398545639349092E-9 < em_max AND em_min < 2.4797091278698184E-10
-ORDER BY obs_collection,t_exptime DESC

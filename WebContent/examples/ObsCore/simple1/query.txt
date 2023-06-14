@@ -1,3 +1,0 @@
-SELECT * 
-FROM ivoa.Obscore 
-WHERE CONTAINS(POINT('ICRS',16.0,40.0),s_region)=1

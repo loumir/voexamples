@@ -1,3 +1,0 @@
-Show me a list of all data that satisfies:
-   I. Datatype=any
-  II. contains RA=16.0 and DEC=40.0

@@ -1,8 +1,0 @@
-Show me a list of all data that satisfies:
-    I. DataType=Image
-   II. Spatial resolution better than 0.3 arc seconds
-  III. Filter = J or H or K
-   IV. RA between 16 hours and 17 hours
-    V. DEC between 10 degrees and 11 degrees
-    
-Such a query needs to compute RA in degrees, extract information from Filter and adjust spectral intervals for search.

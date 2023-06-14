@@ -1,1 +1,0 @@
-Query Images by both Spatial and Spectral Attributes (V1.0)

@@ -1,5 +1,0 @@
-SELECT i.*,o.*
-FROM ivoa.ObsCore AS o JOIN TAP_UPLOAD.input AS i
-  ON CONTAINS(POINT('ICRS',i.ra,i.dec),o.s_region) = 1
-WHERE dataproduct_type = 'image'
-AND t_min <= i.mjd + 1 AND i.mjd - 1 <= t_max

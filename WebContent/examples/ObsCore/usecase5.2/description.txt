@@ -1,5 +1,0 @@
-Show me a list of all event lists observed in the XMM data collection within the region covered by a particular image of GALEX data collection.
-    I. DataType=event list
-   II. Region contains polygon P1 extracted from the foot print of a GALEX image 
-  III. Data collection= XMM
-   IV. Instrument name=EPN

@@ -1,7 +1,0 @@
-SELECT * FROM ivoa.Obscore
-WHERE	dataproduct_type='image'
-    AND s_resolution < 0.3 AND s_ra > 240 AND s_ra < 255
-    AND s_dec > 10 AND s_dec < 11
-    AND (em_min > 2.1e-06 AND em_max < 2.4e-06)
-	  OR(em_min >= 1.6e-06 AND em_max <= 1.8e-06)
-	  OR(em_min >= 1.2e-06 AND em_max <= 1.4e-06)

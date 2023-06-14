@@ -1,5 +1,0 @@
-SELECT * FROM ivoa.ObsCore
-WHERE dataproduct_type = 'cube'
-  AND (em_max - em_min) > 0.599585
-  AND 8.669634948629682E-4 between em_min and em_max
-  AND s_xel1 > 100 AND s_xel2 > 100
