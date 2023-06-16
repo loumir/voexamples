@@ -1,0 +1,9 @@
+<INSTANCE dmid="IDtimesys" dmrole="" dmtype="coords:TimeSys">
+	<PRIMARY_KEY dmtype="ivoa:string" value="TCB" />
+	<INSTANCE dmrole="coords:PhysicalCoordSys.frame" dmtype="coords:TimeFrame">
+		<ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="TCB" />
+		<INSTANCE dmrole="coords:TimeFrame.refPosition" dmtype="coords:StdRefLocation">
+			<ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="BARYCENTER" />
+		</INSTANCE>
+	</INSTANCE>
+</INSTANCE>

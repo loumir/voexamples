@@ -1,0 +1,2 @@
+This is a mapping example in MIVOT for the INSTANCE field.
+Its purpose is to defines a complex ObjectType or DataType.
