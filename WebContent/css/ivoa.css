@@ -76,25 +76,21 @@ h3 {font-family: "Myriad Pro", "Trebuchet MS", sans-serif; font-size: 18px; colo
     width: 650px;
     padding-top: 26px;
     padding-left: 8px;
-
 }
+
+
 
 .heading-cnt ul {
     list-style-type: none;
 
 }
 
-.heading-cnt li {
-    margin: 20px;
-    border: 1px solid #d1d1d1;
-    border-radius: 25px;
-    padding: 10px;
-}
 #heading h2 {
     color: #3d49c7;
     padding-bottom: 15px;
     margin-top: 15px;
 }
+
 #heading p {padding-bottom: 16px;}
 
 #features {background: url(images/features2.gif) repeat-x 0 0; height: 122px; padding-top: 5px;}
@@ -303,4 +299,88 @@ a.wd {
 
 #top:hover {
     background-color: #c2d3f9;
+}
+
+strong {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #162638;
+}
+
+#subtitle {
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#uri {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+ul.pagelist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+.page strong, p {
+    padding: 5px;
+}
+.page strong {
+    background-color: lightgray;
+}
+
+.page:not(input) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border: 1px solid #d1d1d1;
+    width: 250px;
+    height: fit-content;
+}
+
+.page-buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.page-buttons form {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.page-buttons form input {
+    flex-grow: 1;
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+.page input {
+    background-color: #4473a8;
+    transition: 0.5s;
+}
+.page input:hover {
+    background-color: #386bd8;
+    transition: 0.5s;
+}
+
+#dali {
+    background-color: #8a8a8a;
+    transition: 0.5s;
+}
+
+#dali:hover {
+    background-color: #646464;
+    transition: 0.5s;
 }
