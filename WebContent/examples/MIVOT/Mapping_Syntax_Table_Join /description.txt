@@ -1,0 +1,2 @@
+This example illustrates the use a JOIN into the TEMPLATE block when data from two tables 
+are present in the VOTable document and some combination is needed to handle the data columns . 

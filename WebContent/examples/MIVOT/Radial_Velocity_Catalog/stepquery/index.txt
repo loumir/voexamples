@@ -6,7 +6,7 @@ description_Velocity.txt
 query_Velocity.xml
 description_Time.txt
 query_Time.xml
-description_OtherColumnsToMap.txt
+description_otherColumnsToMap.txt
 query_otherColumnsToMap.xml
 description_Label.txt
 query_Label.xml

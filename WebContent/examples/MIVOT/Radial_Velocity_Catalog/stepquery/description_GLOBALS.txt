@@ -1,4 +1,5 @@
-Mapping extra columns:
-
-SNR, Chi2, corr columns are not direct measurement results but were computed from observing conditions or from the data.
-MANGO has a class for this called ComputedProperty that we use here:
+The coordinate system used for Position and Time are common to several properties.
+So they are gathered into a <GLOBALS> section .
+When an <INSTANCE> element, typically a Position, needs to refer to the coordinate system, it just mentions 
+the dmID in a <REFERENCE> element.
+ 
