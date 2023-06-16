@@ -1,5 +1,0 @@
-description.txt
-uri_main.txt
-description_classes.txt
-stepquery
-RAVEdr6_Vizier_example.xml

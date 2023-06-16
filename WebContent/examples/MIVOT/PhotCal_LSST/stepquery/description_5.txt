@@ -1,1 +1,0 @@
-We are now able to instanciate all classes we need, according to the models:

@@ -1,1 +1,0 @@
-Using aladin lite, we can now load this mapping file to see the field of view, for examples in M51:

@@ -1,3 +1,0 @@
-We will first concentrate about the metadata part of the footprint information.
-
-Here is the diagram class of this part:

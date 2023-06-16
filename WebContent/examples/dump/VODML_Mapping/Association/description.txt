@@ -1,2 +1,0 @@
-This is an mapping example of an association linking passengers with a flight.
-The VODML model can be seen <a href="/voexamples/show/VODML/Association">here</a>

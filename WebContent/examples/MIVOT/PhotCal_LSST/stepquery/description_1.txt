@@ -1,1 +1,0 @@
-First look of the vodml file without mivot mapping

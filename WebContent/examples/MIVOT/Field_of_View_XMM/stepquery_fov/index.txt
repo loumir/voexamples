@@ -1,6 +1,0 @@
-description_1.txt
-query_fov_1.xml
-description_2.txt
-query_fov_2.xml
-description_3.txt
-query_fov_3.xml

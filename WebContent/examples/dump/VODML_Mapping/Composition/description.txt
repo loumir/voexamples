@@ -1,3 +1,0 @@
-This is an mapping example of a composition link (4.17) binding 2 wings with an airplane. 
-The composition links is used because wings are part of the airplane. 
-The VODML model can be seen <a href="/voexamples/show/VODML/Composition">here</a>

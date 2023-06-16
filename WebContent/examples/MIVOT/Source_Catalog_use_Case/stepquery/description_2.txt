@@ -1,5 +1,0 @@
-Describe a Source and its parameters .
-This corresponds to a row in the catalog table.
-
-the Source Object is a Mango Object and gathers several properties.
-Here we describe the Physical Property Position with its error.

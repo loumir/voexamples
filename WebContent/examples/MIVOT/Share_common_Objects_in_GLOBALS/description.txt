@@ -1,3 +1,0 @@
-This is a mapping example in MIVOT for GLOBALS instanciation.
-Its purpose is to define global instances which can be use anywhere in the mapping by referencing them.
-This block is not mandatory and can be present only ONCE in a mapping block.

@@ -1,4 +1,0 @@
-Mapping extra columns:
-
-SNR, Chi2, corr columns are not direct measurement results but were computed from observing conditions or from the data.
-MANGO has a class for this called ComputedProperty that we use here:

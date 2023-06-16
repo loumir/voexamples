@@ -1,4 +1,0 @@
-Let's review step by step the construction of such a mapping:
-We will first concentrate on the root class of the footprint and instrumental parameters.
-
-Here is the diagram class of this part:

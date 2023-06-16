@@ -1,9 +1,0 @@
-<INSTANCE dmrole="mango:measure" dmtype="meas:Time">
-    <INSTANCE dmrole="meas:Time.coord" dmtype="coords.JD" >
-        <ATTRIBUTE dmrole="coords:JD.date" dmtype="ivoa:real" ref="obs_time" />
-        <REFERENCE dmrole="coords:Coordinate.coordSys" dmref="TimeSystem" />
-    </INSTANCE>
-    <INSTANCE dmrole="meas:Error"  dmtype="meas:Symmetrical">
-        <ATTRIBUTE dmrole="meas:Error.statError" dmtype="meas:Symmetrical" value="NotSet" />
-    </INSTANCE>
-</INSTANCE>

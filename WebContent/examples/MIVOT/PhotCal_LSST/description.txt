@@ -1,4 +1,0 @@
-This example describes how to annotate a Photometric Calibration description with a transmission curve
-using PhotDM classes in MIVOT.
-
-Let's analyze it step by step :
