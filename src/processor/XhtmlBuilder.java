@@ -48,28 +48,8 @@ public class XhtmlBuilder {
 
 	public static String getExampleNiceDiv(ExampleModel em) throws Exception{
 		StringBuilder retour = new StringBuilder();
-		retour.append("<div class=\"collapse\">\n");
-		retour.append("<button type=\"button\" class=\"collapsible\">Show DALI Resources</button>\n");
-		retour.append("     <p class=\"content\">");
-		retour.append("[<a title='Get Dali resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "'>dali xhtml</a>]");
-
 		List<String> index = em.getIndex(null);
 		if(index != null) {
-			for(String file : index){
-				if(file.contains(".")){
-					String el = file.substring(0, file.indexOf("."));
-					retour.append(" [<a title='Get " + el + " resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/" + el + "'>" + el + "</a>]");
-				}
-				else{
-					for (String stepFile : em.getIndex(file)){
-						String el = stepFile.substring(0, stepFile.indexOf("."));
-						retour.append(" [<a title='Get " + file + "/" + el + " resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/" + file + "/" + el + "'>" + file + "/" + el + "</a>]");
-					}
-				}
-			}
-			retour.append("     </p>\n");
-			retour.append("</div>\n");
-
 			for(String file : index){
 				String el = em.getByName(file);
 				if(file.contains("txt") && !file.contains("query")){
@@ -102,14 +82,44 @@ public class XhtmlBuilder {
 					retour.append(addStepQuery(file, em));
 				}
 				else{
-					retour.append("     <strong><p>Link</p></strong>\n");
+					retour.append("     <p> Link: \n");
 					retour.append("     <a href=\"../../examples/" +  em.params.protocol + "/" + em.params.useCase + "/" + file + "\"\n");
 					retour.append("       <p>" + file + "</p>\n");
-					retour.append("     </a>\n");
+					retour.append("     </a></p>\n");
 				}
 			}
+
+			retour.append("<div class=\"collapse\">\n");
+			retour.append("<button type=\"button\" class=\"collapsible\">Show DALI Resources</button>\n");
+			retour.append("     <p class=\"content\">");
+			retour.append("[<a title='Get Dali resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "'>dali xhtml</a>]");
+
+			for(String file : index){
+				if(file.contains(".")){
+					String el = file.substring(0, file.indexOf("."));
+					retour.append(" [<a title='Get " + el + " resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/" + el + "'>" + el + "</a>]");
+				}
+				else{
+					for (String stepFile : em.getIndex(file)){
+						String el = stepFile.substring(0, stepFile.indexOf("."));
+						retour.append(" [<a title='Get " + file + "/" + el + " resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/" + file + "/" + el + "'>" + file + "/" + el + "</a>]");
+					}
+				}
+			}
+			retour.append("     </p>\n");
+			retour.append("</div>\n");
 		}
 		else {
+			retour.append(addDescription(em.getDescription()));
+			retour.append(addQuery(em.getQuery(), null));
+			retour.append(addUsage(em.getUsage()));
+			retour.append(addImage(em.getImage(), em));
+
+			retour.append("<div class=\"collapse\">\n");
+			retour.append("<button type=\"button\" class=\"collapsible\">Show DALI Resources</button>\n");
+			retour.append("     <p class=\"content\">");
+			retour.append("[<a title='Get Dali resource' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "'>dali xhtml</a>]");
+
 			if( em.getTitle().length() > 0 ){
 				retour.append(" [<a title='Get title' href='" + Processor.DALIURL + em.params.protocol+ "/" + em.params.useCase + "/title'>title</a>]");
 			}
@@ -127,28 +137,34 @@ public class XhtmlBuilder {
 			}
 			retour.append("     </p>\n");
 			retour.append("</div>\n");
-
-			retour.append(addDescription(em.getDescription()));
-			retour.append(addQuery(em.getQuery(), null));
-			retour.append(addUsage(em.getUsage()));
-			retour.append(addImage(em.getImage(), em));
 		}
 
 		retour.append("<button type=\"button\" id=\"top\">Back to top</button>\n");
+
 		return retour.toString();
 	}
 
+	/**
+	TODO: Modify to make it prettier
+	 */
 	public static String getExampleAnchor(String baseDir , Request params) throws Exception{
 		ExampleModel em = new ExampleModel(baseDir, params);
 		StringBuffer retour = new StringBuffer();
-		retour.append("<div id=\"" + em.getName() + "\" resource=\"#" +em.getName() + "\" typeof=\"example\">\n");
-		retour.append("[<a href=\"" + Processor.SHOWURL + params.protocol + "/" + params.useCase + "\">" + params.useCase + "</a>]\n");
-		retour.append("[<a href=\"" + Processor.DALIURL + params.protocol + "/" + params.useCase + "\">dali xhtml</a>] \n");
-		retour.append("<strong>" + em.getTitle() + " </strong>");
-
+		retour.append("<div class=\"page\" id=\"" + em.getName() + "\" resource=\"#" +em.getName() + "\" typeof=\"example\">\n");
+		retour.append("<strong>" + em.getTitle() + " </strong>\n");
+		retour.append("<p>\n");
 		String d = em.getDescription();
 		if( d.length() > 100 ) d = d.substring(0,  100) + "... ";
 		retour.append(d);
+		retour.append("</p>\n");
+		retour.append("<div class=\"page-buttons\">\n");
+		retour.append("<form action=\"" + Processor.SHOWURL + params.protocol + "/" + params.useCase + "\">\n");
+		retour.append("<input class=\"page\" type=\"submit\" value=\"Go to page\"/>\n");
+		retour.append("</form>\n");
+		retour.append("<form action=\"" + Processor.DALIURL + params.protocol + "/" + params.useCase + "\">\n");
+		retour.append("<input id=\"dali\" type=\"submit\" value=\"DALI xHtml\"/>\n");
+		retour.append("</form>\n");
+		retour.append("</div>\n");
 		retour.append("</div>\n");
 		return retour.toString();
 	}
@@ -245,7 +261,7 @@ public class XhtmlBuilder {
 	}
 
 	public static String addSubtitle(String subtitle){
-		return "<p><strong>" + subtitle.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</strong></p>\n";
+		return "<p id=\"subtitle\">" + subtitle.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</p>\n";
 	}
 	public static String addDescription(String description) {
 		StringBuilder html = new StringBuilder();
@@ -262,11 +278,11 @@ public class XhtmlBuilder {
 		StringBuilder html = new StringBuilder();
 		if( usage.length() > 0 ) {
 			if (!usage.startsWith("#!")) {
-				html.append("     <p><strong>Usage</strong>\n");
+				html.append("     <p><strong id=\"inpage\">Usage</strong>\n");
 				html.append("       <pre>" + usage.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</pre>");
 				html.append("     </pre>\n");
 			} else {
-				html.append("     <p><strong>Usage</strong>\n");
+				html.append("     <p><strong id=\"inpage\">Usage</strong>\n");
 				html.append("       <pre><code>" + usage.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</code></pre>");
 				html.append("     </pre>\n");
 			}
@@ -289,7 +305,7 @@ public class XhtmlBuilder {
 				}
 			}
 
-			html.append("     <p><strong>Query or Code</strong>\n");
+			html.append("     <p><strong id=\"inpage\">Query or Code</strong>\n");
 			html.append("       <pre><code " + cssClass + ">" + query.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</code></pre>");
 			html.append("     </p>\n");
 		}
@@ -321,10 +337,10 @@ public class XhtmlBuilder {
 			else{
 				file = "Link";
 			}
-			html.append("     <strong><p>" + file + "</p></strong>\n");
+			html.append("     <p>" + file + ": \n");
 			html.append("     <a href=\"" + uri.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "\"\n");
 			html.append("       <p>" + uri.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</p>\n");
-			html.append("     </a>\n");
+			html.append("     </a></p>\n");
 		}
 
 		return html.toString();
