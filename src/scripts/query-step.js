@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const stepQuery = document.querySelectorAll(".stepquery");
-
+    if (!stepQuery) return;
     for (let i = 0; i < stepQuery.length; i++) {
         function showStep(step) {
             steps[currentStep].classList.remove("active");
