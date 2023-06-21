@@ -1,1 +1,1 @@
-Mapping of a FoV in MIVOT with representation
+FoV model instance serialized with MIVOT with representation
