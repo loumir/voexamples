@@ -384,3 +384,29 @@ ul.pagelist {
     background-color: #646464;
     transition: 0.5s;
 }
+
+.contentlist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+.contentlist input {
+    background-color: #4473a8;
+    transition: 0.5s;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin: 5px;
+    transition: 0.5s;
+}
+
+.contentlist input:hover {
+    background-color: #386bd8;
+    cursor: pointer;
+    transition: 0.5s;
+}

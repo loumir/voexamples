@@ -38,11 +38,13 @@ public class GetIndex extends Processor {
 		String myfile = servletContext.getRealPath(ROOTDIR);
 		File fls = new File(myfile);
 
-		String retour = XhtmlBuilder.getNiceHead() + XhtmlBuilder.openNiceHeading("Protocols and Langages") + "\n<strong><ul>";
+		String retour = XhtmlBuilder.getNiceHead() + XhtmlBuilder.openNiceHeading("Protocols and Langages") + "\n<strong><ul class=\"contentlist\">";
 		for( String f: fls.list() ) {
 			File fl = new File(fls.getAbsolutePath() + "/" + f);
 			if( fl.isDirectory()){
-				retour += "<li><a href=\"" + SHOWURL  + f + "\">" + f +  "</a></li>\n";
+				retour += "<li><form action=\"" + SHOWURL  + f + "\">\n" +
+						"<input type=\"submit\" value=\"" + f + "\"/>\n" +
+						"</form></li>\n";
 			}
 		}
 		return retour + "</ul></strong>\n"+ XhtmlBuilder.closeNiceHeading() + XhtmlBuilder.getNiceFooter();
