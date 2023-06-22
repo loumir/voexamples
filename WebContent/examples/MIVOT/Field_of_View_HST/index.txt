@@ -13,3 +13,5 @@ HST_WFC3IUVISBOTH.xml
 Class Diagram FoV Model.png
 description_aladin.txt
 Aladin Overview M51.png
+usage_abt_aladin.txt
+uri_aladin_saada.txt

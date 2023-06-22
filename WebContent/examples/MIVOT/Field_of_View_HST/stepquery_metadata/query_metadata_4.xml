@@ -10,12 +10,12 @@
                 <MODEL name="coords" url="https://www.ivoa.net/xml/Coords-v1.xsd"/>
                 <GLOBALS>
                     <INSTANCE dmid="_footprint" dmtype="instfov:InstrumentalFootPrint">
-                        <ATTRIBUTE dmrole="instfov:InstrumentalFootPrint.author_name" dmtype="ivoa:string" value="XMM-Newton SOC" />
+                        <ATTRIBUTE dmrole="instfov:InstrumentalFootPrint.author_name" dmtype="ivoa:string" value="STScI/T. Donaldson" />
                         <INSTANCE dmrole="instfov:InstrumentalFootPrint.telescope" dmtype="instfov:Telescope">
-                            <ATTRIBUTE dmrole="instfov:Telescope.name" dmtype="ivoa:String" value="XMM-Newton" />
-                            <ATTRIBUTE dmrole="instfov:Telescope.description" dmtype="ivoa:string" value="EPIC-pn Camera footprint" />
+                            <ATTRIBUTE dmrole="instfov:Telescope.name" dmtype="ivoa:String" value="HST" />
+                            <ATTRIBUTE dmrole="instfov:Telescope.description" dmtype="ivoa:string" value="IUVIS+IUVIS1+IUVIS2" />
                             <INSTANCE dmrole="instfov:Telescope.instrument" dmtype="instfov:Instrument">
-                                <ATTRIBUTE dmrole="instfov:Instrument.name" dmtype="ivoa:String" value="EPIC-pn" />
+                                <ATTRIBUTE dmrole="instfov:Instrument.name" dmtype="ivoa:String" value="WFC3.IUVISBOTH" />
                                 <INSTANCE dmrole="instfov:Instrument.instrumentMode" dmtype="instfov:InstrumentMode">
                                     ...
                                 </INSTANCE>

@@ -3,47 +3,23 @@
         <INSTANCE dmtype="instfov:Polygon">
             <COLLECTION dmrole="instfov:Polygon.vertex">
                 <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.03263889"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.0129374545"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.018800126"/>
                     <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
                 </INSTANCE>
                 <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.032666665"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.016985504"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.015113308"/>
                     <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
                 </INSTANCE>
                 <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.10605555"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="9.931425E-4"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.031010153"/>
                     <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
                 </INSTANCE>
                 <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.10605555"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.10752778"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.10755556"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010416667"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.18094446"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.18091667"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.028568486"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.0028843714"/>
                     <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
                 </INSTANCE>
             </COLLECTION>
@@ -51,239 +27,23 @@
         <INSTANCE dmtype="instfov:Polygon">
             <COLLECTION dmrole="instfov:Polygon.vertex">
                 <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.18241668"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.0031012846"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.035145245"/>
                     <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
                 </INSTANCE>
                 <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010416667"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.18241668"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.03341686"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.0012370894"/>
                     <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
                 </INSTANCE>
                 <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010416667"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.25583333"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.017248388"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.014866891"/>
                     <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
                 </INSTANCE>
                 <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.25580555"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.04238889"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.04238889"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.031027777"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.031"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.11727778"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.11725"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.04386111"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.04386111"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21777777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.1921389"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.1921389"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.010444444"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.11875"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.21780555"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.11875"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.031027777"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.031027777"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.04238889"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.04236111"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.043833334"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.04386111"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.11725"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.11725"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.11872222"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.11875"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.1921389"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24205557"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.1921389"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.10608333"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.10605555"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.032666665"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.032666665"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.18094446"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.18094446"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.10755556"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.10755556"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-            </COLLECTION>
-        </INSTANCE>
-        <INSTANCE dmtype="instfov:Polygon">
-            <COLLECTION dmrole="instfov:Polygon.vertex">
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.25583333"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.25583333"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.013805556"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.18241668"/>
-                    <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
-                </INSTANCE>
-                <INSTANCE dmtype="coords:LonLatPoint">
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="0.24202777"/>
-                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="-0.18244444"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="-0.012699403"/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="0.019020567"/>
                     <REFERENCE dmref="_custcoordsys" dmrole="coords:LonLatPoint.coordSys"/>
                 </INSTANCE>
             </COLLECTION>

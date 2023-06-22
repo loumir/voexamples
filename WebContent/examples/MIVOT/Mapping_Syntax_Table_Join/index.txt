@@ -1,4 +1,3 @@
 subtitle.txt
 description.txt
-stepquery
 joinexample.xml
