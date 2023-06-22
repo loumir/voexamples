@@ -1,2 +1,5 @@
 This is a mapping example in MIVOT for the INSTANCE field.
 Its purpose is to defines a complex ObjectType or DataType.
+
+Each dmtype is a complex type taken from the available classes in model,
+and each dmrole is the class path leading to the one used.

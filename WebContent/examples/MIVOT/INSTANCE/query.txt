@@ -1,9 +1,9 @@
-<INSTANCE dmid="IDtimesys" dmrole="" dmtype="coords:TimeSys">
-	<PRIMARY_KEY dmtype="ivoa:string" value="TCB" />
-	<INSTANCE dmrole="coords:PhysicalCoordSys.frame" dmtype="coords:TimeFrame">
-		<ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="TCB" />
-		<INSTANCE dmrole="coords:TimeFrame.refPosition" dmtype="coords:StdRefLocation">
-			<ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="BARYCENTER" />
-		</INSTANCE>
-	</INSTANCE>
+<INSTANCE dmrole="" dmtype="phot:Bandwidth">
+    <!-- This class is used to characterize the spectral properties of a filter.
+" -->
+    <INSTANCE dmrole="phot:Bandwidth.ucd" dmtype="Phot:UCD" />
+    <ATTRIBUTE dmrole="phot:Bandwidth.unitexpression" dmtype="ivoa:Unit" unit="" ref="@@@@@" value="" />
+    <ATTRIBUTE dmrole="phot:Bandwidth.extent" dmtype="ivoa:real" unit="" ref="@@@@@" value="" />
+    <ATTRIBUTE dmrole="phot:Bandwidth.start" dmtype="ivoa:real" unit="" ref="@@@@@" value="" />
+    <ATTRIBUTE dmrole="phot:Bandwidth.stop" dmtype="ivoa:real" unit="" ref="@@@@@" value="" />
 </INSTANCE>

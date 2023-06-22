@@ -1,0 +1,1 @@
+We can take for example the Bandwidth from the <a href="https://ivoa.net/xml/VODML/Phot-v1.1.vodml.xml">PhotDM</a> model.

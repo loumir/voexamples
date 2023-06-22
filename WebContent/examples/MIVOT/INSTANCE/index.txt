@@ -1,7 +1,8 @@
 description.txt
-query.txt
+subtitle_sample.txt
+query_2.txt
 subtitle_example.txt
-query_TimeSystem_globals.xml
-image_coordsys.png
-description_example_2.txt
-query_TimeSystem_reference.xml
+description_2.txt
+bandwidth.png
+description_3.txt
+query.txt
