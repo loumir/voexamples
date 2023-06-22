@@ -1,9 +1,0 @@
-description.txt
-usage.txt
-query.txt
-query.xml
-subtitle_test.txt
-stepquery
-myImage.jpg
-uri.txt
-toto.txt

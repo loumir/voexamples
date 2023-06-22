@@ -274,7 +274,6 @@ a.wd {
 }
 
 .content img {
-    width: 100%;
     overflow-y:scroll;
 }
 
