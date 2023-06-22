@@ -310,7 +310,7 @@ strong#inpage  {
     font-weight: bold;
     font-size: 1.2em;
     background-color: #eee;
-    color: #444;
+    color: #1F204FFF;
     padding: 8px;
     text-align: left;
     width: 70%;
@@ -323,7 +323,10 @@ strong#inpage  {
 #subtitle {
     font-size: 1em;
     font-weight: bold;
-    text-decoration: underline;
+    color: #1f204f;
+    background-color: #f7f7f7;
+    width: 50%;
+    border-radius: 10px;
 }
 
 #uri {
