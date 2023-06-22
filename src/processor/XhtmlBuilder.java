@@ -83,9 +83,8 @@ public class XhtmlBuilder {
 				}
 				else{
 					retour.append("     <p> Link: \n");
-					retour.append("     <a href=\"../../examples/" +  em.params.protocol + "/" + em.params.useCase + "/" + file + "\"\n");
-					retour.append("       <p>" + file + "</p>\n");
-					retour.append("     </a></p>\n");
+					retour.append("     <a href=\"../../examples/" +  em.params.protocol + "/" + em.params.useCase + "/" + file + "\">" + file + "</a>\n");
+					retour.append("     </p>\n");
 				}
 			}
 
@@ -266,9 +265,9 @@ public class XhtmlBuilder {
 	public static String addDescription(String description) {
 		StringBuilder html = new StringBuilder();
 		if( description.length() > 0 ){
-			html.append("     <p><pre id=\"desc\">");
+			html.append("     <pre id=\"desc\">");
 			html.append(description);
-			html.append("      </pre></p>\n");
+			html.append("      </pre></br>\n");
 		}
 
 		return html.toString();
@@ -278,7 +277,7 @@ public class XhtmlBuilder {
 		StringBuilder html = new StringBuilder();
 		if( usage.length() > 0 ) {
 			if (!usage.startsWith("#!")) {
-				html.append("     <p><strong id=\"inpage\">Usage</strong>\n");
+				html.append("     <strong id=\"inpage\">Usage</strong>\n");
 				html.append("       <pre>" + usage.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</pre>");
 				html.append("     </pre>\n");
 			} else {
@@ -305,9 +304,8 @@ public class XhtmlBuilder {
 				}
 			}
 
-			html.append("     <p><strong id=\"inpage\">Query or Code</strong>\n");
-			html.append("       <pre><code " + cssClass + ">" + query.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</code></pre>");
-			html.append("     </p>\n");
+			html.append("     <strong id=\"inpage\">Query or Code</strong>\n");
+			html.append("       <pre><code " + cssClass + ">" + query.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</code></pre>\n");
 		}
 
 		return html.toString();
@@ -330,6 +328,7 @@ public class XhtmlBuilder {
 
 	public static String addURI(String uri, String file){
 		StringBuilder html = new StringBuilder();
+		String url = uri.replaceAll("<","&lt;").replaceAll(">", "&gt;");
 		if( uri.length() > 0 ){
 			if (file.contains("_")) {
 				file = file.substring(file.indexOf("_") + 1, file.length() - 4);
@@ -337,10 +336,8 @@ public class XhtmlBuilder {
 			else{
 				file = "Link";
 			}
-			html.append("     <p>" + file + ": \n");
-			html.append("     <a href=\"" + uri.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "\"\n");
-			html.append("       <p>" + uri.replaceAll("<","&lt;").replaceAll(">", "&gt;") + "</p>\n");
-			html.append("     </a></p>\n");
+			html.append("     <p>" + file + ":\n");
+			html.append("     <a href=\"" + url + "\">" + url + "</a></p>\n");
 		}
 
 		return html.toString();
@@ -350,6 +347,7 @@ public class XhtmlBuilder {
 		StringBuilder html = new StringBuilder();
 		html.append("<div class=\"stepquery\">");
 		html.append("<div id=\"buttons\">");
+		html.append("<strong id=\"inpage\">Step Query</strong>\n");
 		html.append("   <button id=\"info-btn\" title=\"Click on the next button to browse to the next step\">i</button>\n");
 		html.append("	<button id=\"prev-btn\" disabled><<</button>\n");
 		html.append("	<button id=\"next-btn\">>></button>");
@@ -358,7 +356,6 @@ public class XhtmlBuilder {
 		List<String> index = em.getIndex(file);
 		List<String> descriptions = new ArrayList<>();
 		List<String> queries = new ArrayList<>();
-
 		for(String f : index) {
 			String el = em.getByName(file + "/" + f);
 			if(el.length() > 0) {
