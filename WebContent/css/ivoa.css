@@ -91,7 +91,7 @@ h3 {font-family: "Myriad Pro", "Trebuchet MS", sans-serif; font-size: 18px; colo
     margin-top: 15px;
 }
 
-#heading p {padding-bottom: 16px; padding-top:7px;}
+#heading p {padding-bottom: 9px; padding-top:7px;}
 
 #features {background: url(images/features2.gif) repeat-x 0 0; height: 122px; padding-top: 5px;}
 .features-cnt {background: url(images/features2.gif) no-repeat 0 0; height: 118px; padding-left: 20px;}
@@ -184,7 +184,6 @@ a.wd {
 .stepquery #buttons {
     display: flex;
     flex: 1;
-    align-self: flex-end;
 }
 
 .stepquery #buttons button {
@@ -242,26 +241,28 @@ a.wd {
     padding: 0 5px;
 }
 
+
+
 #desc {
     white-space: pre-wrap;
     word-wrap: break-word;
+    margin: 15px 0 0 0;
 }
 
 .collapsible {
-    background-color: #eee;
+    background-color: #d4e1f2;
     color: #444;
     cursor: pointer;
-    padding: 8px;
-    width: 50%;
-    border: none;
+    padding: 6px;
+    width: 45%;
     text-align: left;
     outline: none;
-    font-size: 14px;
+    font-size: 12px;
     font-style: italic;
 }
 
 .collapsible:hover, .collapsible.active {
-    background-color: #ccc;
+    background-color: #adc0d7;
 }
 
 .content {
@@ -283,6 +284,8 @@ a.wd {
 }
 .hljs.xml {
     max-height: 600px;
+    margin: 5px;
+    border-radius: 8px;
 }
 
 #top  {
@@ -306,7 +309,15 @@ a.wd {
 strong#inpage  {
     font-weight: bold;
     font-size: 1.2em;
-    color: #162638;
+    background-color: #eee;
+    color: #444;
+    padding: 8px;
+    text-align: left;
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin: 5px;
+    display: block;
 }
 
 #subtitle {
