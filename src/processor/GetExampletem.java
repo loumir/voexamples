@@ -4,6 +4,8 @@
 package processor;
 
 import java.io.File;
+import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.servlet.ServletContext;
@@ -21,15 +23,15 @@ public class GetExampletem extends Processor {
 
 	@Override
 	public String getContent() throws Exception{
-		String myfile = servletContext.getRealPath(ROOTDIR);
-		File fls = new File(myfile + "/" + params.protocol + "/" + params.useCase+ "/" + params.item + ".txt");
+		File fls = setupFile();
+		String type = fls.getName().substring(fls.getName().length() - 3);
 		String retour = "";
-		if( fls.exists() ) {
-			Scanner myScanner = new Scanner(fls);
-			retour = myScanner.useDelimiter("\\A").next(); 
-			myScanner.close();
+		if(type.equals("png") || type.equals("jpg")) {
+			retour = getImagePath();
 		} else {
-			retour = "Protocol " + params.item + " not supported";
+			Scanner myScanner = new Scanner(fls);
+			retour = myScanner.useDelimiter("\\A").next();
+			myScanner.close();
 		}
 		return retour;
 
@@ -37,24 +39,77 @@ public class GetExampletem extends Processor {
 	
 	@Override
 	public String getNiceContent() throws Exception{
-		String myfile = servletContext.getRealPath(ROOTDIR);
-		File fls = new File(myfile + "/" + params.protocol + "/" + params.useCase+ "/" + params.item + ".txt");
+		File fls = setupFile();
 		String retour = "";
-		if( fls.exists() ) {
+		if( fls != null ) {
 			Scanner myScanner = new Scanner(fls);
-			retour = myScanner.useDelimiter("\\A").next(); 
+			retour = myScanner.useDelimiter("\\A").next();
 			myScanner.close();
 		} else {
-			retour = "Protocol " + params.item + " not supported";
+			if(params.item.contains("image")){
+				retour = getImagePath();
+			}
+			else{
+				retour = "Protocol " + params.item + " not supported";
+			}
 		}
 		return retour;
 
 	}
-
 
 	@Override
 	public String getContentType() {
 		return "text/plain";
 	}
 
+	public String getImagePath(){
+		String myfile = servletContext.getRealPath(ROOTDIR);
+		File folder = new File(myfile + "/" + params.protocol + "/" + params.useCase);
+		String[] listOfFiles = folder.list();
+
+		String retour = null;
+
+		if(listOfFiles != null){
+			for(String file : listOfFiles){
+				System.out.println(file);
+				if(file.contains(".") && file.substring(0, file.indexOf('.')).equals(params.item.replaceAll("%20", " "))){
+					retour = myfile + "/" + params.protocol + "/" + params.useCase+ "/" + file;
+				}
+			}
+		}
+
+		return retour;
+	}
+
+	public File setupFile(){
+		String myfile = servletContext.getRealPath(ROOTDIR);
+		String[] listOfFiles = new File(myfile + "/" + params.protocol + "/" + params.useCase).list();
+		File retour = null;
+
+		if(listOfFiles == null){
+			return retour;
+		}
+		for(String file : listOfFiles){
+			if(file.contains(".")) {
+				if (file.substring(0, file.indexOf('.')).equals(params.item.replaceAll("%20", " ")) && !file.contains("image")) {
+					retour = new File(myfile + "/" + params.protocol + "/" + params.useCase + "/" + file);
+				}
+			}
+			else{
+				String[] listOfStepFiles = new File(myfile + "/" + params.protocol + "/" + params.useCase + "/" + file).list();
+				if(listOfStepFiles == null){
+					continue;
+				}
+				for(String stepFile : listOfStepFiles){
+					if(stepFile.contains(".")){
+						if (stepFile.substring(0, stepFile.indexOf('.')).equals(params.item_step)) {
+							retour = new File(myfile + "/" + params.protocol + "/" + params.useCase + "/" + file + "/" + stepFile);
+						}
+					}
+				}
+			}
+		}
+
+		return retour;
+	}
 }

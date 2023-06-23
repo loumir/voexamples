@@ -1,0 +1,30 @@
+<GLOBALS>
+    <INSTANCE dmid="j2000_FK5" dmrole="coords:Coordinate.coordSys" dmtype="coords:SpaceSys">
+        <!-- Specialized coordinate system for the Spatial domain.  -->
+        <INSTANCE dmid="_spaceFrame1" dmrole="coords:PhysicalCoordSys.frame" dmtype="coords:SpaceFrame">
+            <!-- A SpaceFrame is specified by its reference frame (orientation), and a reference position (origin). -->
+            <INSTANCE dmrole="coords:SpaceFrame.stdRefLocation" dmtype="coords:StdRefLocation">
+                <!-- An absolute a-priori known location in phase space (position and velocity).  
+                                Values are selected from the StdRefPosition vocabulary. -->
+                <ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="BARYCENTER"/>
+            </INSTANCE>
+            <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="FK5"/>
+            <ATTRIBUTE dmrole="coords:SpaceFrame.equinox" dmtype="coords:Epoch" value="J2000"/>
+        </INSTANCE>
+    </INSTANCE>
+    <!-- corresponds to <COOSYS ID="J2000" system="eq_FK5" equinox="J2000"/> -->
+    <INSTANCE dmid="_timesys_1" dmtype="coords:TimeSys">
+        <INSTANCE dmid="TimeFrame_1" dmtype="coords:TimeFrame">
+            <INSTANCE dmrole="coords:TimeFrame.refPosition" dmtype="coords:StdRefLocation">
+                <ATTRIBUTE dmrole="coords:StdRefLocation.position" dmtype="ivoa:string" value="BARYCENTER"/>
+            </INSTANCE>
+            <ATTRIBUTE dmrole="coords:TimeFrame.timescale" dmtype="ivoa:string" value="UT"/>
+        </INSTANCE>
+        <INSTANCE dmid="TimeCoordSpace_1" dmtype="coords:coordSpace">
+            <INSTANCE dmrole="coords:TimeFrame.refPosition" dmtype="coords:StdRefLocation">
+                <ATTRIBUTE dmrole="coords:CoordSpace.timereference" dmtype="ivoa:string" value="UNKNOWN"/>
+            </INSTANCE>
+        </INSTANCE>
+    </INSTANCE>    <!-- fin TimeSys -->
+    <!--  corresponds to <TIMESYS ID="time_1" refposition="UNKNOWN" timeorigin="0.000000" timescale="UNKNOWN"/> -->
+</GLOBALS>

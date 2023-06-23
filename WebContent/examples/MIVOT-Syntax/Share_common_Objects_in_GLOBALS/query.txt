@@ -1,0 +1,18 @@
+<VODML xmlns:dm-mapping="http://www.ivoa.net/xml/mivot">
+    <REPORT status="OK">Mapping compiled by hand</REPORT>
+    <MODEL... />
+    <!--
+    place holder for singular data model instances
+    not associated with a singular VOTable TABLE
+    -->
+    <GLOBALS>
+        <!--
+        Container for any instances
+        -->
+        <COLLECTION dmid="PUT_AN_ID_HERE" dmrole="">
+            ...
+        </COLLECTION>
+        ...
+    </GLOBALS>
+    ...
+</VODML>

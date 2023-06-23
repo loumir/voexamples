@@ -1,0 +1,14 @@
+<INSTANCE dmid="_custcoordsys" dmrole="instfov:Fov.customSpaceSys" dmtype="instfov:CustomSpaceSys">
+    <INSTANCE dmrole="instfov:CustomSpaceSys.customSpaceFrame" dmtype="instfov:CustomSpaceFrame">
+        <INSTANCE dmrole="instfov:CustomSpaceFrame.refPosition_custom" dmtype="instfov:CustomRefLonLatLocation">
+            <INSTANCE dmrole="instfov:CustomRefLonLatLocation.position" dmtype="coords:LonLatPoint">
+                <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:real" value="NaN"/>
+                <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:real" value="NaN"/>
+                <REFERENCE dmref="_universalCoordSys" dmrole="instfov:standardSpaceReferenceSystem"/>
+            </INSTANCE>
+        </INSTANCE>
+        <ATTRIBUTE dmrole="coords:SpaceFrame.spaceRefFrame" dmtype="ivoa:string" value="ICRS"/>
+        <ATTRIBUTE dmrole="instfov:CustomSpaceFrame.directionAngle" dmtype="ivoa:real" value="0"/>
+        <ATTRIBUTE dmrole="instfov:CustomSpaceFrame.projection" dmtype="ivoa:string" value="TAN"/>
+    </INSTANCE>
+</INSTANCE>

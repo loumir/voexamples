@@ -1,0 +1,3 @@
+A MIVOT mapping demonstration for a Field of View of the HST telescope plus a representation of this mapping in Aladin Lite.
+
+Let's review step by step the construction of such a mapping:

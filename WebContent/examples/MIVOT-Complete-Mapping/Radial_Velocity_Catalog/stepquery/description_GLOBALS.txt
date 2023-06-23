@@ -1,0 +1,5 @@
+The coordinate system used for Position and Time are common to several properties.
+So they are gathered into a <GLOBALS> section .
+When an <INSTANCE> element, typically a Position, needs to refer to the coordinate system, it just mentions 
+the dmID in a <REFERENCE> element.
+ 

@@ -1,0 +1,5 @@
+<INSTANCE dmrole="" dmtype="model:MyClass">
+    <ATTRIBUTE dmrole="model:MyClass.myFirstAttribute" dmtype="model:Type" unit="" ref="@@@@@" value="" />
+    <ATTRIBUTE dmrole="model:MyClass.mySecondAttribute" dmtype="model:Type" unit="" ref="@@@@@" value="" />
+    <ATTRIBUTE dmrole="model:MyClass.myThirdAttribute" dmtype="model:Type" unit="" ref="@@@@@" value="" />
+</INSTANCE>

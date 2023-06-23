@@ -1,0 +1,2 @@
+The PhotCal object connects to the PhotometryFilter Object with a reference. 
+These instances are defined in the GLOBALS section of the annotation.

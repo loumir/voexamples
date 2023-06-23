@@ -1,0 +1,1 @@
+We now complete the telescope instance with its name, description and instrument

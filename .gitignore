@@ -4,6 +4,12 @@
 *.ear
 *.class
 
+# idea git ignore
+.idea/
+out/
+lib/
+voexamples.iml
+
 # eclipse specific git ignore
 *.pydevproject
 .project
@@ -19,6 +25,9 @@ local.properties
 .classpath
 .settings/
 .loadpath
+
+### Mac OS ###
+.DS_Store
 
 # External tool builders
 .externalToolBuilders/

@@ -3,6 +3,11 @@ package processor;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.TreeMap;
+import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,6 +45,38 @@ public class ExampleModel {
 	public String getUsage() throws Exception {
 		return getItem("usage.txt");
 	}
+
+	public String getImage() throws Exception {
+		return getItem("image.txt");
+	}
+
+	public List<String> getIndex(String subpath) throws Exception {
+		List<String> index = new ArrayList<>();
+
+		File f = new File(exampleDir + "/index.txt");
+		if(subpath != null){
+			f = new File(exampleDir + "/" + subpath + "/index.txt");
+		}
+		if( !f.exists()) {
+			return null;
+		}
+		BufferedReader br = new BufferedReader(new FileReader(f));
+		String boeuf;
+		while( (boeuf =  br.readLine()) != null ) {
+			index.add(boeuf);
+		}
+		br.close();
+
+		return index;
+	}
+
+	public String getByName(String name) throws Exception {
+		if(name.contains("png") || name.contains("jpg") || name.contains("jpeg")) {
+			return "";
+		}
+		return getItem(name);
+	}
+
 	public boolean match(String filter) throws Exception {
 		Pattern pattern = Pattern.compile(".*" + filter + ".*", Pattern.CASE_INSENSITIVE);
 		System.out.println("@@@@@@@@@@@ " + this.getTitle() + " " + filter + " " + this.getTitle().indexOf(filter));
@@ -48,7 +85,7 @@ public class ExampleModel {
 	}
 	private String getItem(String itemName) throws Exception {
 		File f = new File(exampleDir + "/" + itemName);
-		if( !f.exists()) {
+		if( !f.exists() || f.isDirectory()) {
 			return "";
 		}
 		BufferedReader br = new BufferedReader(new FileReader(f));

@@ -1,0 +1,2 @@
+A MIVOT mapping demonstration for the Field of View of the EPN Camera mounted on XMM-Newton telescope. Followed by a representation of this generated mapping block in Aladin Lite.
+The mapping block is based on the Field of View Data Model, currently in DRAFT version.

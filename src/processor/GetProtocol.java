@@ -54,7 +54,7 @@ public class GetProtocol extends Processor {
 		
 		if( fls.exists() ) {
 			String retour = XhtmlBuilder.getNiceHead() + XhtmlBuilder.openNiceHeading(params.protocol + " Use Cases and Examples");
-			retour += "<ul>\n";
+			retour += "<ul class=\"pagelist\">\n";
 			Set<String> sef = new TreeSet<String>();			
 			for( String f: fls.list() ) {
 				sef.add(f);

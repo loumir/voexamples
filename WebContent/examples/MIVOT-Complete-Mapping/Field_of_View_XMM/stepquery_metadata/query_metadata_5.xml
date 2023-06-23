@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<VOTABLE xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.4"
+         xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3">
+    <RESOURCE type="results">
+        <RESOURCE type="meta">
+            <VODML xmlns="https://ivoa.net/xml/MIVOT">
+                <REPORT status="OK">hand-made mapping: ad hoc model so far</REPORT>
+                <MODEL name="instfov" url="https://www.ivoa.net/xml/instfov.xml"/>
+                <MODEL name="coords" url="https://www.ivoa.net/xml/Coords-v1.xsd"/>
+                <GLOBALS>
+                    <INSTANCE dmid="_footprint" dmtype="instfov:InstrumentalFootPrint">
+                        <ATTRIBUTE dmrole="instfov:InstrumentalFootPrint.author_name" dmtype="ivoa:string" value="XMM-Newton SOC" />
+                        <INSTANCE dmrole="instfov:InstrumentalFootPrint.telescope" dmtype="instfov:Telescope">
+                            <ATTRIBUTE dmrole="instfov:Telescope.name" dmtype="ivoa:String" value="XMM-Newton" />
+                            <ATTRIBUTE dmrole="instfov:Telescope.description" dmtype="ivoa:string" value="EPIC-pn Camera footprint" />
+                            <INSTANCE dmrole="instfov:Telescope.instrument" dmtype="instfov:Instrument">
+                                <ATTRIBUTE dmrole="instfov:Instrument.name" dmtype="ivoa:String" value="EPIC-pn" />
+                                <INSTANCE dmrole="instfov:Instrument.instrumentMode" dmtype="instfov:InstrumentMode">
+                                    <ATTRIBUTE dmrole="instfov:InstrumentMode.name" dmtype="ivoa:String" value="M1" />
+                                    <INSTANCE dmid="_fov" dmrole="instfov:InstrumentMode.fov" dmtype="instfov:Fov">
+                                        ... <!-- Here goes the field of view -->
+                                    </INSTANCE>
+                                </INSTANCE>
+                            </INSTANCE>
+                        </INSTANCE>
+                    </INSTANCE>
+                </GLOBALS>
+            </VODML>
+        </RESOURCE>
+    </RESOURCE>
+</VOTABLE>

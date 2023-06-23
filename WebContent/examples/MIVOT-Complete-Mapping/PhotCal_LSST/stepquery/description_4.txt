@@ -1,0 +1,2 @@
+We now create a TEMPLATE element to map columns of the Transmission Curve table with data points.
+From PHotDM we need a set of TransmissionPoint elements:

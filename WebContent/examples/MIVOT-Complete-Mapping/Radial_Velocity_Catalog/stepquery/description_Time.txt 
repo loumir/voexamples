@@ -1,0 +1,3 @@
+The Time stamps for the Observation date , time start and time stop can be mapped to a Time coordinate in Meas DM.
+Depending of the Time format ISOTime chosen here , some transformation of the time start and time end columns are necessary.
+for instance Obs.st = "$Obs.date+T+$Obs.st" for instance 

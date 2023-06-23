@@ -1,0 +1,2 @@
+We can now add the positions informations of each polygons.
+We will talk about the custom coordinate system later on.

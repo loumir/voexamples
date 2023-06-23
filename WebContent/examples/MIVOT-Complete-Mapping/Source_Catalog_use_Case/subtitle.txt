@@ -1,0 +1,1 @@
+Mapping Flux values in various bands and Hardness Ratio values.
