@@ -57,7 +57,7 @@ class StepFilesChecker:
                 self.error_count += 1
 
             for file in self.files:
-                if file != "index.txt" and file not in lines:
+                if file != "index.txt" and file != ".DS_Store" and file not in lines:
                     self.log.warning(f"{file} file is not in the index.txt, "
                                      f"consider adding it if you want it to be displayed")
                     self.warning_count += 1

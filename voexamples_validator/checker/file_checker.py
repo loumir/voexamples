@@ -66,7 +66,7 @@ class FileChecker:
                         self.error_count += 1
 
             for file in os.listdir(os.path.dirname(self.file)):
-                if file != "index.txt" and file != "title.txt":
+                if file != "index.txt" and file != "title.txt" and file != ".DS_Store":
                     if file not in lines:
                         self.log.warning(f"{file} file is not in the index.txt, "
                                          f"consider adding it if you want it to be displayed")
