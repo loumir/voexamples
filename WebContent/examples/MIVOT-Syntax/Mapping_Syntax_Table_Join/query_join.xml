@@ -1,0 +1,4 @@
+<JOIN dmref="IDtsIDdata">
+    <WHERE foreignkey="_srcid" primarykey="_pksrcid" />
+    <WHERE foreignkey="_band" primarykey="_pkband" />
+</JOIN>

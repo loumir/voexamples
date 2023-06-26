@@ -1,0 +1,39 @@
+JOIN may have 2 uses:
+
+* JOIN with TEMPLATES data:
+    - must have either a @sourceref attribute identifying the foreign
+    TEMPLATES or a @dmref attribute identifying the foreign mapped
+    INSTANCE or both.
+        ^ if only @sourceref is given, the host collection is populated
+        with the INSTANCE mapping the foreign table rows.
+        This pattern is only valid when the foreign TEMPLATEs has one
+        unique instance child.
+        ^ if only @dmref is given, the host collection is populated with
+        the INSTANCE having the matching @dmid. In this case, the
+        client is in charge of locating the TEMPLATES containing that
+        INSTANCE.
+        ^ if both @sourceref and @dmref are given, it is assumed that
+        the INSTANCE with @dmid matching @dmref is hosted by the
+        TEMPLATES matching @sourceref;
+        an error must be risen otherwise.
+
+* JOIN with GLOBALS's COLLECTION data:
+    - the foreign COLLECTION must be direct child of GLOBALS
+    - JOIN must have one @sourceref attribute identifying the foreign
+    COLLECTION
+    - the host COLLECTION is populated with the foreign COLLECTION
+    items eventually filtered by the WHERE condition.
+    - the foreign COLLECTION must only have INSTANCE (eventually
+    REFERENCE) as children.
+    - the foreign COLLECTION items are supposed to have all the same
+    @dmtype this rule is however out of
+    the scope of the present standard.
+    - If there are WHERE conditions, the foreign COLLECTION items must
+    have PRIMARY_KEY
+
+JOIN example with 2 join conditions (see line 192 in
+Appendix A). The joined condition is satisfied
+when the value of the column _srcid of the
+collection identified by IDtsIDdata matches the one of
+the _band column and the value of the column _pkband matches this of the
+_pksrcid column:
