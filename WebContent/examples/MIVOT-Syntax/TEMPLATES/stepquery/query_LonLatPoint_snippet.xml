@@ -1,0 +1,43 @@
+<RESOURCE type="results">
+    <RESOURCE type="meta">
+        <VODML xmlns="https://ivoa.net/xml/MIVOT">
+
+            <GLOBALS>
+                <INSTANCE dmid="J2000" dmtype="coords:SpaceSys">
+                    ...
+                </INSTANCE>
+            </GLOBALS>
+            <TEMPLATES tableref="mytable">
+    ...
+                <INSTANCE dmrole="" dmtype="coords:LonLatPoint">
+                    <!-- A spatial coordinate in a Spherical coordinate space defining a Celestial position in Latitude and Longitude.  
+      Any associated CoordSpace MUST conform to this description.  -->
+                    <REFERENCE dmrole="coords:Coordinate.coordSys" dmref="J2000"/>
+
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lon" dmtype="ivoa:Quantity" unit="" ref="@@@@@" value=""/>
+                    <ATTRIBUTE dmrole="coords:LonLatPoint.lat" dmtype="ivoa:Quantity" unit="" ref="@@@@@" value=""/>
+                </INSTANCE>
+                <!-- ... insert here the INSTANCE blocks matching other groups of columns -->
+            </TEMPLATES>
+
+        </VODML>
+    </RESOURCE>
+    <TABLE name="mytable">
+        <FIELD ID="_2CXO" arraysize="*" datatype="char" name="2CXO" ucd="meta.id;meta.main">
+            <DESCRIPTION>Source name (Jhhmmss.s+ddmmssX) (name)</DESCRIPTION>
+        </FIELD>
+        <FIELD ID="RA" datatype="double" name="RAICRS" ucd="pos.eq.ra;meta.main">
+            <DESCRIPTION>Source position, ICRS right ascension (ra)</DESCRIPTION>
+        </FIELD>
+        <FIELD ID="DEC" datatype="double" name="DEICRS" ucd="pos.eq.dec;meta.main">
+            <DESCRIPTION>Source position, ICRS declination (dec)</DESCRIPTION>
+        </FIELD>
+
+        <DATA>  
+    ... 
+        </DATA>
+
+
+    </TABLE>
+
+</RESOURCE>

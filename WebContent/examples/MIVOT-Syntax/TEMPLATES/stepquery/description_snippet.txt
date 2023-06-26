@@ -1,0 +1,3 @@
+Here is the XML skeleton of the mapping block for a 2D Sky Position in J2000, generated from Coords DM 
+by the command: 
+mivot-snippet-instance coords:LonLatPoint <directory_name>
