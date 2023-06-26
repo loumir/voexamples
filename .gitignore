@@ -3,7 +3,7 @@
 *.war
 *.ear
 *.class
-
+__pycache__/
 # idea git ignore
 .idea/
 out/
