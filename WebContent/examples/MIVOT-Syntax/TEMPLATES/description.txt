@@ -1,0 +1,11 @@
+This example illustrates the use the TEMPLATE mapping block .
+This element lists the data model classes with their attributes, that correspond to the columns content in a <TABLE> VOTable element. 
+
+Usually each table column corresponds to some class's attribute represented by an <ATTRIBUTE> element. 
+For instance 'lon' and 'lat' are attributes of LongLatPoint of the Coords data model.
+The Class is represented by an <INSTANCE> and gathers its <ATTRIBUTE> elements as well as some <REFERENCE>  to the Coordinate system.
+
+The TEMPLATE definition applies to all rows of the table and builds objects from the columns it refers to.
+
+The classes represented in the mapping block, can be effectively translated further to an Astropy class or 
+some other dedicated object in the astronomical libraries.
