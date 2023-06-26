@@ -1,1 +1,0 @@
-Script CURL accessing the CADC (to be set)

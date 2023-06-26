@@ -347,7 +347,7 @@ public class XhtmlBuilder {
 		StringBuilder html = new StringBuilder();
 		html.append("<div class=\"stepquery\">");
 		html.append("<div id=\"buttons\">");
-		html.append("<strong id=\"inpage\">Step Query</strong>\n");
+		html.append("<strong id=\"inpage\">Step by Step</strong>\n");
 		html.append("   <button id=\"info-btn\" title=\"Click on the next button to browse to the next step\">i</button>\n");
 		html.append("	<button id=\"prev-btn\" disabled><<</button>\n");
 		html.append("	<button id=\"next-btn\">>></button>");
