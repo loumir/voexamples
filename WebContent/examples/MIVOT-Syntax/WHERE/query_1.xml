@@ -1,0 +1,7 @@
+<TEMPLATES tableref="table">
+    <WHERE primarykey="col1" value="val1" />
+    <WHERE primarykey="col2" value="val2" />
+    <INSTANCE dmtype="type">
+        ....
+    </INSTANCE>
+</TEMPLATES>

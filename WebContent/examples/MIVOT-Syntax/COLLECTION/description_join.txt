@@ -1,0 +1,3 @@
+Example of COLLECTION populated with a JOIN. The collection will be populated with the rows of another
+collection of the MIVOT block identified by @dmid=IDtsIDdata and that
+match both WHERE conditions:

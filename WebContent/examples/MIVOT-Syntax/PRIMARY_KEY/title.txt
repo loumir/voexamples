@@ -1,0 +1,1 @@
+FOREIGN_KEY Mapping Example in MIVOT

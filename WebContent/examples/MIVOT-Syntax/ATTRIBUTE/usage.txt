@@ -1,0 +1,38 @@
+1. Child of INSTANCE
+    The ATTRIBUTE can be seen as a class attribute;
+    it must have a @dmrole XML attribute.
+    In this case, the ATTRIBUTE must be specified by:
+        * @ref - reference to a VOTable PARAM or FIELD
+        * @value - a literal
+        * if both are provided; @value serves as the default
+        if the reference cannot be resolved
+        * if @ref cannot resolved and there is no @value,
+        the client must consider that value as NULL in its software context (language, inner model).
+
+2. Child of COLLECTION
+    In this case the host COLLECTION can be seen as a vector
+    and the ATTRIBUTE as one coordinate of the vector.
+    It must have no @dmrole XML attribute or an empty one.
+    In this case, the ATTRIBUTE must be specified by:
+        * @ref - reference to a VOTable PARAM or FIELD
+        * @value - a literal
+        * if both are provided, @value serves as the default if the reference cannot be resolved
+        * if @ref cannot resolved and there is no @value,
+        the client must consider that value as NULL.
+        The definition of the NULL value depends of the software environment
+
+3. Any case :
+    The ATTRIBUTE must always have a non-empty @dmtype XML attribute.
+    This @dmtype may complete missing types in the VOTable.
+    In case of inconsistency with VOTable @dmtype SHOULD supersede VOTable types.
+    An ATTRIBUTE with a @ref pointing on a FIELD must be located in the TEMPLATES
+    element mapping the table containing that field.
+    @ref of ATTRIBUTE-s located in the GLOBALS block
+    can only point at PARAM since the GLOBALS element
+    does not map any data table.
+
+
+Example of ATTRIBUTE set with either a column reference
+or a static value ATTRIBUTE[@dmrole=cube:DataAxis.dependent] will
+always be set as "False" whereas ATTRIBUTE[@dmrole=coords:MJD.date]
+will be set with the value of the IDobstime column:

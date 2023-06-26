@@ -1,0 +1,1 @@
+WHERE Mapping Example in MIVOT

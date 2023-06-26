@@ -1,0 +1,3 @@
+The ATTRIBUTE element defines either a class attribute or a collection item,
+both set with atomic values. The requirements on the content (especially
+@ref and @dmrole, may differ depending on the usage.

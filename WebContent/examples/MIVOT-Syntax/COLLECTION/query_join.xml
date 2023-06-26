@@ -1,0 +1,11 @@
+    <TEMPLATES tableref="IDPKTable">
+    <INSTANCE dmid="IDTimeSeries" dmrole="" dmtype="cube:SparseCube">
+        ....
+        <COLLECTION dmrole="cube:SparseCube.data">
+            <JOIN dmref="IDtsIDdata">
+                <WHERE foreignkey="IDsrcid" primarykey="IDpksrcid" />
+                <WHERE foreignkey="IDband" primarykey="IDpkband" />
+            </JOIN>
+        </COLLECTION>
+    </INSTANCE>
+</TEMPLATES>

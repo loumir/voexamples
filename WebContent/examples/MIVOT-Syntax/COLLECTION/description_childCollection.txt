@@ -1,0 +1,4 @@
+3. As child of COLLECTION
+    The collection contains a matrix of atomic values.
+
+Example of COLLECTION mapping a 2x2 matrix:

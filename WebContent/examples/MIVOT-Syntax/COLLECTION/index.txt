@@ -1,0 +1,13 @@
+description.txt
+subtitle_childInstance.txt
+description_childInstance.txt
+query_childInstance.xml
+subtitle_childGlobals.txt
+description_childGlobals.txt
+query_childGlobals.xml
+subtitle_childCollection.txt
+description_childCollection.txt
+query_childCollection.xml
+subtitle_join.txt
+description_join.txt
+query_join.xml

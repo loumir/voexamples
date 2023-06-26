@@ -1,5 +1,5 @@
 description.txt
-uri_main.txt
+uri_Catalog.txt
 description_classes.txt
 stepquery
 RAVEdr6_Vizier_example.xml

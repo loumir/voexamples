@@ -1,0 +1,12 @@
+1. As child of INSTANCE
+    The COLLECTION serves as a container for elements with multiplicity > 1
+
+    Examples of usage in this context would be:
+        * an array attribute
+        * a reference relation with multiplicity > 1
+        * a composition relation with multiplicity > 1
+
+Example of a COLLECTION child of INSTANCE. It must have a role
+as an enclosing INSTANCE component. In this example, the collection plays
+the role model:Thing.elems within the enclosing instance. The role is the
+actual VODMID of the corresponding VO-DML composition:

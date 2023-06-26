@@ -1,0 +1,3 @@
+FOREIGN_KEY is only used within a REFERENCE located within a TEMPLATE.
+It identifies the FIELD that must match the primary key of the referenced
+collection.

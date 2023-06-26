@@ -1,0 +1,11 @@
+* Dynamic reference: The element has a @sourceref attribute identifying the foreign collection (TEMPLATES or COLLECTION) containing the
+referenced INSTANCE which is identified by its PRIMARY_KEY(s) children. In this case, REFERENCE must be located in a TEMPLATES and it
+must have one or more FOREIGN_KEY children. If the foreign collection
+has multiple INSTANCE-s with matching PRIMARY_KEY-s, the first match
+must be taken by default. If the REFERENCE has multiple FOREIGN_KEY-s, they must be evaluated against the target PRIMARY_KEY-s in order
+of occurrence. An error must be risen if the number of FOREIGN_KEY-s
+does not match this of target PRIMARY_KEY-s.
+
+Dynamic REFERENCE, to be replaced with the INSTANCE of the
+collection _CoordinateSystems having a PRIMARY_KEY matching the value
+of the column _band. This pattern is valid in the context of a TEMPLATES:

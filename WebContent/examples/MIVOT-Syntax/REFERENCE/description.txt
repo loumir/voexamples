@@ -1,0 +1,3 @@
+The REFERENCE element provides a reference to an INSTANCE or COLLECTION
+serialized elsewhere in the mapping block. Reference can be used in the same
+contexts as INSTANCE.

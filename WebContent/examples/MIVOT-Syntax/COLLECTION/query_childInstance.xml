@@ -1,0 +1,6 @@
+<INSTANCE dmtype="model:Thing">
+    <COLLECTION dmrole="model:Thing.elems">
+        <ATTRIBUTE dmtype="model:Foo" value="100" />
+        <ATTRIBUTE dmtype="model:Foo" value="110" />
+    </COLLECTION>
+</INSTANCE>

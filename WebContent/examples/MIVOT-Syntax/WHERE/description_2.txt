@@ -1,0 +1,2 @@
+WHERE Example: the join is satisfied when the value of the
+_pksrcid column is equal to the _srcid column of the foreign table:

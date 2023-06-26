@@ -1,0 +1,4 @@
+<INSTANCE dmtype="ds:experiment.ObsDataset">
+    <PRIMARY_KEY dmtype="ivoa:string" value="5813181197970338560"/>
+    ...
+</INSTANCE>

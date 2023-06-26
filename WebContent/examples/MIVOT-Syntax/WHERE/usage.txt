@@ -1,0 +1,16 @@
+There are 2 different uses for this element:
+
+    1. As a child of TEMPLATES:
+Only the table rows satisfying the WHERE conditions will be mapped.
+With this pattern WHERE must have one @primarykey attribute and
+one @value attribute. @primarykey references the column (FIELD)
+to be checked. The WHERE condition is satisfied for the rows having
+@primarykey equals to @value.
+
+    2. As a child of JOIN:
+Only the joined data items satisfying the WHERE conditions will be
+taken. With this pattern WHERE must have one @foreignkey attribute
+and one of either @value or @primarykey attribute. @foreignkey references
+the column of the foreign collection to be checked. The WHERE
+condition is satisfied for the rows having @foreignkey equals to either
+@value or @primarykey value.

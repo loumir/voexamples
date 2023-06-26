@@ -1,0 +1,4 @@
+* Static reference: the element has a @dmref attribute that matches the
+@dmid attribute of the referenced INSTANCE or COLLECTION
+
+Simple REFERENCE, to be replaced with the INSTANCE having @dmid=_tg1:

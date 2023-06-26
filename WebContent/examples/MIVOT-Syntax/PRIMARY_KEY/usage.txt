@@ -1,0 +1,3 @@
+The REFERENCE is resolved by the INSTANCE of the table
+_CoordinateSystems that has a primary key equals
+to the value of the column _band:

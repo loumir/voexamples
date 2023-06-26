@@ -1,0 +1,2 @@
+WHERE Example: only rows having val1 as col1 value and val2
+as col2 value must be mapped:

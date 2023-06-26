@@ -1,0 +1,9 @@
+<INSTANCE dmtype="cube:Observable">
+    <ATTRIBUTE dmrole="cube:DataAxis.dependent" dmtype="ivoa:boolean" value="False"/>
+    <INSTANCE dmrole="cube:MeasurementAxis.measure" dmtype="meas:Time"
+        <INSTANCE dmrole="meas:Measure.coord" dmtype="coords:MJD"
+            <ATTRIBUTE dmrole="coords:MJD.date" dmtype="ivoa:real" ref="IDobstime"/>
+            <REFERENCE dmrole="coords:Coordinate.coordSys" dmref="IDtimesys"/>
+        </INSTANCE>
+    </INSTANCE>
+</INSTANCE>

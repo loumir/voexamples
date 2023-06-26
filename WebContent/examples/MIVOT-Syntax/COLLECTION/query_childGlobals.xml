@@ -1,0 +1,21 @@
+<GLOBALS>
+    <!--
+    Container for the datasets (one per timeseries)
+    -->
+    <COLLECTION dmid="IDDatasets" dmrole="">
+        <INSTANCE dmid="IDds1" dmtype="ds:experiment.ObsDataset">
+            <PRIMARY_KEY dmtype="ivoa:string" value="5813181197970338560"/>
+            <ATTRIBUTE dmrole="ds:dataset.Dataset.dataProductType"
+                       dmtype="ds:dataset.DataProductType" value="TIMESERIES"/>
+            <ATTRIBUTE dmrole="ds:dataset.Dataset.dataProductSubtype"
+                       dmtype="ivoa:string" value="GAIA Time Series"/>
+            <ATTRIBUTE dmrole="ds:experiment.ObsDataset.calibLevel"
+                       dmtype="ivoa:integer" value="1"/>
+            <REFERENCE dmrole="ds:experiment.ObsDataset.target" dmref="IDtg1"/>
+        </INSTANCE>
+        <INSTANCE dmid="IDds1" dmtype="ds:experiment.ObsDataset">
+            <PRIMARY_KEY dmtype="ivoa:string" value="5813181197970338561"/>
+            ...
+        </INSTANCE>
+    </COLLECTION>
+</GLOBALS>

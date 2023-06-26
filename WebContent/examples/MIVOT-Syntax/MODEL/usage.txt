@@ -1,0 +1,1 @@
+Example MODEL mapping block:

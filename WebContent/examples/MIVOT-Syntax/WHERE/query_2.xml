@@ -1,0 +1,3 @@
+<JOIN dmref="_ts_data">
+    <WHERE foreignkey="_srcid" primarykey="_pksrcid" />
+</JOIN>

@@ -1,0 +1,5 @@
+The WHERE element is used to filter iteration outputs. Results are accepted
+when the key is equal to the specified @value.
+
+    * For now, we only define type-preserving comparisons; comparisons requiring type corrections will be defined in a future version of this standard and for now must raise an error.
+    * The WHERE statement is false if at least one of the values used for the comparison is NULL.

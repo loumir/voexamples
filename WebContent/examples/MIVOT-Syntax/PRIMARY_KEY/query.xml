@@ -1,0 +1,3 @@
+<REFERENCE dmrole="coords:Coordinate.coordSys" sourceref="_CoordinateSystems">
+    <FOREIGN_KEY ref="IDband"/>
+</REFERENCE>
