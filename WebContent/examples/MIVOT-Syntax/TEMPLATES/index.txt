@@ -1,4 +1,3 @@
-subtitle.txt
 description.txt
+template_view.jpg
 stepquery
-template_example.xml

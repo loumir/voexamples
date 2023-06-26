@@ -1,0 +1,4 @@
+description_snippet.txt
+query_LonLatPoint_snippet.xml
+description_pointers.txt
+query_LonLatPoint_pointers.xml

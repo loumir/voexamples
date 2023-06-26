@@ -1,0 +1,1 @@
+TEMPLATES Mapping Example in MIVOT
