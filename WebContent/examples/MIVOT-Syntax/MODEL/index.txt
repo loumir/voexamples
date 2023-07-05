@@ -1,3 +1,6 @@
 description.txt
 usage.txt
 query.xml
+model_attributes.txt
+modele_hierarchy.txt
+modele_hierarchy.png

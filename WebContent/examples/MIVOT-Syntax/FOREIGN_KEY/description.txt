@@ -1,7 +1,9 @@
 The PRIMARY_KEY element allows to set an identification key to an INSTANCE.
 
-The primary keys are only used in the context of REFERENCE using FOREIGN_KEY A primary key can be either static or dynamic:
+The primary keys are only used in the context of REFERENCE using FOREIGN_KEY.
+A primary key can be either static or dynamic:
 * Static: the key value is given by the @value attribute.
-* Dynamic: the key value is given by the value of the field referenced by @ref This pattern is only valid if the INSTANCE is within a TEMPLATES.
+* Dynamic: the key value is given by the value of the FIELD referenced by @ref.
+ This pattern is only valid if the INSTANCE is within a TEMPLATES.
 
 The type of the key must always be specified by the @dmtype attribute.

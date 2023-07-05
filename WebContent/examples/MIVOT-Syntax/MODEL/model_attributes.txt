@@ -1,0 +1,1 @@
+<MODEL> defines an namespace in attribute 'name' and the url to point to the VODML XML definition of the model used in the ressource.

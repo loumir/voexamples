@@ -1,1 +1,1 @@
-Example MODEL mapping block:
+Example MIVOT annotation for <MODEL> element
